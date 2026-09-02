@@ -1,0 +1,152 @@
+{
+  "scene_id": "scene_06",
+  "scene_name": "中文命名实体标注",
+  "version": "test_v1",
+  "questions": [
+    {
+      "question_id": "s6_test_001",
+      "dataset": "CLUENER2020",
+      "sample_origin": "synthetic_test",
+      "question_type": "ner",
+      "difficulty": 2,
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "goal_tags": [
+        "job",
+        "course"
+      ],
+      "prompt": "请识别句子中的实体，并填写实体文本、类型和位置。",
+      "content": {
+        "text": "张明毕业于复旦大学。"
+      },
+      "answer_instruction": "请填写实体文本、实体类型、start和end。start从0开始计数，end采用左闭右开规则。",
+      "answer_example": {
+        "example_text": "李华就读于清华大学。",
+        "entities": [
+          {
+            "text": "李华",
+            "type": "PER",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "清华大学",
+            "type": "ORG",
+            "start": 5,
+            "end": 9
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "张明",
+            "type": "PER",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "复旦大学",
+            "type": "ORG",
+            "start": 5,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "s6_test_002",
+      "dataset": "CMeEE",
+      "sample_origin": "synthetic_test",
+      "question_type": "ner",
+      "difficulty": 4,
+      "kp_ids": [
+        "s6_boundary",
+        "s6_type",
+        "s6_nested"
+      ],
+      "goal_tags": [
+        "course",
+        "competition"
+      ],
+      "prompt": "请完成医学文本实体标注，并注意实体边界。",
+      "content": {
+        "text": "患者被诊断为慢性肾功能不全。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end；如果存在嵌套实体，同时填写nested_entities。",
+      "answer_example": {
+        "example_text": "患者被诊断为肺部感染。",
+        "entities": [
+          {
+            "text": "肺部感染",
+            "type": "疾病"
+          }
+        ],
+        "nested_entities": []
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "慢性肾功能不全",
+            "type": "疾病"
+          }
+        ],
+        "nested_entities": []
+      }
+    },
+    {
+      "question_id": "s6_test_003",
+      "dataset": "Resume NER",
+      "sample_origin": "synthetic_test",
+      "question_type": "ner",
+      "difficulty": 3,
+      "kp_ids": [
+        "s6_recognition",
+        "s6_type",
+        "s6_bio"
+      ],
+      "goal_tags": [
+        "job",
+        "course",
+        "competition"
+      ],
+      "prompt": "请识别简历文本中的实体，并完成实体类型标注。",
+      "content": {
+        "text": "王强曾在腾讯科技有限公司担任产品经理。"
+      },
+      "answer_instruction": "请填写实体文本、类型和位置，并检查BIO/BIOES标注是否合法。",
+      "answer_example": {
+        "example_text": "赵敏在阿里巴巴工作。",
+        "entities": [
+          {
+            "text": "赵敏",
+            "type": "PER"
+          },
+          {
+            "text": "阿里巴巴",
+            "type": "ORG"
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "王强",
+            "type": "PER"
+          },
+          {
+            "text": "腾讯科技有限公司",
+            "type": "ORG"
+          },
+          {
+            "text": "产品经理",
+            "type": "TITLE"
+          }
+        ]
+      }
+    }
+  ]
+}
