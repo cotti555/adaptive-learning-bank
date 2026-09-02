@@ -1,3 +1,97 @@
-job
-course
-competition
+{
+  "scene_id": "scene_06",
+  "scene_name": "中文命名实体标注",
+  "version": "test_v1",
+
+  "basic_learning": {
+    "resource_id": "s6_basic_learning",
+    "stage": "basic_learning",
+    "title": "中文命名实体标注基础学习",
+    "resource_type": "text",
+    "content": "学习命名实体标注前，请先掌握五个基础知识点：1. 实体识别：找出文本中的人名、地名、机构名等实体；2. 实体边界：完整选中实体，不能多字或漏字；3. 实体类型：为实体选择正确类别；4. BIO/BIOES：理解实体开始、中间、结束及单字实体的序列标注规则；5. 嵌套实体：识别一个实体内部包含另一个实体的情况。",
+    "enabled": true
+  },
+
+  "personalized_resources": [
+    {
+      "resource_id": "s6_nested_job_basic",
+      "kp_id": "s6_nested",
+      "kp_name": "嵌套实体",
+      "goal_type": "job",
+      "level": "basic",
+      "mastery_min": 0,
+      "mastery_max": 0.59,
+      "title": "嵌套实体岗位标注基础",
+      "resource_type": "text",
+      "content": "在真实数据标注工作中，嵌套实体最容易出现漏标和边界错误。请先判断两个实体是否存在包含关系，再分别标注外层实体和内层实体。重点检查：是否漏掉内层实体、实体边界是否完整、实体类型是否符合项目标注规范。",
+      "enabled": true
+    },
+    {
+      "resource_id": "s6_nested_job_practice",
+      "kp_id": "s6_nested",
+      "kp_name": "嵌套实体",
+      "goal_type": "job",
+      "level": "practice",
+      "mastery_min": 0.6,
+      "mastery_max": 0.79,
+      "title": "嵌套实体岗位专项强化",
+      "resource_type": "text",
+      "content": "你已经理解嵌套实体的基本概念，下一步重点练习真实标注项目中的复杂边界。标注时按“识别外层实体→寻找内部实体→分别确定类型→检查边界”的顺序完成，并重点避免漏标和重复标注。",
+      "enabled": true
+    },
+
+    {
+      "resource_id": "s6_nested_course_basic",
+      "kp_id": "s6_nested",
+      "kp_name": "嵌套实体",
+      "goal_type": "course",
+      "level": "basic",
+      "mastery_min": 0,
+      "mastery_max": 0.59,
+      "title": "嵌套实体概念与正反例",
+      "resource_type": "text",
+      "content": "嵌套实体是指一个实体完整包含在另一个实体内部。学习时重点理解实体之间的包含关系，并区分嵌套实体与相邻实体。先判断实体边界，再确定外层和内层实体的类别。",
+      "enabled": true
+    },
+    {
+      "resource_id": "s6_nested_course_practice",
+      "kp_id": "s6_nested",
+      "kp_name": "嵌套实体",
+      "goal_type": "course",
+      "level": "practice",
+      "mastery_min": 0.6,
+      "mastery_max": 0.79,
+      "title": "嵌套实体课程巩固练习",
+      "resource_type": "text",
+      "content": "请通过多组正例与反例进一步区分嵌套、相邻和重叠实体。每次判断时依次检查：实体是否完整包含、边界是否重合、两个实体是否具有独立语义以及实体类型是否正确。",
+      "enabled": true
+    },
+
+    {
+      "resource_id": "s6_nested_competition_basic",
+      "kp_id": "s6_nested",
+      "kp_name": "嵌套实体",
+      "goal_type": "competition",
+      "level": "basic",
+      "mastery_min": 0,
+      "mastery_max": 0.59,
+      "title": "嵌套实体竞赛基础专项",
+      "resource_type": "text",
+      "content": "竞赛场景中的嵌套实体通常具有边界复杂、类型相似和多层包含等特点。先快速识别外层实体，再检查内部是否存在独立实体，最后核对实体类型与边界。重点避免只标外层而漏掉内层。",
+      "enabled": true
+    },
+    {
+      "resource_id": "s6_nested_competition_practice",
+      "kp_id": "s6_nested",
+      "kp_name": "嵌套实体",
+      "goal_type": "competition",
+      "level": "practice",
+      "mastery_min": 0.6,
+      "mastery_max": 0.79,
+      "title": "嵌套实体竞赛高难强化",
+      "resource_type": "text",
+      "content": "进入高难强化阶段后，重点训练多实体、多层嵌套、边界干扰和类型歧义样本。做题时不仅要找到所有实体，还要检查外层与内层实体是否同时完整标注，并控制答题速度和准确率。",
+      "enabled": true
+    }
+  ]
+}
