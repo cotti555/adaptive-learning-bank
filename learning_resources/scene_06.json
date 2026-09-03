@@ -6,9 +6,28 @@
     "resource_id": "s6_basic_learning",
     "stage": "basic_learning",
     "title": "中文命名实体标注基础学习",
-    "resource_type": "text",
+    "resource_type": "link_collection",
     "content": "进入诊断前先掌握五个基础知识点：实体识别、实体边界、实体类型、BIO/BIOES、嵌套实体。基础学习完成后再进入初次诊断；诊断发现薄弱点后，系统会结合岗/课/赛目标推荐个性化资源。",
-    "enabled": true
+    "enabled": true,
+    "links": [
+      {
+        "title": "Label Studio 命名实体标注模板",
+        "url": "https://labelstud.io/templates/named_entity"
+      },
+      {
+        "title": "Stanford Stanza NER 文档",
+        "url": "https://stanfordnlp.github.io/stanza/ner.html"
+      },
+      {
+        "title": "Doccano 标注工具",
+        "url": "https://doccano.github.io/doccano/"
+      },
+      {
+        "title": "Hugging Face Token Classification 教程",
+        "url": "https://huggingface.co/docs/transformers/tasks/token_classification"
+      }
+    ],
+    "source_document": "任务plus/6/教学资源.docx"
   },
   "personalized_resources": [
     {
@@ -20,9 +39,12 @@
       "mastery_min": 0.0,
       "mastery_max": 0.59,
       "title": "岗位技能提升：实体识别基础补弱",
-      "resource_type": "text",
-      "content": "当前薄弱点是“实体识别”。先掌握核心要求：准确找出文本中所有需要标注的实体。本资源面向岗位技能提升，重点结合真实标注流程、项目规范和常见操作错误。完成后请进入同知识点新题复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Label Studio 命名实体标注模板》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Label Studio 命名实体标注模板",
+      "url": "https://labelstud.io/templates/named_entity",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_recognition_job_practice",
@@ -33,9 +55,12 @@
       "mastery_min": 0.6,
       "mastery_max": 0.79,
       "title": "岗位技能提升：实体识别专项强化",
-      "resource_type": "text",
-      "content": "你已经掌握“实体识别”的基础，但尚未达到80%。请围绕“准确找出文本中所有需要标注的实体”进行专项强化。本资源面向岗位技能提升，重点结合真实标注流程、项目规范和常见操作错误。完成后使用不同题目进行专项复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Doccano 标注工具》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Doccano 标注工具",
+      "url": "https://doccano.github.io/doccano/",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_boundary_job_basic",
@@ -46,9 +71,12 @@
       "mastery_min": 0.0,
       "mastery_max": 0.59,
       "title": "岗位技能提升：实体边界基础补弱",
-      "resource_type": "text",
-      "content": "当前薄弱点是“实体边界”。先掌握核心要求：完整确定实体起止范围，避免多字、漏字。本资源面向岗位技能提升，重点结合真实标注流程、项目规范和常见操作错误。完成后请进入同知识点新题复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Label Studio 命名实体标注模板》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Label Studio 命名实体标注模板",
+      "url": "https://labelstud.io/templates/named_entity",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_boundary_job_practice",
@@ -59,9 +87,12 @@
       "mastery_min": 0.6,
       "mastery_max": 0.79,
       "title": "岗位技能提升：实体边界专项强化",
-      "resource_type": "text",
-      "content": "你已经掌握“实体边界”的基础，但尚未达到80%。请围绕“完整确定实体起止范围，避免多字、漏字”进行专项强化。本资源面向岗位技能提升，重点结合真实标注流程、项目规范和常见操作错误。完成后使用不同题目进行专项复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Doccano 标注工具》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Doccano 标注工具",
+      "url": "https://doccano.github.io/doccano/",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_type_job_basic",
@@ -72,9 +103,12 @@
       "mastery_min": 0.0,
       "mastery_max": 0.59,
       "title": "岗位技能提升：实体类型基础补弱",
-      "resource_type": "text",
-      "content": "当前薄弱点是“实体类型”。先掌握核心要求：根据语义与标注规范选择正确实体类别。本资源面向岗位技能提升，重点结合真实标注流程、项目规范和常见操作错误。完成后请进入同知识点新题复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Stanford Stanza NER 文档》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Stanford Stanza NER 文档",
+      "url": "https://stanfordnlp.github.io/stanza/ner.html",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_type_job_practice",
@@ -85,9 +119,12 @@
       "mastery_min": 0.6,
       "mastery_max": 0.79,
       "title": "岗位技能提升：实体类型专项强化",
-      "resource_type": "text",
-      "content": "你已经掌握“实体类型”的基础，但尚未达到80%。请围绕“根据语义与标注规范选择正确实体类别”进行专项强化。本资源面向岗位技能提升，重点结合真实标注流程、项目规范和常见操作错误。完成后使用不同题目进行专项复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Hugging Face Token Classification 教程》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Hugging Face Token Classification 教程",
+      "url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_nested_job_basic",
@@ -98,9 +135,12 @@
       "mastery_min": 0.0,
       "mastery_max": 0.59,
       "title": "岗位技能提升：嵌套实体基础补弱",
-      "resource_type": "text",
-      "content": "当前薄弱点是“嵌套实体”。先掌握核心要求：识别外层实体与内部独立实体的包含关系。本资源面向岗位技能提升，重点结合真实标注流程、项目规范和常见操作错误。完成后请进入同知识点新题复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Doccano 标注工具》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Doccano 标注工具",
+      "url": "https://doccano.github.io/doccano/",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_nested_job_practice",
@@ -111,9 +151,12 @@
       "mastery_min": 0.6,
       "mastery_max": 0.79,
       "title": "岗位技能提升：嵌套实体专项强化",
-      "resource_type": "text",
-      "content": "你已经掌握“嵌套实体”的基础，但尚未达到80%。请围绕“识别外层实体与内部独立实体的包含关系”进行专项强化。本资源面向岗位技能提升，重点结合真实标注流程、项目规范和常见操作错误。完成后使用不同题目进行专项复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Stanford Stanza NER 文档》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Stanford Stanza NER 文档",
+      "url": "https://stanfordnlp.github.io/stanza/ner.html",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_bio_job_basic",
@@ -124,9 +167,12 @@
       "mastery_min": 0.0,
       "mastery_max": 0.59,
       "title": "岗位技能提升：BIO/BIOES基础补弱",
-      "resource_type": "text",
-      "content": "当前薄弱点是“BIO/BIOES”。先掌握核心要求：正确理解并检查实体序列标签规则。本资源面向岗位技能提升，重点结合真实标注流程、项目规范和常见操作错误。完成后请进入同知识点新题复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Hugging Face Token Classification 教程》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Hugging Face Token Classification 教程",
+      "url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_bio_job_practice",
@@ -137,9 +183,12 @@
       "mastery_min": 0.6,
       "mastery_max": 0.79,
       "title": "岗位技能提升：BIO/BIOES专项强化",
-      "resource_type": "text",
-      "content": "你已经掌握“BIO/BIOES”的基础，但尚未达到80%。请围绕“正确理解并检查实体序列标签规则”进行专项强化。本资源面向岗位技能提升，重点结合真实标注流程、项目规范和常见操作错误。完成后使用不同题目进行专项复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Hugging Face Token Classification 教程》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Hugging Face Token Classification 教程",
+      "url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_recognition_course_basic",
@@ -150,9 +199,12 @@
       "mastery_min": 0.0,
       "mastery_max": 0.59,
       "title": "课程学习巩固：实体识别基础补弱",
-      "resource_type": "text",
-      "content": "当前薄弱点是“实体识别”。先掌握核心要求：准确找出文本中所有需要标注的实体。本资源面向课程学习巩固，重点结合概念讲解、正反例与知识点辨析。完成后请进入同知识点新题复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Label Studio 命名实体标注模板》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Label Studio 命名实体标注模板",
+      "url": "https://labelstud.io/templates/named_entity",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_recognition_course_practice",
@@ -163,9 +215,12 @@
       "mastery_min": 0.6,
       "mastery_max": 0.79,
       "title": "课程学习巩固：实体识别专项强化",
-      "resource_type": "text",
-      "content": "你已经掌握“实体识别”的基础，但尚未达到80%。请围绕“准确找出文本中所有需要标注的实体”进行专项强化。本资源面向课程学习巩固，重点结合概念讲解、正反例与知识点辨析。完成后使用不同题目进行专项复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Doccano 标注工具》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Doccano 标注工具",
+      "url": "https://doccano.github.io/doccano/",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_boundary_course_basic",
@@ -176,9 +231,12 @@
       "mastery_min": 0.0,
       "mastery_max": 0.59,
       "title": "课程学习巩固：实体边界基础补弱",
-      "resource_type": "text",
-      "content": "当前薄弱点是“实体边界”。先掌握核心要求：完整确定实体起止范围，避免多字、漏字。本资源面向课程学习巩固，重点结合概念讲解、正反例与知识点辨析。完成后请进入同知识点新题复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Label Studio 命名实体标注模板》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Label Studio 命名实体标注模板",
+      "url": "https://labelstud.io/templates/named_entity",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_boundary_course_practice",
@@ -189,9 +247,12 @@
       "mastery_min": 0.6,
       "mastery_max": 0.79,
       "title": "课程学习巩固：实体边界专项强化",
-      "resource_type": "text",
-      "content": "你已经掌握“实体边界”的基础，但尚未达到80%。请围绕“完整确定实体起止范围，避免多字、漏字”进行专项强化。本资源面向课程学习巩固，重点结合概念讲解、正反例与知识点辨析。完成后使用不同题目进行专项复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Doccano 标注工具》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Doccano 标注工具",
+      "url": "https://doccano.github.io/doccano/",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_type_course_basic",
@@ -202,9 +263,12 @@
       "mastery_min": 0.0,
       "mastery_max": 0.59,
       "title": "课程学习巩固：实体类型基础补弱",
-      "resource_type": "text",
-      "content": "当前薄弱点是“实体类型”。先掌握核心要求：根据语义与标注规范选择正确实体类别。本资源面向课程学习巩固，重点结合概念讲解、正反例与知识点辨析。完成后请进入同知识点新题复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Stanford Stanza NER 文档》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Stanford Stanza NER 文档",
+      "url": "https://stanfordnlp.github.io/stanza/ner.html",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_type_course_practice",
@@ -215,9 +279,12 @@
       "mastery_min": 0.6,
       "mastery_max": 0.79,
       "title": "课程学习巩固：实体类型专项强化",
-      "resource_type": "text",
-      "content": "你已经掌握“实体类型”的基础，但尚未达到80%。请围绕“根据语义与标注规范选择正确实体类别”进行专项强化。本资源面向课程学习巩固，重点结合概念讲解、正反例与知识点辨析。完成后使用不同题目进行专项复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Hugging Face Token Classification 教程》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Hugging Face Token Classification 教程",
+      "url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_nested_course_basic",
@@ -228,9 +295,12 @@
       "mastery_min": 0.0,
       "mastery_max": 0.59,
       "title": "课程学习巩固：嵌套实体基础补弱",
-      "resource_type": "text",
-      "content": "当前薄弱点是“嵌套实体”。先掌握核心要求：识别外层实体与内部独立实体的包含关系。本资源面向课程学习巩固，重点结合概念讲解、正反例与知识点辨析。完成后请进入同知识点新题复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Doccano 标注工具》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Doccano 标注工具",
+      "url": "https://doccano.github.io/doccano/",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_nested_course_practice",
@@ -241,9 +311,12 @@
       "mastery_min": 0.6,
       "mastery_max": 0.79,
       "title": "课程学习巩固：嵌套实体专项强化",
-      "resource_type": "text",
-      "content": "你已经掌握“嵌套实体”的基础，但尚未达到80%。请围绕“识别外层实体与内部独立实体的包含关系”进行专项强化。本资源面向课程学习巩固，重点结合概念讲解、正反例与知识点辨析。完成后使用不同题目进行专项复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Stanford Stanza NER 文档》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Stanford Stanza NER 文档",
+      "url": "https://stanfordnlp.github.io/stanza/ner.html",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_bio_course_basic",
@@ -254,9 +327,12 @@
       "mastery_min": 0.0,
       "mastery_max": 0.59,
       "title": "课程学习巩固：BIO/BIOES基础补弱",
-      "resource_type": "text",
-      "content": "当前薄弱点是“BIO/BIOES”。先掌握核心要求：正确理解并检查实体序列标签规则。本资源面向课程学习巩固，重点结合概念讲解、正反例与知识点辨析。完成后请进入同知识点新题复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Hugging Face Token Classification 教程》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Hugging Face Token Classification 教程",
+      "url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_bio_course_practice",
@@ -267,9 +343,12 @@
       "mastery_min": 0.6,
       "mastery_max": 0.79,
       "title": "课程学习巩固：BIO/BIOES专项强化",
-      "resource_type": "text",
-      "content": "你已经掌握“BIO/BIOES”的基础，但尚未达到80%。请围绕“正确理解并检查实体序列标签规则”进行专项强化。本资源面向课程学习巩固，重点结合概念讲解、正反例与知识点辨析。完成后使用不同题目进行专项复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Hugging Face Token Classification 教程》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Hugging Face Token Classification 教程",
+      "url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_recognition_competition_basic",
@@ -280,9 +359,12 @@
       "mastery_min": 0.0,
       "mastery_max": 0.59,
       "title": "竞赛备赛：实体识别基础补弱",
-      "resource_type": "text",
-      "content": "当前薄弱点是“实体识别”。先掌握核心要求：准确找出文本中所有需要标注的实体。本资源面向竞赛备赛，重点结合高难样本、易错边界、综合题与竞赛陷阱。完成后请进入同知识点新题复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Label Studio 命名实体标注模板》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Label Studio 命名实体标注模板",
+      "url": "https://labelstud.io/templates/named_entity",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_recognition_competition_practice",
@@ -293,9 +375,12 @@
       "mastery_min": 0.6,
       "mastery_max": 0.79,
       "title": "竞赛备赛：实体识别专项强化",
-      "resource_type": "text",
-      "content": "你已经掌握“实体识别”的基础，但尚未达到80%。请围绕“准确找出文本中所有需要标注的实体”进行专项强化。本资源面向竞赛备赛，重点结合高难样本、易错边界、综合题与竞赛陷阱。完成后使用不同题目进行专项复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Doccano 标注工具》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Doccano 标注工具",
+      "url": "https://doccano.github.io/doccano/",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_boundary_competition_basic",
@@ -306,9 +391,12 @@
       "mastery_min": 0.0,
       "mastery_max": 0.59,
       "title": "竞赛备赛：实体边界基础补弱",
-      "resource_type": "text",
-      "content": "当前薄弱点是“实体边界”。先掌握核心要求：完整确定实体起止范围，避免多字、漏字。本资源面向竞赛备赛，重点结合高难样本、易错边界、综合题与竞赛陷阱。完成后请进入同知识点新题复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Label Studio 命名实体标注模板》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Label Studio 命名实体标注模板",
+      "url": "https://labelstud.io/templates/named_entity",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_boundary_competition_practice",
@@ -319,9 +407,12 @@
       "mastery_min": 0.6,
       "mastery_max": 0.79,
       "title": "竞赛备赛：实体边界专项强化",
-      "resource_type": "text",
-      "content": "你已经掌握“实体边界”的基础，但尚未达到80%。请围绕“完整确定实体起止范围，避免多字、漏字”进行专项强化。本资源面向竞赛备赛，重点结合高难样本、易错边界、综合题与竞赛陷阱。完成后使用不同题目进行专项复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Doccano 标注工具》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Doccano 标注工具",
+      "url": "https://doccano.github.io/doccano/",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_type_competition_basic",
@@ -332,9 +423,12 @@
       "mastery_min": 0.0,
       "mastery_max": 0.59,
       "title": "竞赛备赛：实体类型基础补弱",
-      "resource_type": "text",
-      "content": "当前薄弱点是“实体类型”。先掌握核心要求：根据语义与标注规范选择正确实体类别。本资源面向竞赛备赛，重点结合高难样本、易错边界、综合题与竞赛陷阱。完成后请进入同知识点新题复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Stanford Stanza NER 文档》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Stanford Stanza NER 文档",
+      "url": "https://stanfordnlp.github.io/stanza/ner.html",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_type_competition_practice",
@@ -345,9 +439,12 @@
       "mastery_min": 0.6,
       "mastery_max": 0.79,
       "title": "竞赛备赛：实体类型专项强化",
-      "resource_type": "text",
-      "content": "你已经掌握“实体类型”的基础，但尚未达到80%。请围绕“根据语义与标注规范选择正确实体类别”进行专项强化。本资源面向竞赛备赛，重点结合高难样本、易错边界、综合题与竞赛陷阱。完成后使用不同题目进行专项复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Hugging Face Token Classification 教程》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Hugging Face Token Classification 教程",
+      "url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_nested_competition_basic",
@@ -358,9 +455,12 @@
       "mastery_min": 0.0,
       "mastery_max": 0.59,
       "title": "竞赛备赛：嵌套实体基础补弱",
-      "resource_type": "text",
-      "content": "当前薄弱点是“嵌套实体”。先掌握核心要求：识别外层实体与内部独立实体的包含关系。本资源面向竞赛备赛，重点结合高难样本、易错边界、综合题与竞赛陷阱。完成后请进入同知识点新题复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Doccano 标注工具》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Doccano 标注工具",
+      "url": "https://doccano.github.io/doccano/",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_nested_competition_practice",
@@ -371,9 +471,12 @@
       "mastery_min": 0.6,
       "mastery_max": 0.79,
       "title": "竞赛备赛：嵌套实体专项强化",
-      "resource_type": "text",
-      "content": "你已经掌握“嵌套实体”的基础，但尚未达到80%。请围绕“识别外层实体与内部独立实体的包含关系”进行专项强化。本资源面向竞赛备赛，重点结合高难样本、易错边界、综合题与竞赛陷阱。完成后使用不同题目进行专项复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Stanford Stanza NER 文档》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Stanford Stanza NER 文档",
+      "url": "https://stanfordnlp.github.io/stanza/ner.html",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_bio_competition_basic",
@@ -384,9 +487,12 @@
       "mastery_min": 0.0,
       "mastery_max": 0.59,
       "title": "竞赛备赛：BIO/BIOES基础补弱",
-      "resource_type": "text",
-      "content": "当前薄弱点是“BIO/BIOES”。先掌握核心要求：正确理解并检查实体序列标签规则。本资源面向竞赛备赛，重点结合高难样本、易错边界、综合题与竞赛陷阱。完成后请进入同知识点新题复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Hugging Face Token Classification 教程》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Hugging Face Token Classification 教程",
+      "url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+      "source_document": "任务plus/6/教学资源.docx"
     },
     {
       "resource_id": "s6_bio_competition_practice",
@@ -397,9 +503,17 @@
       "mastery_min": 0.6,
       "mastery_max": 0.79,
       "title": "竞赛备赛：BIO/BIOES专项强化",
-      "resource_type": "text",
-      "content": "你已经掌握“BIO/BIOES”的基础，但尚未达到80%。请围绕“正确理解并检查实体序列标签规则”进行专项强化。本资源面向竞赛备赛，重点结合高难样本、易错边界、综合题与竞赛陷阱。完成后使用不同题目进行专项复测。",
-      "enabled": true
+      "resource_type": "link",
+      "content": "请打开学习资源《Hugging Face Token Classification 教程》完成当前知识点学习，完成后返回平台进行同知识点新题复测。",
+      "enabled": true,
+      "link_title": "Hugging Face Token Classification 教程",
+      "url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+      "source_document": "任务plus/6/教学资源.docx"
     }
-  ]
+  ],
+  "resource_source": {
+    "package": "任务plus.zip",
+    "document": "任务plus/6/教学资源.docx",
+    "note": "学习资源链接均来自用户提供的任务plus包。场景6文档中的Label Studio地址显示为named_entit；同一包其他教学资源文档出现完整named_entity地址，因此此处使用完整地址。"
+  }
 }
