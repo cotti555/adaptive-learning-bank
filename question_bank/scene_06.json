@@ -1,17 +1,54 @@
 {
   "scene_id": "scene_06",
   "scene_name": "中文命名实体标注",
-  "version": "test_v2_goal_123",
+  "version": "real_complete_v1_90",
+  "question_count": 90,
+  "sample_policy": {
+    "CLUENER2020": "30条公开真实 train 样本",
+    "CMeEE": "21条公开真实完整标注样本 + 9条从公开真实样本抽取的嵌套实体专项题",
+    "Resume NER": "30条公开真实 train BIOES 样本",
+    "no_synthetic_question": true
+  },
   "difficulty_rule": {
-    "1": "job",
-    "2": "course",
-    "3": "competition"
+    "1": "job / 岗位技能提升",
+    "2": "course / 课程学习巩固",
+    "3": "competition / 竞赛备赛",
+    "note": "difficulty 是平台分流标签，不宣称为原数据集官方难度。"
+  },
+  "position_rule": "0-based, end-exclusive（左闭右开）",
+  "kp_ids": [
+    "s6_recognition",
+    "s6_boundary",
+    "s6_type",
+    "s6_nested",
+    "s6_bio"
+  ],
+  "counts": {
+    "by_dataset": {
+      "CLUENER2020": 30,
+      "CMeEE": 30,
+      "Resume NER": 30
+    },
+    "by_goal": {
+      "job": 30,
+      "course": 30,
+      "competition": 30
+    },
+    "per_goal_per_dataset": 10
+  },
+  "source_urls": {
+    "CLUENER2020": "https://huggingface.co/datasets/xusenlin/clue-ner",
+    "CMeEE": "https://huggingface.co/datasets/xusenlin/cmeee",
+    "Resume NER": "https://huggingface.co/datasets/ttxy/resume_ner",
+    "taskplus_scene06_reference": "任务plus/6/场景六：中文命名实体标注.docx"
   },
   "questions": [
     {
-      "question_id": "s6_job_001",
+      "question_id": "s6_cluener_001",
+      "scene_id": "scene_06",
       "dataset": "CLUENER2020",
-      "sample_origin": "synthetic_test",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
       "question_type": "ner",
       "difficulty": 1,
       "goal_type": "job",
@@ -20,179 +57,548 @@
         "s6_boundary",
         "s6_type"
       ],
-      "prompt": "请识别句子中的实体，并填写实体文本、类型和位置。",
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
       "content": {
-        "text": "张明毕业于复旦大学。"
+        "text": "浙商银行企业信贷部叶老桂博士则从另一个角度对五道门槛进行了解读。叶老桂认为，对目前国内商业银行而言，"
       },
-      "answer_instruction": "请填写实体文本、实体类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
       "answer_example": {
-        "example_text": "李华就读于清华大学。",
+        "example_text": "李雷在北京工作。",
         "entities": [
           {
-            "text": "李华",
-            "type": "PER",
+            "text": "李雷",
+            "type": "name",
             "start": 0,
             "end": 2
           },
           {
-            "text": "清华大学",
-            "type": "ORG",
-            "start": 5,
-            "end": 9
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
           }
         ]
       },
       "answer": {
         "entities": [
           {
-            "text": "张明",
-            "type": "PER",
-            "start": 0,
-            "end": 2
+            "text": "叶老桂",
+            "type": "name",
+            "start": 9,
+            "end": 12
           },
           {
-            "text": "复旦大学",
-            "type": "ORG",
-            "start": 5,
-            "end": 9
+            "text": "浙商银行",
+            "type": "company",
+            "start": 0,
+            "end": 4
           }
-        ]
-      }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "b272bb9f00a9b96640f7a5dabd129a3ee429e6eddd0f0d6402d425ed19e1e21e",
+      "enabled": true
     },
     {
-      "question_id": "s6_job_002",
-      "dataset": "Resume NER",
-      "sample_origin": "synthetic_test",
+      "question_id": "s6_cluener_002",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
       "question_type": "ner",
       "difficulty": 1,
       "goal_type": "job",
       "kp_ids": [
         "s6_recognition",
-        "s6_type",
-        "s6_bio"
-      ],
-      "prompt": "请识别简历文本中的实体并检查BIO/BIOES标注是否合法。",
-      "content": {
-        "text": "王强在腾讯科技担任产品经理。"
-      },
-      "answer_instruction": "填写实体文本和类型，并将bio_valid设为true或false。",
-      "answer_example": {
-        "example_text": "赵敏在阿里巴巴工作。",
-        "entities": [
-          {
-            "text": "赵敏",
-            "type": "PER"
-          },
-          {
-            "text": "阿里巴巴",
-            "type": "ORG"
-          }
-        ],
-        "bio_valid": true
-      },
-      "answer": {
-        "entities": [
-          {
-            "text": "王强",
-            "type": "PER"
-          },
-          {
-            "text": "腾讯科技",
-            "type": "ORG"
-          },
-          {
-            "text": "产品经理",
-            "type": "TITLE"
-          }
-        ],
-        "bio_valid": true
-      }
-    },
-    {
-      "question_id": "s6_job_003",
-      "dataset": "CMeEE",
-      "sample_origin": "synthetic_test",
-      "question_type": "ner",
-      "difficulty": 1,
-      "goal_type": "job",
-      "kp_ids": [
         "s6_boundary",
-        "s6_type",
-        "s6_nested"
+        "s6_type"
       ],
-      "prompt": "请完成实体标注，并判断是否存在实体包含关系。",
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
       "content": {
-        "text": "患者出现右肺下叶感染。"
+        "text": "主要属于结构性理财产品。上周交通银行发行了“天添利”系列理财产品，投资者在封闭期申购该系列理财产品，"
       },
-      "answer_instruction": "分别填写外层实体和内层实体；存在包含关系时填写nested_entities。",
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
       "answer_example": {
-        "example_text": "检查发现左肺上叶病变。",
-        "description": "注意解剖部位与疾病实体的包含关系。"
-      },
-      "answer": {
+        "example_text": "李雷在北京工作。",
         "entities": [
           {
-            "text": "右肺下叶感染",
-            "type": "疾病"
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
           },
           {
-            "text": "右肺下叶",
-            "type": "解剖部位"
-          }
-        ],
-        "nested_entities": [
-          {
-            "outer": "右肺下叶感染",
-            "inner": "右肺下叶"
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
           }
         ]
-      }
-    },
-    {
-      "question_id": "s6_job_004",
-      "dataset": "CMeEE",
-      "sample_origin": "synthetic_test",
-      "question_type": "ner",
-      "difficulty": 1,
-      "goal_type": "job",
-      "kp_ids": [
-        "s6_bio",
-        "s6_nested",
-        "s6_boundary"
-      ],
-      "prompt": "请完成实体边界与嵌套关系标注，并检查BIO/BIOES合法性。",
-      "content": {
-        "text": "影像显示左肺上叶肿瘤。"
-      },
-      "answer_instruction": "填写实体、嵌套关系，并将bio_valid设为true或false。",
-      "answer_example": {
-        "example_text": "检查发现右肺下叶病变。",
-        "bio_valid": true
       },
       "answer": {
         "entities": [
           {
-            "text": "左肺上叶肿瘤",
-            "type": "疾病"
-          },
-          {
-            "text": "左肺上叶",
-            "type": "解剖部位"
+            "text": "交通银行",
+            "type": "company",
+            "start": 14,
+            "end": 18
           }
         ],
-        "nested_entities": [
-          {
-            "outer": "左肺上叶肿瘤",
-            "inner": "左肺上叶"
-          }
-        ],
-        "bio_valid": true
-      }
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "aefd5cc3dbfc8c14051065ff104e86a0459fb95abcedaa5c8a0924ad30bfa909",
+      "enabled": true
     },
     {
-      "question_id": "s6_course_001",
+      "question_id": "s6_cluener_003",
+      "scene_id": "scene_06",
       "dataset": "CLUENER2020",
-      "sample_origin": "synthetic_test",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "除了资金支持之外，工行还为创业大学生提供包括存款、资金结算、电子银行、银行卡等一站式金融服务，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "工行",
+            "type": "company",
+            "start": 9,
+            "end": 11
+          },
+          {
+            "text": "大学生",
+            "type": "position",
+            "start": 15,
+            "end": 18
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "eb52810452f9a343f4fab0ba1962ef2ca6e560b8365b68873ea386f3c4de4da9",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_004",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "对此，原告代理律师指出，原告在签署认购合同时，从未看到过写明购买产品为一年期“金通道”"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "代理律师",
+            "type": "position",
+            "start": 5,
+            "end": 9
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "ea0d58bf9fb77a6e1cb1d9838f866396caab3ba263ca7963a7c669101b874411",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_005",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "当记者在泗水街头随便询问10余名市民却发现，只有寥寥几人知道当地有如此神奇的东西。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "泗水街",
+            "type": "address",
+            "start": 4,
+            "end": 7
+          },
+          {
+            "text": "记者",
+            "type": "position",
+            "start": 1,
+            "end": 3
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "d6860f143d27307cc8061889afa3e2b9f6e88d2d2d04c9ff072898e627992d49",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_006",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "丽泽金融商务区具有金融地产和地铁地产的商机，因此我们提出综合开发的理念，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "丽泽金融商务区",
+            "type": "address",
+            "start": 0,
+            "end": 7
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "4a12a89dbefd39568645b6319e7b3d372bdef1ac2dc3354c635e2541d9cb6a1d",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_007",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "米特罗凡·莫斯卡伦科”号目前仍在俄罗斯海军中服役。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "俄罗斯海军",
+            "type": "government",
+            "start": 16,
+            "end": 21
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "5a08a744ca80b85c954c6fe6445bde3f40284524285c15911e9df0d37cdd4a6d",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_008",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "或者可以直接登陆美国使馆的网站来查询。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "美国使馆",
+            "type": "government",
+            "start": 8,
+            "end": 12
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "029b53fda86082ddfee651116ff5a89e9da42b66469a474003328b8cb18cb19e",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_009",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "家住宝城的梁京去年办了张信用卡，有三次未及时还款，前不久他计划买住房时，去售楼部打听得知，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "宝城",
+            "type": "address",
+            "start": 2,
+            "end": 4
+          },
+          {
+            "text": "梁京",
+            "type": "name",
+            "start": 5,
+            "end": 7
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "b245a2e4372a39300a52aa04cdc8a7ea6063c46f1b9364de0823cde9f4133f01",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_010",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "属于翡翠中的高端产品。高老板告诉记者，这块冰种翡翠挂件2003年的价格是4000元，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "记者",
+            "type": "position",
+            "start": 16,
+            "end": 18
+          },
+          {
+            "text": "老板",
+            "type": "position",
+            "start": 12,
+            "end": 14
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "d114b6ee9e6f663b70e2f92128e18121d1d1700fc92678d9e9c568cbe3c2a488",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_011",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
       "question_type": "ner",
       "difficulty": 2,
       "goal_type": "course",
@@ -201,157 +607,542 @@
         "s6_boundary",
         "s6_type"
       ],
-      "prompt": "请对句子进行实体识别、边界判断和类型标注。",
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
       "content": {
-        "text": "李娜在北京大学医学部工作。"
+        "text": "生生不息CSOL生化狂潮让你填弹狂扫"
       },
-      "answer_instruction": "填写所有实体的文本、类型、start、end。",
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
       "answer_example": {
-        "example_text": "陈杰在清华大学任教。",
+        "example_text": "李雷在北京工作。",
         "entities": [
           {
-            "text": "陈杰",
-            "type": "PER"
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
           },
           {
-            "text": "清华大学",
-            "type": "ORG"
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
           }
         ]
       },
       "answer": {
         "entities": [
           {
-            "text": "李娜",
-            "type": "PER"
-          },
-          {
-            "text": "北京大学医学部",
-            "type": "ORG"
+            "text": "CSOL",
+            "type": "game",
+            "start": 4,
+            "end": 8
           }
-        ]
-      }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "0fe688d8cf684e35fcae676d4c44f6ee9596c0d8d6152e875b79c1efeeddfd1b",
+      "enabled": true
     },
     {
-      "question_id": "s6_course_002",
-      "dataset": "Resume NER",
-      "sample_origin": "synthetic_test",
+      "question_id": "s6_cluener_012",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
       "question_type": "ner",
       "difficulty": 2,
       "goal_type": "course",
       "kp_ids": [
         "s6_recognition",
-        "s6_type",
-        "s6_bio"
-      ],
-      "prompt": "请完成实体识别与BIO/BIOES规则判断。",
-      "content": {
-        "text": "赵伟曾就读于上海交通大学。"
-      },
-      "answer_instruction": "填写实体文本、类型，并判断bio_valid。",
-      "answer_example": {
-        "example_text": "孙丽毕业于浙江大学。",
-        "bio_valid": true
-      },
-      "answer": {
-        "entities": [
-          {
-            "text": "赵伟",
-            "type": "PER"
-          },
-          {
-            "text": "上海交通大学",
-            "type": "ORG"
-          }
-        ],
-        "bio_valid": true
-      }
-    },
-    {
-      "question_id": "s6_course_003",
-      "dataset": "CMeEE",
-      "sample_origin": "synthetic_test",
-      "question_type": "ner",
-      "difficulty": 2,
-      "goal_type": "course",
-      "kp_ids": [
         "s6_boundary",
-        "s6_type",
-        "s6_nested"
+        "s6_type"
       ],
-      "prompt": "请识别医学实体并分析实体包含关系。",
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
       "content": {
-        "text": "患者诊断为慢性肾功能不全。"
+        "text": "加勒比海盗3：世界尽头》的去年同期成绩死死甩在身后，后者则即将赶超《变形金刚》，"
       },
-      "answer_instruction": "填写疾病实体及其内部相关实体，并标注nested_entities。",
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
       "answer_example": {
-        "example_text": "患者出现左肺感染。",
-        "description": "先确定完整疾病边界，再判断内部实体。"
-      },
-      "answer": {
+        "example_text": "李雷在北京工作。",
         "entities": [
           {
-            "text": "慢性肾功能不全",
-            "type": "疾病"
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
           },
           {
-            "text": "肾",
-            "type": "解剖部位"
-          }
-        ],
-        "nested_entities": [
-          {
-            "outer": "慢性肾功能不全",
-            "inner": "肾"
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
           }
         ]
-      }
-    },
-    {
-      "question_id": "s6_course_004",
-      "dataset": "CMeEE",
-      "sample_origin": "synthetic_test",
-      "question_type": "ner",
-      "difficulty": 2,
-      "goal_type": "course",
-      "kp_ids": [
-        "s6_bio",
-        "s6_nested",
-        "s6_boundary"
-      ],
-      "prompt": "请完成嵌套实体与BIO/BIOES综合判断。",
-      "content": {
-        "text": "检查提示右肺下叶炎症。"
-      },
-      "answer_instruction": "填写实体、nested_entities，并判断bio_valid。",
-      "answer_example": {
-        "example_text": "影像显示左肺上叶病变。",
-        "bio_valid": true
       },
       "answer": {
         "entities": [
           {
-            "text": "右肺下叶炎症",
-            "type": "疾病"
+            "text": "加勒比海盗3：世界尽头》",
+            "type": "movie",
+            "start": 0,
+            "end": 12
           },
           {
-            "text": "右肺下叶",
-            "type": "解剖部位"
+            "text": "《变形金刚》",
+            "type": "movie",
+            "start": 33,
+            "end": 39
           }
         ],
-        "nested_entities": [
-          {
-            "outer": "右肺下叶炎症",
-            "inner": "右肺下叶"
-          }
-        ],
-        "bio_valid": true
-      }
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "ea673c4e4a3fd4cb23a31f166c09ec02010e992babd4d3513b212f420204ab0e",
+      "enabled": true
     },
     {
-      "question_id": "s6_comp_001",
+      "question_id": "s6_cluener_013",
+      "scene_id": "scene_06",
       "dataset": "CLUENER2020",
-      "sample_origin": "synthetic_test",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "目前主赞助商暂时空缺，他们的球衣上印的是“unicef”（联合国儿童基金会），是公益性质的广告；"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "unicef",
+            "type": "organization",
+            "start": 21,
+            "end": 27
+          },
+          {
+            "text": "联合国儿童基金会",
+            "type": "organization",
+            "start": 29,
+            "end": 37
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "4a1e5cef81e324cc89f099b68fbd03f7c65905d1ea3f8fd5ae7cf528159d5ee0",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_014",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "此数据换算成亚洲盘罗马客场可让平半低水。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "罗马",
+            "type": "organization",
+            "start": 9,
+            "end": 11
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "30fb4f27f8590326ea984a6cd2d89bafc93e669de8dc7e355bdd26eff2816253",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_015",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "你们是最棒的!#英雄联盟d学sanchez创作的原声王"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "英雄联盟",
+            "type": "game",
+            "start": 8,
+            "end": 12
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "60ea0252e6d9bc2ff85a7f67a28f2275bfd483f5a65e10e1cf906f9affdbb070",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_016",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "会议批准了中国与欧盟海军、多国海上力量和北约等就在“国际推荐通行走廊”"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "中国与欧盟海军",
+            "type": "government",
+            "start": 5,
+            "end": 12
+          },
+          {
+            "text": "北约",
+            "type": "government",
+            "start": 20,
+            "end": 22
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "6c6c1a0824eeaea93a6e154ff0807dd8554bff5d2abc77b72a31816d6acacfcd",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_017",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "20雷池，本场无冷迹象。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "雷池",
+            "type": "address",
+            "start": 2,
+            "end": 4
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "e3108d48a100e5735c66263b63aff5576ccd9938ad5f7bb7090dc08c1d60470f",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_018",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "不久后，“星展中国”南宁分行也将择机开业。除新加坡星展银行外，多家外资银行最近纷纷扩大在华投资，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "“星展中国”南宁分行",
+            "type": "company",
+            "start": 4,
+            "end": 14
+          },
+          {
+            "text": "新加坡星展银行",
+            "type": "company",
+            "start": 22,
+            "end": 29
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "f2af62ed20ab0124d8b173afc67f4fab8ebcd414d823b4a350e7d50685942c6b",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_019",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "部分作品被加州地方艺术馆收藏。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "加州地方艺术馆",
+            "type": "scene",
+            "start": 5,
+            "end": 12
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "92361156b1c3160a3333c4f29eca9af824beec52d55cf47283d21d1b1bcf1266",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_020",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "(发表于2011年《大众软件》1月下)"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "《大众软件》",
+            "type": "book",
+            "start": 9,
+            "end": 15
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "9dd2d0b59ade418a31ed91d410dd00486d419b3b9a17f50e42d5711b30c67843",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_021",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
       "question_type": "ner",
       "difficulty": 3,
       "goal_type": "competition",
@@ -360,149 +1151,4222 @@
         "s6_boundary",
         "s6_type"
       ],
-      "prompt": "请在复杂句中识别全部实体并准确确定边界和类型。",
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
       "content": {
-        "text": "周宁加入北京智源人工智能研究院后赴上海参加论坛。"
+        "text": "他们需要1分确保小组出线。出线形势要求赫塔必须全力争胜。interwetten相同赔率下，"
       },
-      "answer_instruction": "填写全部实体，注意人名、机构名、地名之间的类型差异。",
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
       "answer_example": {
-        "example_text": "王晨在清华大学参加会议。"
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
       },
       "answer": {
         "entities": [
           {
-            "text": "周宁",
-            "type": "PER"
+            "text": "赫塔",
+            "type": "organization",
+            "start": 19,
+            "end": 21
           },
           {
-            "text": "北京智源人工智能研究院",
-            "type": "ORG"
-          },
-          {
-            "text": "上海",
-            "type": "LOC"
+            "text": "interwetten",
+            "type": "organization",
+            "start": 28,
+            "end": 39
           }
-        ]
-      }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "006a655a1baa9bac511fc559688af9de401f6653c3b41697d169a13f22b28833",
+      "enabled": true
     },
     {
-      "question_id": "s6_comp_002",
-      "dataset": "Resume NER",
-      "sample_origin": "synthetic_test",
+      "question_id": "s6_cluener_022",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
       "question_type": "ner",
       "difficulty": 3,
       "goal_type": "competition",
       "kp_ids": [
         "s6_recognition",
-        "s6_type",
-        "s6_bio"
+        "s6_boundary",
+        "s6_type"
       ],
-      "prompt": "请完成多实体简历文本标注，并检查BIO/BIOES序列合法性。",
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
       "content": {
-        "text": "陈宇毕业于南京大学，后任职于华为技术有限公司。"
+        "text": "拍卖公司的预展，找故宫的相关记载资料来看一看，对乾隆时期的主要艺人多多了解。竹木牙角是一个门类，"
       },
-      "answer_instruction": "识别人物、学校、机构等实体并判断bio_valid。",
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
       "answer_example": {
-        "example_text": "李敏毕业于北京大学。",
-        "bio_valid": true
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
       },
       "answer": {
         "entities": [
           {
-            "text": "陈宇",
-            "type": "PER"
+            "text": "故宫",
+            "type": "scene",
+            "start": 9,
+            "end": 11
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "e31f04779663ec86331e5441567be369b4c5c0bba6f1f60e1601f1a0066dd7f3",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_023",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "1，尽量增加非技术性因素（war3外）的复杂程度，我的适应性更好，好很多。2，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
           },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "war3",
+            "type": "game",
+            "start": 13,
+            "end": 17
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "46693451d8734f92ee20a8f343b3d18c8504685d1852f3491692e500c73ce24d",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_024",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "力求让球队表现更加完美。热那亚主强客弱之势更加明显，本赛季6个主场竟然全胜，对手中还包括了米兰、"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "热那亚",
+            "type": "organization",
+            "start": 12,
+            "end": 15
+          },
+          {
+            "text": "米兰",
+            "type": "organization",
+            "start": 45,
+            "end": 47
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "1fb131304329a7d1445fe9451e215cec1a6e1c9746e738db82a1982e7fa60075",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_025",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "诸侯曰类宫。”东汉蔡邕的《明堂丹令论》解释为：“取其四面环水，圆如壁，后世遂名辟雍。”魏晋南北朝、"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "《明堂丹令论》",
+            "type": "book",
+            "start": 12,
+            "end": 19
+          },
+          {
+            "text": "蔡邕",
+            "type": "name",
+            "start": 9,
+            "end": 11
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "71e8df66db5098a98ac685fe683cb96d8ae82ddb1c5902622a643f9800aa8bf8",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_026",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "《艺术与投资》：对你来说是一个水到渠成的事情？"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "《艺术与投资》",
+            "type": "book",
+            "start": 0,
+            "end": 7
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "6842a56ce12ee3058b39028ebcfda7bddacd24a2cb1aefb9d429a8273e3076f4",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_027",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "不少人表示本届比赛由于是DOTA2首次面世，因此巨额的奖金无可厚非，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "DOTA2",
+            "type": "game",
+            "start": 12,
+            "end": 17
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "5486dbd6a9618341b01e588ae7ec06a0159e2c27c49062b7a60dd4b1e50214b3",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_028",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "要知道志愿军空军无论从战果还是所付出的牺牲，都要高于外援。好在从机种和战役的编排上看，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "空军",
+            "type": "government",
+            "start": 6,
+            "end": 8
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "88ce48ea0e9080f027ce9d63d303a1fe032cfe98855ce653e5f2937e7238a3bc",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_029",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "世上或许有两个人并不那么喜欢LewisCarroll的原著小说《爱丽斯梦游奇境》("
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "《爱丽斯梦游奇境》",
+            "type": "book",
+            "start": 31,
+            "end": 40
+          },
+          {
+            "text": "LewisCarroll",
+            "type": "name",
+            "start": 14,
+            "end": 26
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "efd55837c63b2ba8c78fc643289e8130428f9b63fec398629881d04f567fe6ff",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cluener_030",
+      "scene_id": "scene_06",
+      "dataset": "CLUENER2020",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "著名策略游戏《要塞》系列的开发商Firefly"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "《要塞》",
+            "type": "game",
+            "start": 6,
+            "end": 10
+          },
+          {
+            "text": "Firefly",
+            "type": "company",
+            "start": 16,
+            "end": 23
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/clue-ner",
+      "source_note": "真实 CLUENER2020 train 样本；通过 xusenlin/clue-ner 的公开 Dataset Viewer 核对实体与 exclusive end offset。",
+      "source_text_sha256": "34499f9023ac302d147152573c9ae479f1147ec9860b8c010e4f7c25067ec3da",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_001",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "4.第三类（1）无症状性WPW综合征患者，年龄小于5岁。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "无症状性WPW综合征",
+            "type": "dis",
+            "start": 8,
+            "end": 18
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "256aedfbeaaed47d7fb1b9909516b219d3ffe88102652e65f54d013663789839",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_002",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "（2）室上性心动过速可用常规抗心律失常药物控制，年龄小于5岁。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "室上性心动过速",
+            "type": "dis",
+            "start": 3,
+            "end": 10
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "529e1d612d7a65fce4d836c1472ed9a97c0a4a592c1c98b01eef9001501d4386",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_003",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "（3）非持续性，不考虑为无休止性的阵发性室性心动过速（即一次监视数小时或任何一小时记录的心电图条带几乎均可出现），心室功能正常。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "非持续性，不考虑为无休止性的阵发性室性心动过速",
+            "type": "dis",
+            "start": 3,
+            "end": 26
+          },
+          {
+            "text": "心电图",
+            "type": "pro",
+            "start": 44,
+            "end": 47
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "adefe94cbcf897c383b4771ee8e76dc66dc4cec299c5f9400dce525d844b855b",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_004",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "（4）非持续性室上性心动过速，不需其他治疗和（或）症状轻微。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "非持续性室上性心动过速",
+            "type": "dis",
+            "start": 3,
+            "end": 14
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "9b36eca1fb432784a19574c345c919a4157d4a9912697c8164887c9a3a885a53",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_005",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "结缔组织疾病如风湿热患儿亦可发生。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "结缔组织疾病",
+            "type": "dis",
+            "start": 0,
+            "end": 6
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "16ab1a0d3f3ada361cf9fa0a72606705c260af1106dba85be8a9677dcbc7c63d",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_006",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "深呼吸及咳嗽时疼痛加剧。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "深呼吸及咳嗽时疼痛加剧",
+            "type": "sym",
+            "start": 0,
+            "end": 11
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "7648dc49c131fb36eb983c5ff1542ebf5bdc4c082cef233b6755e3a7346bbdb9",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_007",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "病程早期可闻胸膜摩擦音在全部呼吸期间均可听到。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "闻胸膜摩擦音",
+            "type": "sym",
+            "start": 5,
+            "end": 11
+          },
+          {
+            "text": "在全部呼吸期间均可听到",
+            "type": "sym",
+            "start": 11,
+            "end": 22
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "226e7e8c4559fcab8376d4599d1205a87d11224752fee2e375570fe7185cd144",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_008",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_nested"
+      ],
+      "prompt": "这是 CMeEE 真实样本的嵌套实体专项题。请只标注构成目标嵌套关系的内层实体和外层实体，忽略文本中的其他实体。",
+      "content": {
+        "text": "呼吸肌麻痹和呼吸中枢受累患者因呼吸不畅可并发肺炎、肺不张等。"
+      },
+      "answer_instruction": "只填写目标内层实体与外层实体的文本、类型、start、end，并填写 nested_entities。不要额外提交其他实体。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "呼吸肌",
+            "type": "bod",
+            "start": 0,
+            "end": 3
+          },
+          {
+            "text": "呼吸肌麻痹",
+            "type": "sym",
+            "start": 0,
+            "end": 5
+          }
+        ],
+        "nested_entities": [
+          {
+            "outer": "呼吸肌麻痹",
+            "inner": "呼吸肌"
+          }
+        ]
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE 文本；本题从原样本抽取一个真实嵌套实体对作为专项题，答案范围仅限题目指定的目标嵌套实体。",
+      "source_text_sha256": "11ebdf571fbbedbf2f5fe9579b1f12ddc6becb89b250612936297bb3d71315c1",
+      "enabled": true,
+      "answer_scope": "target_nested_pair_only"
+    },
+    {
+      "question_id": "s6_cmeee_009",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_nested"
+      ],
+      "prompt": "这是 CMeEE 真实样本的嵌套实体专项题。请只标注构成目标嵌套关系的内层实体和外层实体，忽略文本中的其他实体。",
+      "content": {
+        "text": "交感神经受累时，可致唾液分泌和出汗增多。"
+      },
+      "answer_instruction": "只填写目标内层实体与外层实体的文本、类型、start、end，并填写 nested_entities。不要额外提交其他实体。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "交感神经",
+            "type": "bod",
+            "start": 0,
+            "end": 4
+          },
+          {
+            "text": "交感神经受累",
+            "type": "sym",
+            "start": 0,
+            "end": 6
+          }
+        ],
+        "nested_entities": [
+          {
+            "outer": "交感神经受累",
+            "inner": "交感神经"
+          }
+        ]
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE 文本；本题从原样本抽取一个真实嵌套实体对作为专项题，答案范围仅限题目指定的目标嵌套实体。",
+      "source_text_sha256": "f4e86f056036ed05636dc44f4ad54d016dd2a6cc70063728a8f12e972b0da389",
+      "enabled": true,
+      "answer_scope": "target_nested_pair_only"
+    },
+    {
+      "question_id": "s6_cmeee_010",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_nested"
+      ],
+      "prompt": "这是 CMeEE 真实样本的嵌套实体专项题。请只标注构成目标嵌套关系的内层实体和外层实体，忽略文本中的其他实体。",
+      "content": {
+        "text": "延髓和脊髓受损，则可引起各种类型的瘫痪。"
+      },
+      "answer_instruction": "只填写目标内层实体与外层实体的文本、类型、start、end，并填写 nested_entities。不要额外提交其他实体。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "延髓",
+            "type": "bod",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "延髓和脊髓受损",
+            "type": "sym",
+            "start": 0,
+            "end": 7
+          }
+        ],
+        "nested_entities": [
+          {
+            "outer": "延髓和脊髓受损",
+            "inner": "延髓"
+          }
+        ]
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE 文本；本题从原样本抽取一个真实嵌套实体对作为专项题，答案范围仅限题目指定的目标嵌套实体。",
+      "source_text_sha256": "729a8e9a4a33fdffe603bd6104ff32ed812ea0c4324b51e05c3f2377b18a7f52",
+      "enabled": true,
+      "answer_scope": "target_nested_pair_only"
+    },
+    {
+      "question_id": "s6_cmeee_011",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "如非肺炎病例，宜用宽大胶布条紧缠患部以减少其呼吸动作或给镇咳剂抑制咳嗽。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "宽大胶布条紧缠患部",
+            "type": "pro",
+            "start": 9,
+            "end": 18
+          },
+          {
+            "text": "镇咳剂",
+            "type": "dru",
+            "start": 28,
+            "end": 31
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "3a07bd0ec9c3c4f9f2babd1cd1810099da608c77caf761bf1e3045ca81eaf045",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_012",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "肺炎患儿则不宜采用。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "肺炎",
+            "type": "dis",
+            "start": 0,
+            "end": 2
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "ea7f98ec48216456d8b95375bc9c0a49f8290b7df067314999af19e2816fdcb3",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_013",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "病毒基因为单负链RNA。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "病毒基因",
+            "type": "mic",
+            "start": 0,
+            "end": 4
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "6168b3c2d6c1f97e2bea10e4fbb2eb5f0f849adbb19f5ce787f5ac26e7dd93b8",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_014",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "在狂犬患者和动物神经细胞内存在狂犬病病毒特有的胞质内包涵体，又称内基小体（Negribodies）。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "狂犬病病毒",
+            "type": "mic",
+            "start": 15,
+            "end": 20
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "18250dd5e95a2910c7c9ff19137871c1f66a5dfc5cb2287b1347e3cd1280920b",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_015",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "病毒对理化因素抵抗力较低，56℃30分钟或100℃2分钟、强酸、强碱、甲醛、升汞、脂溶剂、季铵类化合物都能很快杀灭之；紫外线和直射阳光可迅速降低病毒活力。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "病毒",
+            "type": "mic",
+            "start": 72,
+            "end": 74
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "cdc59a20ccb4888e0ee7bf9a76c82f31d0327ec16addeea9060332d2437f9af1",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_016",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "狂犬病的传染源主要是犬，其次是猫和狼，其他野生动物如狐、浣熊、吸血蝙蝠也能传播本病。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "狂犬病",
+            "type": "dis",
+            "start": 0,
+            "end": 3
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "7de60af97480031ea94050cbca3c3580b0df4287703fd5135055b1f38ea26260",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_017",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "患病或带毒动物唾液中有大量病毒，通过咬伤、抓伤和舔伤皮肤黏膜而侵入，偶经食入带毒肉类而感染。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "病毒",
+            "type": "mic",
+            "start": 13,
+            "end": 15
+          },
+          {
+            "text": "皮肤黏膜",
+            "type": "bod",
+            "start": 26,
+            "end": 30
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "4699c7f10ae745a0e89a107159e937433ed48fc942570144b7149225aca8ffc2",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_018",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_nested"
+      ],
+      "prompt": "这是 CMeEE 真实样本的嵌套实体专项题。请只标注构成目标嵌套关系的内层实体和外层实体，忽略文本中的其他实体。",
+      "content": {
+        "text": "常伴呼吸肌痉挛而发生呼吸困难，全身肌张力高，颈部强硬。"
+      },
+      "answer_instruction": "只填写目标内层实体与外层实体的文本、类型、start、end，并填写 nested_entities。不要额外提交其他实体。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "呼吸肌",
+            "type": "bod",
+            "start": 2,
+            "end": 5
+          },
+          {
+            "text": "呼吸肌痉挛",
+            "type": "sym",
+            "start": 2,
+            "end": 7
+          }
+        ],
+        "nested_entities": [
+          {
+            "outer": "呼吸肌痉挛",
+            "inner": "呼吸肌"
+          }
+        ]
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE 文本；本题从原样本抽取一个真实嵌套实体对作为专项题，答案范围仅限题目指定的目标嵌套实体。",
+      "source_text_sha256": "681e86a1bf06621a6e8fea63bfdc3405394e507ae31e8f568fa1607b4cb974e5",
+      "enabled": true,
+      "answer_scope": "target_nested_pair_only"
+    },
+    {
+      "question_id": "s6_cmeee_019",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_nested"
+      ],
+      "prompt": "这是 CMeEE 真实样本的嵌套实体专项题。请只标注构成目标嵌套关系的内层实体和外层实体，忽略文本中的其他实体。",
+      "content": {
+        "text": "由于交感神经亢进，有大汗、心率增快、血压升高、瞳孔扩大、唾液分泌增加等表现。"
+      },
+      "answer_instruction": "只填写目标内层实体与外层实体的文本、类型、start、end，并填写 nested_entities。不要额外提交其他实体。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "交感神经",
+            "type": "bod",
+            "start": 2,
+            "end": 6
+          },
+          {
+            "text": "交感神经亢进",
+            "type": "sym",
+            "start": 2,
+            "end": 8
+          }
+        ],
+        "nested_entities": [
+          {
+            "outer": "交感神经亢进",
+            "inner": "交感神经"
+          }
+        ]
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE 文本；本题从原样本抽取一个真实嵌套实体对作为专项题，答案范围仅限题目指定的目标嵌套实体。",
+      "source_text_sha256": "b84ee4cce9a1588770eb574ba0d618c93080a4d5d960dd81f5978d25d82b39ca",
+      "enabled": true,
+      "answer_scope": "target_nested_pair_only"
+    },
+    {
+      "question_id": "s6_cmeee_020",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_nested"
+      ],
+      "prompt": "这是 CMeEE 真实样本的嵌套实体专项题。请只标注构成目标嵌套关系的内层实体和外层实体，忽略文本中的其他实体。",
+      "content": {
+        "text": "主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。"
+      },
+      "answer_instruction": "只填写目标内层实体与外层实体的文本、类型、start、end，并填写 nested_entities。不要额外提交其他实体。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "脑实质",
+            "type": "bod",
+            "start": 7,
+            "end": 10
+          },
+          {
+            "text": "脑实质和脑膜水肿、充血",
+            "type": "sym",
+            "start": 7,
+            "end": 18
+          }
+        ],
+        "nested_entities": [
+          {
+            "outer": "脑实质和脑膜水肿、充血",
+            "inner": "脑实质"
+          }
+        ]
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE 文本；本题从原样本抽取一个真实嵌套实体对作为专项题，答案范围仅限题目指定的目标嵌套实体。",
+      "source_text_sha256": "9ea16fa3b44f19eddc572f9d7a361dbeeab401039a59a2f583232ce2fd8aac38",
+      "enabled": true,
+      "answer_scope": "target_nested_pair_only"
+    },
+    {
+      "question_id": "s6_cmeee_021",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "人群普通易感，被病犬咬伤而未预防接种者发病率为10%～70%，病死率近100%。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "咬伤",
+            "type": "dis",
+            "start": 10,
+            "end": 12
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "a3b194854b0f185800b0736477e6301d657ef29931ee6bc60e1e99f339db024e",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_022",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "狂犬病在全球2/3的国家和地区流行。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "狂犬病",
+            "type": "dis",
+            "start": 0,
+            "end": 3
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "7e8f4d174874fe6dacea64c7efa5dd3b99e0e6ab5212f4f7404df6369119519f",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_023",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "我国在20世纪50年代发病率很低，近几年随着“宠物热”的升温，发病率逐年增高，近5年全国狂犬病年疫报人数由160人（1996年）上升至899人（2001年），年死亡人数由140人（1996年）上升至862人（2001年）。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "狂犬病",
+            "type": "dis",
+            "start": 44,
+            "end": 47
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "e7e1a96b14c2b1571e5810e981ee98699c51fe20949d790ecc551276e9298134",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_024",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "最终因脑实质损伤导致呼吸和循环衰竭而死亡。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "脑实质损伤",
+            "type": "dis",
+            "start": 3,
+            "end": 8
+          },
+          {
+            "text": "呼吸和循环衰竭",
+            "type": "sym",
+            "start": 10,
+            "end": 17
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "05fcb9f3400b127d819e72b9d2c3d221d86ddfdc3bd84cc85536e0a732395bd1",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_025",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "影响潜伏期的因素为年龄（儿童较短）、伤口部位（头面部发病早）、伤口性质（深咬伤较短）和入侵病毒的数量、毒力及宿主防御机制等。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "头面部",
+            "type": "bod",
+            "start": 23,
+            "end": 26
+          },
+          {
+            "text": "病毒",
+            "type": "mic",
+            "start": 45,
+            "end": 47
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "6d497b8995f7c362e76e304989e59070dee8c38cef5f304eb813d542468ca27b",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_026",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "约80%的患者伤口局部及其神经通路上有放射性疼痛、麻木、痒及感觉异常。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "伤口局部及其神经通路上有放射性疼痛、麻木、痒及感觉异常",
+            "type": "sym",
+            "start": 7,
+            "end": 34
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "4b4cf239441e943418c4116eed912027430852c1b00737dc3165392aea91c707",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_027",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请根据该真实数据集的标注规范完成命名实体标注。",
+      "content": {
+        "text": "常出现躁狂与昏睡交替。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end。start从0开始，end采用左闭右开。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "躁狂",
+            "type": "sym",
+            "start": 3,
+            "end": 5
+          },
+          {
+            "text": "昏睡交替",
+            "type": "sym",
+            "start": 6,
+            "end": 10
+          }
+        ],
+        "nested_entities": []
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE train 样本；实体与 exclusive end offset 来自公开 Dataset Viewer。",
+      "source_text_sha256": "aa3d041d85f11264c137c56fde908db6efc3f34621cc516693d3d350c5c39c61",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_cmeee_028",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_nested"
+      ],
+      "prompt": "这是 CMeEE 真实样本的嵌套实体专项题。请只标注构成目标嵌套关系的内层实体和外层实体，忽略文本中的其他实体。",
+      "content": {
+        "text": "显微镜下见神经细胞空泡形成，透明变性和染色体分解小神经胶质细胞浸润，血管周围单核细胞及浆细胞浸润。"
+      },
+      "answer_instruction": "只填写目标内层实体与外层实体的文本、类型、start、end，并填写 nested_entities。不要额外提交其他实体。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "神经细胞",
+            "type": "bod",
+            "start": 5,
+            "end": 9
+          },
+          {
+            "text": "神经细胞空泡",
+            "type": "sym",
+            "start": 5,
+            "end": 11
+          }
+        ],
+        "nested_entities": [
+          {
+            "outer": "神经细胞空泡",
+            "inner": "神经细胞"
+          }
+        ]
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE 文本；本题从原样本抽取一个真实嵌套实体对作为专项题，答案范围仅限题目指定的目标嵌套实体。",
+      "source_text_sha256": "687dfb719c0cf66c3b9ae44a130af028238303c02e1e59549c1c9b9b515129e9",
+      "enabled": true,
+      "answer_scope": "target_nested_pair_only"
+    },
+    {
+      "question_id": "s6_cmeee_029",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_nested"
+      ],
+      "prompt": "这是 CMeEE 真实样本的嵌套实体专项题。请只标注构成目标嵌套关系的内层实体和外层实体，忽略文本中的其他实体。",
+      "content": {
+        "text": "继之对强光、高声等刺激敏感而有咽喉紧迫感，进食时咽喉肌轻度痉挛，但尚能吞咽。"
+      },
+      "answer_instruction": "只填写目标内层实体与外层实体的文本、类型、start、end，并填写 nested_entities。不要额外提交其他实体。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "咽喉",
+            "type": "bod",
+            "start": 15,
+            "end": 17
+          },
+          {
+            "text": "对强光、高声等刺激敏感而有咽喉紧迫感",
+            "type": "sym",
+            "start": 2,
+            "end": 20
+          }
+        ],
+        "nested_entities": [
+          {
+            "outer": "对强光、高声等刺激敏感而有咽喉紧迫感",
+            "inner": "咽喉"
+          }
+        ]
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE 文本；本题从原样本抽取一个真实嵌套实体对作为专项题，答案范围仅限题目指定的目标嵌套实体。",
+      "source_text_sha256": "c0b910dd67f2b3d4814c59b1410daab2ba012d670224fc92ba0b564ed9b40bdc",
+      "enabled": true,
+      "answer_scope": "target_nested_pair_only"
+    },
+    {
+      "question_id": "s6_cmeee_030",
+      "scene_id": "scene_06",
+      "dataset": "CMeEE",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_nested"
+      ],
+      "prompt": "这是 CMeEE 真实样本的嵌套实体专项题。请只标注构成目标嵌套关系的内层实体和外层实体，忽略文本中的其他实体。",
+      "content": {
+        "text": "（二）兴奋期反射性咽喉痉挛逐渐加重，当饮水，甚至听到讲水、看到水及咽水动作，或风、光、声、烟刺激也会引起咽喉部严重痉挛，出现典型的恐水症。"
+      },
+      "answer_instruction": "只填写目标内层实体与外层实体的文本、类型、start、end，并填写 nested_entities。不要额外提交其他实体。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "咽喉",
+            "type": "bod",
+            "start": 9,
+            "end": 11
+          },
+          {
+            "text": "咽喉痉挛逐渐加重",
+            "type": "sym",
+            "start": 9,
+            "end": 17
+          }
+        ],
+        "nested_entities": [
+          {
+            "outer": "咽喉痉挛逐渐加重",
+            "inner": "咽喉"
+          }
+        ]
+      },
+      "source_url": "https://huggingface.co/datasets/xusenlin/cmeee",
+      "source_note": "真实 CMeEE 文本；本题从原样本抽取一个真实嵌套实体对作为专项题，答案范围仅限题目指定的目标嵌套实体。",
+      "source_text_sha256": "d414ec4af6106b6fab6a082840eee9c373ba98542380e54e56be13419c9aca84",
+      "enabled": true,
+      "answer_scope": "target_nested_pair_only"
+    },
+    {
+      "question_id": "s6_resume_001",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "高勇：男，中国国籍，无境外居留权，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "高勇",
+            "type": "NAME",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "中国国籍",
+            "type": "CONT",
+            "start": 5,
+            "end": 9
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "36f5cbffbe4bdd90bc369a20c3a2a8fb141d135d20d5469ba8c981f74a2ad63e",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_002",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "2007年10月至今任人和投资董事；"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "人和投资",
+            "type": "ORG",
+            "start": 11,
+            "end": 15
+          },
+          {
+            "text": "董事",
+            "type": "TITLE",
+            "start": 15,
+            "end": 17
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "df6580b6fda06d44a366519a254fcccf191fa23cbc8f3b81f8cd990c398d0b2d",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_003",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "2007年12月至2013年2月任公司董事、董事会秘书、综合管理部部长；"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "公司",
+            "type": "ORG",
+            "start": 17,
+            "end": 19
+          },
+          {
+            "text": "董事",
+            "type": "TITLE",
+            "start": 19,
+            "end": 21
+          },
+          {
+            "text": "董事会秘书",
+            "type": "TITLE",
+            "start": 22,
+            "end": 27
+          },
+          {
+            "text": "综合管理部部长",
+            "type": "TITLE",
+            "start": 28,
+            "end": 35
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "db316ad8b2cb2cb5792bd280954358df393de8f1e655738907a9ca2d581855ac",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_004",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "2013年2月至今任山东三维石化工程股份有限公司董事、董事会秘书、副总经理。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "山东三维石化工程股份有限公司",
+            "type": "ORG",
+            "start": 10,
+            "end": 24
+          },
+          {
+            "text": "董事",
+            "type": "TITLE",
+            "start": 24,
+            "end": 26
+          },
+          {
+            "text": "董事会秘书",
+            "type": "TITLE",
+            "start": 27,
+            "end": 32
+          },
+          {
+            "text": "副总经理",
+            "type": "TITLE",
+            "start": 33,
+            "end": 37
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "e3a804fbd8edd4d2f843c40ac87ad2fa691a2d96779a7a6d4d431166e11e1677",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_005",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "张雁冰，男，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "张雁冰",
+            "type": "NAME",
+            "start": 0,
+            "end": 3
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "8157dad7ea629bb699b101bfbd56fd139fcea65a0a6a632adc233f3684cc7f22",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_006",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "1965年1月出生，中国国籍，无永久境外居留权。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "中国国籍",
+            "type": "CONT",
+            "start": 10,
+            "end": 14
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "6f6a0abf83211e9ca35d676b890d537cb44408fb295a6d358071b2204bac603d",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_007",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "兰州商学院会计专业学士，中国社科院研究生院国际贸易专业硕士研究生。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "兰州商学院",
+            "type": "ORG",
+            "start": 0,
+            "end": 5
+          },
+          {
+            "text": "会计专业",
+            "type": "PRO",
+            "start": 5,
+            "end": 9
+          },
+          {
+            "text": "学士",
+            "type": "EDU",
+            "start": 9,
+            "end": 11
+          },
+          {
+            "text": "中国社科院研究生院",
+            "type": "ORG",
+            "start": 12,
+            "end": 21
+          },
+          {
+            "text": "国际贸易专业",
+            "type": "PRO",
+            "start": 21,
+            "end": 27
+          },
+          {
+            "text": "硕士研究生",
+            "type": "EDU",
+            "start": 27,
+            "end": 32
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "83fcee2015de339859b05780dabba6f1fd341e48bb06f00b5e2cb6c5c9712018",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_008",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "1987年7月-1995年5月任甘肃省友谊公司主管会计、第二经营部副经理，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "甘肃省友谊公司",
+            "type": "ORG",
+            "start": 16,
+            "end": 23
+          },
+          {
+            "text": "主管会计",
+            "type": "TITLE",
+            "start": 23,
+            "end": 27
+          },
+          {
+            "text": "第二经营部副经理",
+            "type": "TITLE",
+            "start": 28,
+            "end": 36
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "976d27aa1ac5484f54d1a7b1cf322492d1bd1db0e08c5bb6e38f28178ed49333",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_009",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "现任北京鼎汉技术股份有限公司董事会董事、副总裁。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "北京鼎汉技术股份有限公司",
+            "type": "ORG",
+            "start": 2,
+            "end": 14
+          },
+          {
+            "text": "董事会董事",
+            "type": "TITLE",
+            "start": 14,
+            "end": 19
+          },
+          {
+            "text": "副总裁",
+            "type": "TITLE",
+            "start": 20,
+            "end": 23
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "9722c3e492b1a5e3cdfc8990f20c8c9d49f4f4f672f046fa1b9cd566e2485cc2",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_010",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "陈云峰先生，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "陈云峰",
+            "type": "NAME",
+            "start": 0,
+            "end": 3
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "0266370f65f5968f93f30c1677543d214a7babb99c672ad46b9af37b295d5b20",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_011",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "1992年毕业于中国人民大学会计系，获学士学位；"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "中国人民大学会计系",
+            "type": "ORG",
+            "start": 8,
+            "end": 17
+          },
+          {
+            "text": "学士学位",
+            "type": "EDU",
+            "start": 19,
+            "end": 23
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "c0972cc4d287f65696ac7cabb5b8487a1ed76715a92a5b29fa82a513325042fd",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_012",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "1992年至1993年于外交部财务司二处工作；"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "外交部",
+            "type": "ORG",
+            "start": 12,
+            "end": 15
+          },
+          {
+            "text": "财务司二处",
+            "type": "TITLE",
+            "start": 15,
+            "end": 20
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "e28d649caf7dbda72da69586454ed545b21261d4fb0687950da6dc1631bb6a22",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_013",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "杨帆，男，经济学博士。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "杨帆",
+            "type": "NAME",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "经济学",
+            "type": "PRO",
+            "start": 5,
+            "end": 8
+          },
+          {
+            "text": "博士",
+            "type": "EDU",
+            "start": 8,
+            "end": 10
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "541d5a0ab68bcd6c4f265464cf2a5dcdcc37281a8afe9a87770981a970ee3bf1",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_014",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "杨帆先生曾任天津开发区研究所所长、国家物价局涉外价格司进出口处副处长、中国社会科学院经济研究所研究员。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "杨帆",
+            "type": "NAME",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "天津开发区研究所",
+            "type": "ORG",
+            "start": 6,
+            "end": 14
+          },
+          {
+            "text": "所长",
+            "type": "TITLE",
+            "start": 14,
+            "end": 16
+          },
+          {
+            "text": "国家物价局",
+            "type": "ORG",
+            "start": 17,
+            "end": 22
+          },
+          {
+            "text": "涉外价格司进出口处副处长",
+            "type": "TITLE",
+            "start": 22,
+            "end": 34
+          },
+          {
+            "text": "中国社会科学院经济研究所",
+            "type": "ORG",
+            "start": 35,
+            "end": 47
+          },
+          {
+            "text": "研究员",
+            "type": "TITLE",
+            "start": 47,
+            "end": 50
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "e2bbbe0aa8c4a01a25b7dfe9fe8e79bd958e13da134397816516f67a40327336",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_015",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "现任中国政法大学商学院教授、博士生导师，湖北天华股份有限公司独立董事。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "中国政法大学商学院",
+            "type": "ORG",
+            "start": 2,
+            "end": 11
+          },
+          {
+            "text": "教授",
+            "type": "TITLE",
+            "start": 11,
+            "end": 13
+          },
+          {
+            "text": "博士生导师",
+            "type": "TITLE",
+            "start": 14,
+            "end": 19
+          },
+          {
+            "text": "湖北天华股份有限公司",
+            "type": "ORG",
+            "start": 20,
+            "end": 30
+          },
+          {
+            "text": "独立董事",
+            "type": "TITLE",
+            "start": 30,
+            "end": 34
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "cb738ca674a3e390ecb1998d95b52c5e48dc75855b7edd7065e8928c167c0551",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_016",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "贾志颖女士：1971年出生，中国国籍，无境外永久居留权，本科学历。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "贾志颖",
+            "type": "NAME",
+            "start": 0,
+            "end": 3
+          },
+          {
+            "text": "中国国籍",
+            "type": "CONT",
+            "start": 14,
+            "end": 18
+          },
+          {
+            "text": "本科学历",
+            "type": "EDU",
+            "start": 28,
+            "end": 32
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "7206e418341c55d7c5ebfe2900c774363becd54e283f07bae5223419060e9969",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_017",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "段继东，男，汉族，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "段继东",
+            "type": "NAME",
+            "start": 0,
+            "end": 3
+          },
+          {
+            "text": "汉族",
+            "type": "RACE",
+            "start": 6,
+            "end": 8
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "3ee7643f368b3e22c45c5818cd78a96d3b2ffaa736a7fcb290b29cddb9023231",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_018",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "1965年5月出生，本科学历。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "本科学历",
+            "type": "EDU",
+            "start": 10,
+            "end": 14
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "df53928884679ab4854698f0c14e8e2144ea901dfcc849db89809a56baa3a188",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_019",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "曾任山东齐鲁制药集团副总经理、贵州神奇制药有限公司常务副总经理、昆明制药股份有限公司总裁等职务。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "山东齐鲁制药集团",
+            "type": "ORG",
+            "start": 2,
+            "end": 10
+          },
+          {
+            "text": "副总经理",
+            "type": "TITLE",
+            "start": 10,
+            "end": 14
+          },
+          {
+            "text": "贵州神奇制药有限公司",
+            "type": "ORG",
+            "start": 15,
+            "end": 25
+          },
+          {
+            "text": "常务副总经理",
+            "type": "TITLE",
+            "start": 25,
+            "end": 31
+          },
+          {
+            "text": "昆明制药股份有限公司",
+            "type": "ORG",
+            "start": 32,
+            "end": 42
+          },
+          {
+            "text": "总裁",
+            "type": "TITLE",
+            "start": 42,
+            "end": 44
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "dc38a74d087313ffaebbc111798b7c2cc770b338472b823920dfbbad1678c3e5",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_020",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "现任仁和药业股份有限公司独立董事，北京时代方略企业咨询公司董事长。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "仁和药业股份有限公司",
+            "type": "ORG",
+            "start": 2,
+            "end": 12
+          },
+          {
+            "text": "独立董事",
+            "type": "TITLE",
+            "start": 12,
+            "end": 16
+          },
+          {
+            "text": "北京时代方略企业咨询公司",
+            "type": "ORG",
+            "start": 17,
+            "end": 29
+          },
+          {
+            "text": "董事长",
+            "type": "TITLE",
+            "start": 29,
+            "end": 32
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "c347d7cb9ee56403a62bd03cc334f0f9bb2c56d03a0949ebe386cbd14eac8d8a",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_021",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "张礼进，男，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "张礼进",
+            "type": "NAME",
+            "start": 0,
+            "end": 3
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "e99cf15222c537b87a4ef6930aa250ad7ac8c487d02c56bfc298340cf5126391",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_022",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "1971年6月出生，毕业于吉林大学数量经济学专业，硕士研究生，经济师。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "吉林大学",
+            "type": "ORG",
+            "start": 13,
+            "end": 17
+          },
+          {
+            "text": "数量经济学专业",
+            "type": "PRO",
+            "start": 17,
+            "end": 24
+          },
+          {
+            "text": "硕士研究生",
+            "type": "EDU",
+            "start": 25,
+            "end": 30
+          },
+          {
+            "text": "经济师",
+            "type": "TITLE",
+            "start": 31,
+            "end": 34
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "2d768fbfc890b23fcd96494a4dd4941f79243020e7589c094ecf953d7e25c4b9",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_023",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "谢永林，副行长。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "谢永林",
+            "type": "NAME",
+            "start": 0,
+            "end": 3
+          },
+          {
+            "text": "副行长",
+            "type": "TITLE",
+            "start": 4,
+            "end": 7
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "d536ddeffa7458f6cff16ec99bcada8898394323db8f71ce024cbece2fa3fcc6",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_024",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "1968年出生，获得南京大学理学硕士、企业管理专业博士学位。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
           {
             "text": "南京大学",
-            "type": "ORG"
+            "type": "ORG",
+            "start": 10,
+            "end": 14
           },
           {
-            "text": "华为技术有限公司",
-            "type": "ORG"
+            "text": "理学",
+            "type": "PRO",
+            "start": 14,
+            "end": 16
+          },
+          {
+            "text": "硕士",
+            "type": "EDU",
+            "start": 16,
+            "end": 18
+          },
+          {
+            "text": "企业管理专业",
+            "type": "PRO",
+            "start": 19,
+            "end": 25
+          },
+          {
+            "text": "博士学位",
+            "type": "EDU",
+            "start": 25,
+            "end": 29
           }
         ],
+        "nested_entities": [],
         "bio_valid": true
-      }
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "c07666d673f0e1f4e8e14cfe66d6a836773e6ad5b5c40b131eb63ca0522a8751",
+      "enabled": true
     },
     {
-      "question_id": "s6_comp_003",
-      "dataset": "CMeEE",
-      "sample_origin": "synthetic_test",
+      "question_id": "s6_resume_025",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
       "question_type": "ner",
       "difficulty": 3,
       "goal_type": "competition",
       "kp_ids": [
+        "s6_recognition",
         "s6_boundary",
         "s6_type",
-        "s6_nested"
+        "s6_bio"
       ],
-      "prompt": "请识别复杂医学文本中的外层与内层实体。",
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
       "content": {
-        "text": "患者因左肺上叶恶性肿瘤接受手术治疗。"
+        "text": "现任平安银行副行长。"
       },
-      "answer_instruction": "分别标注完整疾病实体和内部解剖部位实体，并填写nested_entities。",
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
       "answer_example": {
-        "example_text": "患者出现右肺下叶感染。"
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
       },
       "answer": {
         "entities": [
           {
-            "text": "左肺上叶恶性肿瘤",
-            "type": "疾病"
+            "text": "平安银行",
+            "type": "ORG",
+            "start": 2,
+            "end": 6
           },
           {
-            "text": "左肺上叶",
-            "type": "解剖部位"
+            "text": "副行长",
+            "type": "TITLE",
+            "start": 6,
+            "end": 9
           }
         ],
-        "nested_entities": [
-          {
-            "outer": "左肺上叶恶性肿瘤",
-            "inner": "左肺上叶"
-          }
-        ]
-      }
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "d1b35c9c4903f6785f3ba76d0041eca64b658e207ae6a17ea0d7d3bd2d4f3607",
+      "enabled": true
     },
     {
-      "question_id": "s6_comp_004",
-      "dataset": "CMeEE",
-      "sample_origin": "synthetic_test",
+      "question_id": "s6_resume_026",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
       "question_type": "ner",
       "difficulty": 3,
       "goal_type": "competition",
       "kp_ids": [
-        "s6_bio",
-        "s6_nested",
-        "s6_boundary"
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
       ],
-      "prompt": "请完成高难嵌套实体、边界和BIO/BIOES综合标注。",
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
       "content": {
-        "text": "影像提示右肺下叶周围型肺癌病灶。"
+        "text": "1994年10月加入中国平安保险（集团）股份有限公司。"
       },
-      "answer_instruction": "填写外层疾病、内层解剖部位、nested_entities，并判断bio_valid。",
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
       "answer_example": {
-        "example_text": "影像显示左肺上叶肿瘤。",
-        "bio_valid": true
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
       },
       "answer": {
         "entities": [
           {
-            "text": "右肺下叶周围型肺癌",
-            "type": "疾病"
+            "text": "中国平安保险（集团）股份有限公司",
+            "type": "ORG",
+            "start": 10,
+            "end": 26
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "c9df5f23f6cc3ca6d62c1933533639f73959d955ad56b490557ab5879b48e7f2",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_027",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "2006年3月加入原平安银行，历任运营总监、人力资源总监，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
           },
           {
-            "text": "右肺下叶",
-            "type": "解剖部位"
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
           }
-        ],
-        "nested_entities": [
+        ]
+      },
+      "answer": {
+        "entities": [
           {
-            "outer": "右肺下叶周围型肺癌",
-            "inner": "右肺下叶"
+            "text": "平安银行",
+            "type": "ORG",
+            "start": 10,
+            "end": 14
+          },
+          {
+            "text": "运营总监",
+            "type": "TITLE",
+            "start": 17,
+            "end": 21
+          },
+          {
+            "text": "人力资源总监",
+            "type": "TITLE",
+            "start": 22,
+            "end": 28
           }
         ],
+        "nested_entities": [],
         "bio_valid": true
-      }
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "8feb732fefbb6fe2c50a746d9f74eb21fbfdb3c11831db5e2efe56e640ae2c86",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_028",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "2007年7月至2012年6月任原平安银行副行长，并自2007年6月至2012年6月任原平安银行执行董事。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "平安银行",
+            "type": "ORG",
+            "start": 17,
+            "end": 21
+          },
+          {
+            "text": "副行长",
+            "type": "TITLE",
+            "start": 21,
+            "end": 24
+          },
+          {
+            "text": "平安银行",
+            "type": "ORG",
+            "start": 44,
+            "end": 48
+          },
+          {
+            "text": "执行董事",
+            "type": "TITLE",
+            "start": 48,
+            "end": 52
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "570fc5284477aeaeff3879b7cd74a8cb9edae7d0e830c6f246c09656080ce4df",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_029",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "2012年7月加入深圳发展银行，任副行长。"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "深圳发展银行",
+            "type": "ORG",
+            "start": 9,
+            "end": 15
+          },
+          {
+            "text": "副行长",
+            "type": "TITLE",
+            "start": 17,
+            "end": 20
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "894c787dc978c31d0156afde93fde903fe979c0b731a3f07fa9f0121a9824ef4",
+      "enabled": true
+    },
+    {
+      "question_id": "s6_resume_030",
+      "scene_id": "scene_06",
+      "dataset": "Resume NER",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请根据 Resume NER 的 BIOES 标注规范完成实体识别，并判断该标准标签序列是否合法。",
+      "content": {
+        "text": "孙醒：男，"
+      },
+      "answer_instruction": "请填写实体文本、类型、start、end，并填写 bio_valid=true。",
+      "answer_example": {
+        "example_text": "李雷在北京工作。",
+        "entities": [
+          {
+            "text": "李雷",
+            "type": "name",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "text": "北京",
+            "type": "address",
+            "start": 3,
+            "end": 5
+          }
+        ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "孙醒",
+            "type": "NAME",
+            "start": 0,
+            "end": 2
+          }
+        ],
+        "nested_entities": [],
+        "bio_valid": true
+      },
+      "source_url": "https://huggingface.co/datasets/ttxy/resume_ner",
+      "source_note": "真实 Resume NER train 样本；实体由公开 BIOES 标签序列还原。",
+      "source_text_sha256": "0ede09e27a94bade6adb10c0c707c2f7bea78b7155442aa4d8176caa68c4b7ea",
+      "enabled": true
     }
   ]
 }
