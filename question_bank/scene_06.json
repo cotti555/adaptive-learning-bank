@@ -1,28 +1,30 @@
 {
   "scene_id": "scene_06",
   "scene_name": "中文命名实体标注",
-  "version": "test_v1",
+  "version": "test_v2_goal_123",
+  "difficulty_rule": {
+    "1": "job",
+    "2": "course",
+    "3": "competition"
+  },
   "questions": [
     {
-      "question_id": "s6_test_001",
+      "question_id": "s6_job_001",
       "dataset": "CLUENER2020",
       "sample_origin": "synthetic_test",
       "question_type": "ner",
-      "difficulty": 2,
+      "difficulty": 1,
+      "goal_type": "job",
       "kp_ids": [
         "s6_recognition",
         "s6_boundary",
         "s6_type"
       ],
-      "goal_tags": [
-        "job",
-        "course"
-      ],
       "prompt": "请识别句子中的实体，并填写实体文本、类型和位置。",
       "content": {
         "text": "张明毕业于复旦大学。"
       },
-      "answer_instruction": "请填写实体文本、实体类型、start和end。start从0开始计数，end采用左闭右开规则。",
+      "answer_instruction": "请填写实体文本、实体类型、start、end。start从0开始，end采用左闭右开。",
       "answer_example": {
         "example_text": "李华就读于清华大学。",
         "entities": [
@@ -58,82 +60,124 @@
       }
     },
     {
-      "question_id": "s6_test_002",
-      "dataset": "CMeEE",
+      "question_id": "s6_job_002",
+      "dataset": "Resume NER",
       "sample_origin": "synthetic_test",
       "question_type": "ner",
-      "difficulty": 4,
+      "difficulty": 1,
+      "goal_type": "job",
       "kp_ids": [
-        "s6_boundary",
+        "s6_recognition",
         "s6_type",
-        "s6_nested"
+        "s6_bio"
       ],
-      "goal_tags": [
-        "course",
-        "competition"
-      ],
-      "prompt": "请完成医学文本实体标注，并注意实体边界。",
+      "prompt": "请识别简历文本中的实体并检查BIO/BIOES标注是否合法。",
       "content": {
-        "text": "患者被诊断为慢性肾功能不全。"
+        "text": "王强在腾讯科技担任产品经理。"
       },
-      "answer_instruction": "请填写实体文本、类型、start、end；如果存在嵌套实体，同时填写nested_entities。",
+      "answer_instruction": "填写实体文本和类型，并将bio_valid设为true或false。",
       "answer_example": {
-        "example_text": "患者被诊断为肺部感染。",
+        "example_text": "赵敏在阿里巴巴工作。",
         "entities": [
           {
-            "text": "肺部感染",
-            "type": "疾病"
+            "text": "赵敏",
+            "type": "PER"
+          },
+          {
+            "text": "阿里巴巴",
+            "type": "ORG"
           }
         ],
-        "nested_entities": []
+        "bio_valid": true
       },
       "answer": {
         "entities": [
           {
-            "text": "慢性肾功能不全",
-            "type": "疾病"
+            "text": "王强",
+            "type": "PER"
+          },
+          {
+            "text": "腾讯科技",
+            "type": "ORG"
+          },
+          {
+            "text": "产品经理",
+            "type": "TITLE"
           }
         ],
-        "nested_entities": []
+        "bio_valid": true
       }
     },
     {
-      "question_id": "s6_test_004",
+      "question_id": "s6_job_003",
       "dataset": "CMeEE",
       "sample_origin": "synthetic_test",
       "question_type": "ner",
-      "difficulty": 5,
+      "difficulty": 1,
+      "goal_type": "job",
       "kp_ids": [
         "s6_boundary",
         "s6_type",
         "s6_nested"
       ],
-      "goal_tags": [
-        "course",
-        "competition"
-      ],
-      "prompt": "请完成实体标注，注意识别外层实体与内部实体。",
+      "prompt": "请完成实体标注，并判断是否存在实体包含关系。",
       "content": {
-        "text": "影像提示左肺上叶肿瘤。"
+        "text": "患者出现右肺下叶感染。"
       },
-      "answer_instruction": "请分别填写外层实体和内层实体的文本、类型、start、end，并填写nested_entities。start从0开始，end采用左闭右开规则。",
+      "answer_instruction": "分别填写外层实体和内层实体；存在包含关系时填写nested_entities。",
+      "answer_example": {
+        "example_text": "检查发现左肺上叶病变。",
+        "description": "注意解剖部位与疾病实体的包含关系。"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "右肺下叶感染",
+            "type": "疾病"
+          },
+          {
+            "text": "右肺下叶",
+            "type": "解剖部位"
+          }
+        ],
+        "nested_entities": [
+          {
+            "outer": "右肺下叶感染",
+            "inner": "右肺下叶"
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "s6_job_004",
+      "dataset": "CMeEE",
+      "sample_origin": "synthetic_test",
+      "question_type": "ner",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s6_bio",
+        "s6_nested",
+        "s6_boundary"
+      ],
+      "prompt": "请完成实体边界与嵌套关系标注，并检查BIO/BIOES合法性。",
+      "content": {
+        "text": "影像显示左肺上叶肿瘤。"
+      },
+      "answer_instruction": "填写实体、嵌套关系，并将bio_valid设为true或false。",
       "answer_example": {
         "example_text": "检查发现右肺下叶病变。",
-        "description": "如果一个完整疾病实体内部还包含解剖部位实体，应分别标注。"
+        "bio_valid": true
       },
       "answer": {
         "entities": [
           {
             "text": "左肺上叶肿瘤",
-            "type": "疾病",
-            "start": 4,
-            "end": 10
+            "type": "疾病"
           },
           {
             "text": "左肺上叶",
-            "type": "解剖部位",
-            "start": 4,
-            "end": 8
+            "type": "解剖部位"
           }
         ],
         "nested_entities": [
@@ -141,7 +185,323 @@
             "outer": "左肺上叶肿瘤",
             "inner": "左肺上叶"
           }
+        ],
+        "bio_valid": true
+      }
+    },
+    {
+      "question_id": "s6_course_001",
+      "dataset": "CLUENER2020",
+      "sample_origin": "synthetic_test",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请对句子进行实体识别、边界判断和类型标注。",
+      "content": {
+        "text": "李娜在北京大学医学部工作。"
+      },
+      "answer_instruction": "填写所有实体的文本、类型、start、end。",
+      "answer_example": {
+        "example_text": "陈杰在清华大学任教。",
+        "entities": [
+          {
+            "text": "陈杰",
+            "type": "PER"
+          },
+          {
+            "text": "清华大学",
+            "type": "ORG"
+          }
         ]
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "李娜",
+            "type": "PER"
+          },
+          {
+            "text": "北京大学医学部",
+            "type": "ORG"
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "s6_course_002",
+      "dataset": "Resume NER",
+      "sample_origin": "synthetic_test",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请完成实体识别与BIO/BIOES规则判断。",
+      "content": {
+        "text": "赵伟曾就读于上海交通大学。"
+      },
+      "answer_instruction": "填写实体文本、类型，并判断bio_valid。",
+      "answer_example": {
+        "example_text": "孙丽毕业于浙江大学。",
+        "bio_valid": true
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "赵伟",
+            "type": "PER"
+          },
+          {
+            "text": "上海交通大学",
+            "type": "ORG"
+          }
+        ],
+        "bio_valid": true
+      }
+    },
+    {
+      "question_id": "s6_course_003",
+      "dataset": "CMeEE",
+      "sample_origin": "synthetic_test",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_boundary",
+        "s6_type",
+        "s6_nested"
+      ],
+      "prompt": "请识别医学实体并分析实体包含关系。",
+      "content": {
+        "text": "患者诊断为慢性肾功能不全。"
+      },
+      "answer_instruction": "填写疾病实体及其内部相关实体，并标注nested_entities。",
+      "answer_example": {
+        "example_text": "患者出现左肺感染。",
+        "description": "先确定完整疾病边界，再判断内部实体。"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "慢性肾功能不全",
+            "type": "疾病"
+          },
+          {
+            "text": "肾",
+            "type": "解剖部位"
+          }
+        ],
+        "nested_entities": [
+          {
+            "outer": "慢性肾功能不全",
+            "inner": "肾"
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "s6_course_004",
+      "dataset": "CMeEE",
+      "sample_origin": "synthetic_test",
+      "question_type": "ner",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s6_bio",
+        "s6_nested",
+        "s6_boundary"
+      ],
+      "prompt": "请完成嵌套实体与BIO/BIOES综合判断。",
+      "content": {
+        "text": "检查提示右肺下叶炎症。"
+      },
+      "answer_instruction": "填写实体、nested_entities，并判断bio_valid。",
+      "answer_example": {
+        "example_text": "影像显示左肺上叶病变。",
+        "bio_valid": true
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "右肺下叶炎症",
+            "type": "疾病"
+          },
+          {
+            "text": "右肺下叶",
+            "type": "解剖部位"
+          }
+        ],
+        "nested_entities": [
+          {
+            "outer": "右肺下叶炎症",
+            "inner": "右肺下叶"
+          }
+        ],
+        "bio_valid": true
+      }
+    },
+    {
+      "question_id": "s6_comp_001",
+      "dataset": "CLUENER2020",
+      "sample_origin": "synthetic_test",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_boundary",
+        "s6_type"
+      ],
+      "prompt": "请在复杂句中识别全部实体并准确确定边界和类型。",
+      "content": {
+        "text": "周宁加入北京智源人工智能研究院后赴上海参加论坛。"
+      },
+      "answer_instruction": "填写全部实体，注意人名、机构名、地名之间的类型差异。",
+      "answer_example": {
+        "example_text": "王晨在清华大学参加会议。"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "周宁",
+            "type": "PER"
+          },
+          {
+            "text": "北京智源人工智能研究院",
+            "type": "ORG"
+          },
+          {
+            "text": "上海",
+            "type": "LOC"
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "s6_comp_002",
+      "dataset": "Resume NER",
+      "sample_origin": "synthetic_test",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_recognition",
+        "s6_type",
+        "s6_bio"
+      ],
+      "prompt": "请完成多实体简历文本标注，并检查BIO/BIOES序列合法性。",
+      "content": {
+        "text": "陈宇毕业于南京大学，后任职于华为技术有限公司。"
+      },
+      "answer_instruction": "识别人物、学校、机构等实体并判断bio_valid。",
+      "answer_example": {
+        "example_text": "李敏毕业于北京大学。",
+        "bio_valid": true
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "陈宇",
+            "type": "PER"
+          },
+          {
+            "text": "南京大学",
+            "type": "ORG"
+          },
+          {
+            "text": "华为技术有限公司",
+            "type": "ORG"
+          }
+        ],
+        "bio_valid": true
+      }
+    },
+    {
+      "question_id": "s6_comp_003",
+      "dataset": "CMeEE",
+      "sample_origin": "synthetic_test",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_boundary",
+        "s6_type",
+        "s6_nested"
+      ],
+      "prompt": "请识别复杂医学文本中的外层与内层实体。",
+      "content": {
+        "text": "患者因左肺上叶恶性肿瘤接受手术治疗。"
+      },
+      "answer_instruction": "分别标注完整疾病实体和内部解剖部位实体，并填写nested_entities。",
+      "answer_example": {
+        "example_text": "患者出现右肺下叶感染。"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "左肺上叶恶性肿瘤",
+            "type": "疾病"
+          },
+          {
+            "text": "左肺上叶",
+            "type": "解剖部位"
+          }
+        ],
+        "nested_entities": [
+          {
+            "outer": "左肺上叶恶性肿瘤",
+            "inner": "左肺上叶"
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "s6_comp_004",
+      "dataset": "CMeEE",
+      "sample_origin": "synthetic_test",
+      "question_type": "ner",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s6_bio",
+        "s6_nested",
+        "s6_boundary"
+      ],
+      "prompt": "请完成高难嵌套实体、边界和BIO/BIOES综合标注。",
+      "content": {
+        "text": "影像提示右肺下叶周围型肺癌病灶。"
+      },
+      "answer_instruction": "填写外层疾病、内层解剖部位、nested_entities，并判断bio_valid。",
+      "answer_example": {
+        "example_text": "影像显示左肺上叶肿瘤。",
+        "bio_valid": true
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "右肺下叶周围型肺癌",
+            "type": "疾病"
+          },
+          {
+            "text": "右肺下叶",
+            "type": "解剖部位"
+          }
+        ],
+        "nested_entities": [
+          {
+            "outer": "右肺下叶周围型肺癌",
+            "inner": "右肺下叶"
+          }
+        ],
+        "bio_valid": true
       }
     }
   ]
