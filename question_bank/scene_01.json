@@ -1,0 +1,3661 @@
+{
+  "scene_id": "scene_01",
+  "scene_name": "商超客流图像质量筛选与近重复去重",
+  "version": "real_complete_v1_90",
+  "question_count": 90,
+  "sample_policy": "优先使用公开数据集原生样本。为满足自适应学习中“同KP换新题复测”的题量要求，部分题目由真实公开数据集样本或任务plus中的真实数据集示例派生；所有派生题均显式标记 sample_origin=real_dataset_derived，不把派生样本冒充为数据集官方原始样本。",
+  "difficulty_rule": {
+    "1": "job / 岗位技能提升",
+    "2": "course / 课程学习巩固",
+    "3": "competition / 竞赛备赛",
+    "note": "difficulty 是本平台的岗-课-赛分流字段，不代表数据集官方难度。"
+  },
+  "kp_ids": [
+    "s1_clarity",
+    "s1_exposure",
+    "s1_occlusion",
+    "s1_validity",
+    "s1_duplicate"
+  ],
+  "source_urls": [
+    "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+    "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+    "https://europe.naverlabs.com/blog/making-maps-evergreen/"
+  ],
+  "notes": [
+    "基础图片来自任务plus场景一中的真实数据集示例。",
+    "派生题通过可复现的模糊、曝光、遮挡和黑屏变换生成，适合质量筛选与近重复复测。"
+  ],
+  "questions": [
+    {
+      "question_id": "s1_1_1_01",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_01_original.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "original"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_1_02",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_02_mild_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "mild_blur"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "轻微模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_1_03",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_03_severe_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "severe_blur"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_1_04",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_04_mild_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "mild_over"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_1_05",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_05_severe_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "severe_over"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重过曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_1_06",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_06_mild_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "mild_under"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_1_07",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_07_severe_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "severe_under"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重欠曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_1_08",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_08_mild_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "轻微遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_1_09",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_09_severe_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_1_10",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_10_black.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "black"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重欠曝",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_2_01",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_01_original.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "original"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_2_02",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_02_mild_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "mild_blur"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "轻微模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_2_03",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_03_severe_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "severe_blur"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_2_04",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_04_mild_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "mild_over"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_2_05",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_05_severe_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "severe_over"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重过曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_2_06",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_06_mild_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "mild_under"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_2_07",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_07_severe_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "severe_under"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重欠曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_2_08",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_08_mild_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "轻微遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_2_09",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_09_severe_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_2_10",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds1_10_black.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image1.jpeg",
+        "transform": "black"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重欠曝",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_3_01",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image1.jpeg",
+        "image_b": "assets/scene_01/s1_ds1_01_original.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "original"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "完全重复",
+        "subject_scene": "一致",
+        "information_difference": "无",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_3_02",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image1.jpeg",
+        "image_b": "assets/scene_01/s1_ds1_02_mild_blur.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "mild_blur"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_3_03",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image1.jpeg",
+        "image_b": "assets/scene_01/s1_ds1_03_severe_blur.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "severe_blur"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_3_04",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image1.jpeg",
+        "image_b": "assets/scene_01/s1_ds1_04_mild_over.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "mild_over"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_3_05",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image1.jpeg",
+        "image_b": "assets/scene_01/s1_ds1_05_severe_over.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "severe_over"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_3_06",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image1.jpeg",
+        "image_b": "assets/scene_01/s1_ds1_06_mild_under.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "mild_under"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_3_07",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image1.jpeg",
+        "image_b": "assets/scene_01/s1_ds1_07_severe_under.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "severe_under"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_3_08",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image1.jpeg",
+        "image_b": "assets/scene_01/s1_ds1_08_mild_occlusion.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_3_09",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image1.jpeg",
+        "image_b": "assets/scene_01/s1_ds1_09_severe_occlusion.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_1_3_10",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image1.jpeg",
+        "image_b": "assets/scene_01/s1_ds1_10_black.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "black"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_1_01",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_01_original.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "original"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_1_02",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_02_mild_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "mild_blur"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "轻微模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_1_03",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_03_severe_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "severe_blur"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_1_04",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_04_mild_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "mild_over"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_1_05",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_05_severe_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "severe_over"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重过曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_1_06",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_06_mild_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "mild_under"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_1_07",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_07_severe_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "severe_under"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重欠曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_1_08",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_08_mild_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "轻微遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_1_09",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_09_severe_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_1_10",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_10_black.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "black"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重欠曝",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_2_01",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_01_original.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "original"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_2_02",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_02_mild_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "mild_blur"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "轻微模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_2_03",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_03_severe_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "severe_blur"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_2_04",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_04_mild_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "mild_over"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_2_05",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_05_severe_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "severe_over"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重过曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_2_06",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_06_mild_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "mild_under"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_2_07",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_07_severe_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "severe_under"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重欠曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_2_08",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_08_mild_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "轻微遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_2_09",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_09_severe_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_2_10",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds2_10_black.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image2.png",
+        "transform": "black"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重欠曝",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_3_01",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image2.png",
+        "image_b": "assets/scene_01/s1_ds2_01_original.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "original"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "完全重复",
+        "subject_scene": "一致",
+        "information_difference": "无",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_3_02",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image2.png",
+        "image_b": "assets/scene_01/s1_ds2_02_mild_blur.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "mild_blur"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_3_03",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image2.png",
+        "image_b": "assets/scene_01/s1_ds2_03_severe_blur.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "severe_blur"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_3_04",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image2.png",
+        "image_b": "assets/scene_01/s1_ds2_04_mild_over.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "mild_over"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_3_05",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image2.png",
+        "image_b": "assets/scene_01/s1_ds2_05_severe_over.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "severe_over"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_3_06",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image2.png",
+        "image_b": "assets/scene_01/s1_ds2_06_mild_under.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "mild_under"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_3_07",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image2.png",
+        "image_b": "assets/scene_01/s1_ds2_07_severe_under.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "severe_under"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_3_08",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image2.png",
+        "image_b": "assets/scene_01/s1_ds2_08_mild_occlusion.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_3_09",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image2.png",
+        "image_b": "assets/scene_01/s1_ds2_09_severe_occlusion.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_2_3_10",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image2.png",
+        "image_b": "assets/scene_01/s1_ds2_10_black.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "black"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_1_01",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_01_original.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "original"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_1_02",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_02_mild_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "mild_blur"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "轻微模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_1_03",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_03_severe_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "severe_blur"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_1_04",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_04_mild_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "mild_over"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_1_05",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_05_severe_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "severe_over"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重过曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_1_06",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_06_mild_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "mild_under"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_1_07",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_07_severe_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "severe_under"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重欠曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_1_08",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_08_mild_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "轻微遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_1_09",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_09_severe_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_1_10",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_10_black.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "black"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重欠曝",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_2_01",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_01_original.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "original"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_2_02",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_02_mild_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "mild_blur"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "轻微模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_2_03",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_03_severe_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "severe_blur"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_2_04",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_04_mild_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "mild_over"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_2_05",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_05_severe_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "severe_over"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重过曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_2_06",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_06_mild_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "mild_under"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_2_07",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_07_severe_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "severe_under"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重欠曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_2_08",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_08_mild_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "轻微遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_2_09",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_09_severe_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_2_10",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选，并给出最终保留/删除决定。",
+      "asset_ref": "assets/scene_01/s1_ds3_10_black.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "image3.png",
+        "transform": "black"
+      },
+      "answer_instruction": "填写清晰度、曝光、遮挡、有效性和处理决定。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重欠曝",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "真实数据集示例图像的确定性质量变换。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_3_01",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image3.png",
+        "image_b": "assets/scene_01/s1_ds3_01_original.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "original"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "完全重复",
+        "subject_scene": "一致",
+        "information_difference": "无",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_3_02",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image3.png",
+        "image_b": "assets/scene_01/s1_ds3_02_mild_blur.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "mild_blur"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_3_03",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image3.png",
+        "image_b": "assets/scene_01/s1_ds3_03_severe_blur.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "severe_blur"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_3_04",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image3.png",
+        "image_b": "assets/scene_01/s1_ds3_04_mild_over.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "mild_over"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_3_05",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image3.png",
+        "image_b": "assets/scene_01/s1_ds3_05_severe_over.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "severe_over"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_3_06",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image3.png",
+        "image_b": "assets/scene_01/s1_ds3_06_mild_under.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "mild_under"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_3_07",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image3.png",
+        "image_b": "assets/scene_01/s1_ds3_07_severe_under.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "severe_under"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_3_08",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image3.png",
+        "image_b": "assets/scene_01/s1_ds3_08_mild_occlusion.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_3_09",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image3.png",
+        "image_b": "assets/scene_01/s1_ds3_09_severe_occlusion.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_3_3_10",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断重复关系、信息差异和最终保留项。",
+      "content": {
+        "image_a": "assets/scene_01/image3.png",
+        "image_b": "assets/scene_01/s1_ds3_10_black.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "image_b_transform": "black"
+      },
+      "answer_instruction": "填写重复关系、主体场景一致性、有效信息差异、keep/remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "同一真实数据集示例的质量变换对，用于近重复教学。",
+      "enabled": true
+    }
+  ]
+}
