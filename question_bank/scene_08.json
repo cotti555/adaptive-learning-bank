@@ -1,0 +1,3116 @@
+{
+  "scene_id": "scene_08",
+  "scene_name": "工业产品缺陷识别与区域标注",
+  "version": "real_complete_v1_90",
+  "question_count": 90,
+  "sample_policy": "优先使用公开数据集原生样本。为满足自适应学习中“同KP换新题复测”的题量要求，部分题目由真实公开数据集样本或任务plus中的真实数据集示例派生；所有派生题均显式标记 sample_origin=real_dataset_derived，不把派生样本冒充为数据集官方原始样本。",
+  "difficulty_rule": {
+    "1": "job / 岗位技能提升",
+    "2": "course / 课程学习巩固",
+    "3": "competition / 竞赛备赛",
+    "note": "difficulty 是本平台的岗-课-赛分流字段，不代表数据集官方难度。"
+  },
+  "kp_ids": [
+    "s8_anomaly",
+    "s8_type",
+    "s8_location",
+    "s8_segmentation",
+    "s8_logic"
+  ],
+  "source_urls": [
+    "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+    "https://huggingface.co/datasets/jiang-cc/MMAD",
+    "https://www.mvtec.com/company/research/datasets/mvtec-loco"
+  ],
+  "notes": [
+    "VisA 使用公开 capsules split 的真实异常样本 ID 与官方 mask。",
+    "MVTec AD 使用公开 MVTec bottle 缺陷样本/掩码定位。",
+    "MVTec LOCO 使用任务plus中的 breakfast_box 逻辑异常示例并派生不同训练焦点。"
+  ],
+  "questions": [
+    {
+      "question_id": "s8_visa_001",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=097",
+      "mask_ref": "VisA:capsules:image_id=097:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_002",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=087",
+      "mask_ref": "VisA:capsules:image_id=087:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_003",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=063",
+      "mask_ref": "VisA:capsules:image_id=063:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_004",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=053",
+      "mask_ref": "VisA:capsules:image_id=053:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_005",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=071",
+      "mask_ref": "VisA:capsules:image_id=071:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_006",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=047",
+      "mask_ref": "VisA:capsules:image_id=047:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_007",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=065",
+      "mask_ref": "VisA:capsules:image_id=065:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_008",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=034",
+      "mask_ref": "VisA:capsules:image_id=034:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_009",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=037",
+      "mask_ref": "VisA:capsules:image_id=037:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_010",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=050",
+      "mask_ref": "VisA:capsules:image_id=050:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_011",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=092",
+      "mask_ref": "VisA:capsules:image_id=092:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_012",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=074",
+      "mask_ref": "VisA:capsules:image_id=074:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_013",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=012",
+      "mask_ref": "VisA:capsules:image_id=012:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_014",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=081",
+      "mask_ref": "VisA:capsules:image_id=081:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_015",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=008",
+      "mask_ref": "VisA:capsules:image_id=008:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_016",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=005",
+      "mask_ref": "VisA:capsules:image_id=005:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_017",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=009",
+      "mask_ref": "VisA:capsules:image_id=009:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_018",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=045",
+      "mask_ref": "VisA:capsules:image_id=045:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_019",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=032",
+      "mask_ref": "VisA:capsules:image_id=032:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_020",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=006",
+      "mask_ref": "VisA:capsules:image_id=006:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_021",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=080",
+      "mask_ref": "VisA:capsules:image_id=080:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_022",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=066",
+      "mask_ref": "VisA:capsules:image_id=066:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_023",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=060",
+      "mask_ref": "VisA:capsules:image_id=060:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_024",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=042",
+      "mask_ref": "VisA:capsules:image_id=042:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_025",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=041",
+      "mask_ref": "VisA:capsules:image_id=041:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_026",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=000",
+      "mask_ref": "VisA:capsules:image_id=000:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_027",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=068",
+      "mask_ref": "VisA:capsules:image_id=068:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_028",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=030",
+      "mask_ref": "VisA:capsules:image_id=030:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_029",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=014",
+      "mask_ref": "VisA:capsules:image_id=014:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_030",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断 VisA capsule 样本是否异常，并依据官方 GT mask 标注异常区域。",
+      "asset_ref": "VisA:capsules:image_id=040",
+      "mask_ref": "VisA:capsules:image_id=040:mask",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly，并将区域标注与 official GT mask 对齐。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "dataset_anomaly",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "VisA 公开 Viewer capsules split 的真实异常样本 ID。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_1_01",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断瓶口样本是否异常。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/000.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/000_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right",
+        "appearance": "A jagged irregular break",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_1_02",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断瓶口样本是否异常。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/005.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/005_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "bottle opening",
+        "appearance": "large broken area",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_1_03",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断瓶口样本是否异常。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/006.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/006_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "bottle opening",
+        "appearance": "jagged uneven break with sharp edges",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_1_04",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断瓶口样本是否异常。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/007.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/007_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "approximate center of bottle opening",
+        "appearance": "jagged edges with irregular pattern",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_1_05",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断瓶口样本是否异常。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/008.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/008_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "bottle opening",
+        "appearance": "broken large",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_1_06",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断瓶口样本是否异常。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/011.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/011_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom center",
+        "appearance": "jagged edges where material is missing",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_1_07",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断瓶口样本是否异常。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/012.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/012_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Center right",
+        "appearance": "large jagged area",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_1_08",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断瓶口样本是否异常。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/019.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/019_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "bottle opening",
+        "appearance": "broken large",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_1_09",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断瓶口样本是否异常。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_small/000.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_small/000_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_small",
+        "location": "Outer edge",
+        "appearance": "small break",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_1_10",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断瓶口样本是否异常。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/000.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/000_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right",
+        "appearance": "A jagged irregular break",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_2_01",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断缺陷类型并定位缺陷区域。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/000.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/000_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right",
+        "appearance": "A jagged irregular break",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_2_02",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断缺陷类型并定位缺陷区域。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/005.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/005_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "bottle opening",
+        "appearance": "large broken area",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_2_03",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断缺陷类型并定位缺陷区域。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/006.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/006_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "bottle opening",
+        "appearance": "jagged uneven break with sharp edges",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_2_04",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断缺陷类型并定位缺陷区域。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/007.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/007_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "approximate center of bottle opening",
+        "appearance": "jagged edges with irregular pattern",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_2_05",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断缺陷类型并定位缺陷区域。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/008.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/008_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "bottle opening",
+        "appearance": "broken large",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_2_06",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断缺陷类型并定位缺陷区域。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/011.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/011_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom center",
+        "appearance": "jagged edges where material is missing",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_2_07",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断缺陷类型并定位缺陷区域。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/012.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/012_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Center right",
+        "appearance": "large jagged area",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_2_08",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断缺陷类型并定位缺陷区域。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/019.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/019_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "bottle opening",
+        "appearance": "broken large",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_2_09",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断缺陷类型并定位缺陷区域。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_small/000.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_small/000_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_small",
+        "location": "Outer edge",
+        "appearance": "small break",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_2_10",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断缺陷类型并定位缺陷区域。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/000.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/000_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right",
+        "appearance": "A jagged irregular break",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_3_01",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷存在性、类别、位置与像素级区域的综合标注。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/000.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/000_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right",
+        "appearance": "A jagged irregular break",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_3_02",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷存在性、类别、位置与像素级区域的综合标注。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/005.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/005_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "bottle opening",
+        "appearance": "large broken area",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_3_03",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷存在性、类别、位置与像素级区域的综合标注。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/006.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/006_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "bottle opening",
+        "appearance": "jagged uneven break with sharp edges",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_3_04",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷存在性、类别、位置与像素级区域的综合标注。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/007.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/007_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "approximate center of bottle opening",
+        "appearance": "jagged edges with irregular pattern",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_3_05",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷存在性、类别、位置与像素级区域的综合标注。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/008.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/008_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "bottle opening",
+        "appearance": "broken large",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_3_06",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷存在性、类别、位置与像素级区域的综合标注。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/011.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/011_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom center",
+        "appearance": "jagged edges where material is missing",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_3_07",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷存在性、类别、位置与像素级区域的综合标注。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/012.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/012_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Center right",
+        "appearance": "large jagged area",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_3_08",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷存在性、类别、位置与像素级区域的综合标注。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/019.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/019_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "bottle opening",
+        "appearance": "broken large",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_3_09",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷存在性、类别、位置与像素级区域的综合标注。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_small/000.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_small/000_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_small",
+        "location": "Outer edge",
+        "appearance": "small break",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_3_10",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷存在性、类别、位置与像素级区域的综合标注。",
+      "asset_ref": "DS-MVTec/bottle/image/broken_large/000.png",
+      "mask_ref": "DS-MVTec/bottle/image/rbg_mask/broken_large/000_rbg_mask.png",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref。",
+      "answer_example": {
+        "origin": "format_example",
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "broken_large",
+        "location": "Bottom right",
+        "appearance": "A jagged irregular break",
+        "region_ref": "official_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "公开 MVTec-AD bottle 样本/掩码定位；第10题为已核对样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_1_01",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：是否存在异常。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "anomaly": true
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_1_02",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：异常大类。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "logic_type": "Logical Anomaly"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_1_03",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：具体异常。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "specific_issue": "Missing Component"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_1_04",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：缺失组件。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "missing_component": "Banana Chips / Banana Slices"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_1_05",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：异常相关位置。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "location": "早餐盒右侧食品区域，重点涉及右下方区域"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_1_06",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：GT区域。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "segmentation_ref": "official_gt_mask"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_1_07",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：正常配置规则。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "normal_rule": "正常早餐盒配置中应包含香蕉片"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_1_08",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：判断依据。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_1_09",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：排除物理破损。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_1_10",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：完整逻辑异常标注。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "anomaly": true,
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "location": "早餐盒右侧食品区域，重点涉及右下方区域",
+        "segmentation_ref": "official_gt_mask",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_2_01",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：是否存在异常。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "anomaly": true
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_2_02",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：异常大类。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "logic_type": "Logical Anomaly"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_2_03",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：具体异常。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "specific_issue": "Missing Component"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_2_04",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：缺失组件。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "missing_component": "Banana Chips / Banana Slices"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_2_05",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：异常相关位置。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "location": "早餐盒右侧食品区域，重点涉及右下方区域"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_2_06",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：GT区域。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "segmentation_ref": "official_gt_mask"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_2_07",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：正常配置规则。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "normal_rule": "正常早餐盒配置中应包含香蕉片"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_2_08",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：判断依据。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_2_09",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：排除物理破损。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_2_10",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：完整逻辑异常标注。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "anomaly": true,
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "location": "早餐盒右侧食品区域，重点涉及右下方区域",
+        "segmentation_ref": "official_gt_mask",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_3_01",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：是否存在异常。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "anomaly": true
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_3_02",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：异常大类。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "logic_type": "Logical Anomaly"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_3_03",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：具体异常。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "specific_issue": "Missing Component"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_3_04",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：缺失组件。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "missing_component": "Banana Chips / Banana Slices"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_3_05",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：异常相关位置。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "location": "早餐盒右侧食品区域，重点涉及右下方区域"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_3_06",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：GT区域。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "segmentation_ref": "official_gt_mask"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_3_07",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：正常配置规则。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "normal_rule": "正常早餐盒配置中应包含香蕉片"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_3_08",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：判断依据。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_3_09",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：排除物理破损。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_loco_3_10",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_logic",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "识别 breakfast_box 逻辑异常，重点回答：完整逻辑异常标注。",
+      "asset_ref": "assets/scene_08/image5.png",
+      "mask_ref": "assets/scene_08/image6.png",
+      "asset_binding_required": false,
+      "answer_instruction": "不要把缺少组件误判为表面物理破损；依据正常组成规则作答。",
+      "answer_example": {
+        "origin": "format_example",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component"
+      },
+      "answer": {
+        "anomaly": true,
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "location": "早餐盒右侧食品区域，重点涉及右下方区域",
+        "segmentation_ref": "official_gt_mask",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实 MVTec LOCO breakfast_box logical anomaly 示例；不同题只改变训练焦点。",
+      "enabled": true
+    }
+  ]
+}
