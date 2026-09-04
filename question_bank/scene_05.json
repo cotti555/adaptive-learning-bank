@@ -1,0 +1,3511 @@
+{
+  "scene_id": "scene_05",
+  "scene_name": "图文一致性判断",
+  "version": "real_complete_v1_90",
+  "question_count": 90,
+  "sample_policy": "优先使用公开数据集原生样本。为满足自适应学习中“同KP换新题复测”的题量要求，部分题目由真实公开数据集样本或任务plus中的真实数据集示例派生；所有派生题均显式标记 sample_origin=real_dataset_derived，不把派生样本冒充为数据集官方原始样本。",
+  "difficulty_rule": {
+    "1": "job / 岗位技能提升",
+    "2": "course / 课程学习巩固",
+    "3": "competition / 竞赛备赛",
+    "note": "difficulty 是本平台的岗-课-赛分流字段，不代表数据集官方难度。"
+  },
+  "kp_ids": [
+    "s5_object",
+    "s5_attribute",
+    "s5_relation",
+    "s5_decision"
+  ],
+  "source_urls": [
+    "https://github.com/RAIVNLab/sugar-crepe",
+    "https://huggingface.co/datasets/facebook/winoground",
+    "https://huggingface.co/datasets/mteb/ARO-Visual-Relation"
+  ],
+  "notes": [
+    "SugarCrepe 使用官方 add_obj 样本。",
+    "Winoground 使用公开 caption 对与图像对。",
+    "ARO 使用 Visual Relation 公开关系样本。"
+  ],
+  "questions": [
+    {
+      "question_id": "s5_sugar_001",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000219578.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_002",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000301867.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "Three girls walking down the sidewalk under a sun umbrella.",
+        "caption_b": "Two boys and three girls are walking down the sidewalk under a sun umbrella."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_003",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000104612.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A plate is filled with broccoli and noodles.",
+        "caption_b": "A plate is filled with broccoli, noodles, and carrots."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_004",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000515579.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A man throwing a ball while smiling and on a field.",
+        "caption_b": "A man throwing a ball while a child is smiling on a field."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_005",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000347693.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "An assortment of rags hang on a metal rack.",
+        "caption_b": "An assortment of rags and tools hang on a metal rack."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_006",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000029393.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A brown dog standing on a wooden bench near a lemon tree.",
+        "caption_b": "A brown dog and a bird are standing on a wooden bench near a lemon tree."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_007",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000113403.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "Three stuffed animals lay in a bed cuddled together.",
+        "caption_b": "Three stuffed animals lay in a bed cuddled together next to a lamp."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_008",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000375015.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A baby brown bear standing on top of a rock.",
+        "caption_b": "A baby brown bear standing on top of a rock near a waterfall."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_009",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000031269.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "Two zebras grazing while another horse standing and staring.",
+        "caption_b": "Two zebras grazing while a llama and another horse standing and staring."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_010",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000099242.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A man skiing down a snowy hill alone.",
+        "caption_b": "A group of friends and a man are skiing down a snowy hill together."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_011",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000004495.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A living room with a couch and chair.",
+        "caption_b": "A living room with a couch and a bookshelf and a chair."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_012",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000326082.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "THERE IS A LIVING ROOM WITH A TABLE AND TV",
+        "caption_b": "There is a living room with a table, bookshelf, and TV."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_013",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000239537.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A man in white shirt and shorts playing a game of tennis.",
+        "caption_b": "A man and a woman in white shirts and shorts are playing a game of tennis."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_014",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000243204.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A man is cooking while wearing a jacket and scarf",
+        "caption_b": "A man is cooking while wearing a jacket, scarf, and apron."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_015",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000376442.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A black plush toy sitting on the lid of a toilet.",
+        "caption_b": "A black plush toy and a toothbrush are sitting on the lid of a toilet."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_016",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000384350.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A commercial airplane sits on a runway at an airport.",
+        "caption_b": "A commercial airplane and a helicopter sit on a runway at an airport."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_017",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000154947.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A sheep standing in a dry grass field.",
+        "caption_b": "A sheep and a cow standing in a dry grass field."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_018",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000291490.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A kitten on a bad with its arm stretched out toward the camera",
+        "caption_b": "A kitten with a hat on its head is on a bed with its arm stretched out toward the camera."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_019",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000491366.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "Two men using nintendo wii remotes to play a game",
+        "caption_b": "A child and two men are using nintendo wii remotes to play a game."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_020",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000057238.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A white refrigerator freezer sitting inside of a kitchen.",
+        "caption_b": "A white refrigerator freezer and a dishwasher are sitting inside of a kitchen."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_021",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000251065.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "The small bathroom has a toilet with a black seat.",
+        "caption_b": "The small bathroom has a toilet with a black seat and a towel rack."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_022",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000099054.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "An airplane is at an airport with yellow hoses by it.",
+        "caption_b": "An airplane and a helicopter are at an airport with yellow hoses by them."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_023",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000461405.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A herd of sheep walking across a lush green field.",
+        "caption_b": "A flock of birds and a herd of sheep are walking across a lush green field."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_024",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000483667.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A very sharp dressed man with a black top hat.",
+        "caption_b": "A very sharp dressed man with a black top hat and a poodle."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_025",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000314182.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "An assortment of crackers, dip and veggies sitting on a white counter.",
+        "caption_b": "An assortment of crackers, dip, veggies, and juice are sitting on a white counter."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_026",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000337498.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A large slice of pizza with cheese and marinara sauce on a plate.",
+        "caption_b": "A large slice of pizza with jalapenos, cheese, and marinara sauce on a plate."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_027",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000067180.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A woman sitting on a wooden bench on a wall.",
+        "caption_b": "A woman and a bird are sitting on a wooden bench on a wall."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_028",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000519764.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "a cat sitting in an office chair.",
+        "caption_b": "A cat sitting in an office chair with a lamp next to it."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_029",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000205776.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "A big brown bear asleep in a hammock.",
+        "caption_b": "A big brown bear asleep in a hammock with a pillow."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_030",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出负样本新增的错误对象/属性信息。",
+      "asset_ref": "SugarCrepe:000000560266.jpg",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "Two brown bears swimming together in the water.",
+        "caption_b": "Two brown bears swimming together in the water next to a canoe."
+      },
+      "answer_instruction": "选择一致描述，并填写错误类型。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "added_object"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "added_object"
+      },
+      "source_url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/main/data/add_obj.json",
+      "source_note": "SugarCrepe 官方 add_obj.json 条目。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_001",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:0_img0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "an old person kisses a young person",
+        "caption_b": "a young person kisses an old person"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_002",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:0_img1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "a young person kisses an old person",
+        "caption_b": "an old person kisses a young person"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_003",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:1_img0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the taller person hugs the shorter person",
+        "caption_b": "the shorter person hugs the taller person"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_004",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:1_img1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the shorter person hugs the taller person",
+        "caption_b": "the taller person hugs the shorter person"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_005",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:2_img0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the masked wrestler hits the unmasked wrestler",
+        "caption_b": "the unmasked wrestler hits the masked wrestler"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_006",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:2_img1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the unmasked wrestler hits the masked wrestler",
+        "caption_b": "the masked wrestler hits the unmasked wrestler"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_007",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:3_img0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "a person watches an animal",
+        "caption_b": "an animal watches a person"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_008",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:3_img1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "an animal watches a person",
+        "caption_b": "a person watches an animal"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_009",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:4_img0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the person without earrings pays the person with earrings",
+        "caption_b": "the person with earrings pays the person without earrings"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_010",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:4_img1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the person with earrings pays the person without earrings",
+        "caption_b": "the person without earrings pays the person with earrings"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_011",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:5_img0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_012",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:5_img1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "a snake eats a bird",
+        "caption_b": "a bird eats a snake"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_013",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:6_img0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "a plant was harmed by another organism, and that organism broke the plant into pieces",
+        "caption_b": "another organism was harmed by a plant, and that plant broke the organism into pieces"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_014",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:6_img1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "another organism was harmed by a plant, and that plant broke the organism into pieces",
+        "caption_b": "a plant was harmed by another organism, and that organism broke the plant into pieces"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_015",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:7_img0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "a bottle is in water",
+        "caption_b": "water is in a bottle"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_016",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:7_img1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "water is in a bottle",
+        "caption_b": "a bottle is in water"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_017",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:8_img0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "a tree smashed into a car",
+        "caption_b": "a car smashed into a tree"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_018",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:8_img1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "a car smashed into a tree",
+        "caption_b": "a tree smashed into a car"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_019",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:9_img0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "people fall on the leaves",
+        "caption_b": "the leaves fall on people"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_020",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:9_img1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the leaves fall on people",
+        "caption_b": "people fall on the leaves"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_021",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:10_img0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the sail rests below the water",
+        "caption_b": "the water rests below the sail"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_022",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:10_img1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the water rests below the sail",
+        "caption_b": "the sail rests below the water"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_023",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:11_img0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "there is a table below someone",
+        "caption_b": "there is someone below a table"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_024",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:11_img1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "there is someone below a table",
+        "caption_b": "there is a table below someone"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_025",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:12_img0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the image shows a computer on top of books",
+        "caption_b": "the image shows books on top of a computer"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_026",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:12_img1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the image shows books on top of a computer",
+        "caption_b": "the image shows a computer on top of books"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_027",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:28_img0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "a person walking in a field of yellow flowers with a red dress",
+        "caption_b": "a person walking in a field of red flowers with a yellow dress"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_028",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:28_img1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "a person walking in a field of red flowers with a yellow dress",
+        "caption_b": "a person walking in a field of yellow flowers with a red dress"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_029",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:29_img0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "a brown dog is on a white couch",
+        "caption_b": "a white dog is on a brown couch"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_030",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "根据图像判断主客体/关系方向正确的描述。",
+      "asset_ref": "Winoground:29_img1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "a white dog is on a brown couch",
+        "caption_b": "a brown dog is on a white couch"
+      },
+      "answer_instruction": "选择正确描述，重点判断关系方向。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "error_type": "relation_reversal"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "Winoground 公开 caption 对与对应图像。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_1_01",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door",
+        "relation_name": "to the left of",
+        "bbox": {
+          "x": 42,
+          "y": 0,
+          "w": 259,
+          "h": 354
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "to the left of",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_1_02",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the door is to the left of the man",
+        "caption_b": "the man is to the left of the door",
+        "relation_name": "to the left of",
+        "bbox": {
+          "x": 42,
+          "y": 0,
+          "w": 251,
+          "h": 354
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "to the left of",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_1_03",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_2",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the man is wearing the shirt",
+        "caption_b": "the shirt is wearing the man",
+        "relation_name": "wearing",
+        "bbox": {
+          "x": 133,
+          "y": 57,
+          "w": 168,
+          "h": 278
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "wearing",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_1_04",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_3",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the man is on the train car",
+        "caption_b": "the train car is on the man",
+        "relation_name": "on",
+        "bbox": {
+          "x": 8,
+          "y": 4,
+          "w": 366,
+          "h": 492
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "on",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_1_05",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_4",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the man is to the right of the door",
+        "caption_b": "the door is to the right of the man",
+        "relation_name": "to the right of",
+        "bbox": {
+          "x": 42,
+          "y": 0,
+          "w": 251,
+          "h": 354
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "to the right of",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_1_06",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_5",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the man is in the train car",
+        "caption_b": "the train car is in the man",
+        "relation_name": "in",
+        "bbox": {
+          "x": 8,
+          "y": 4,
+          "w": 366,
+          "h": 492
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "in",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_1_07",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_6",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the shirt is to the right of the door",
+        "caption_b": "the door is to the right of the shirt",
+        "relation_name": "to the right of",
+        "bbox": {
+          "x": 42,
+          "y": 0,
+          "w": 259,
+          "h": 354
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "to the right of",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_1_08",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_7",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the banana is on the plate",
+        "caption_b": "the plate is on the banana",
+        "relation_name": "on",
+        "bbox": {
+          "x": 37,
+          "y": 48,
+          "w": 320,
+          "h": 287
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "on",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_1_09",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_8",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the table is under the plate",
+        "caption_b": "the plate is under the table",
+        "relation_name": "under",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 499,
+          "h": 398
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "under",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_1_10",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset",
+      "question_type": "vl",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_9",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the table is below the plate",
+        "caption_b": "the plate is below the table",
+        "relation_name": "below",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 499,
+          "h": 398
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "below",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_2_01",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door",
+        "relation_name": "to the left of",
+        "bbox": {
+          "x": 42,
+          "y": 0,
+          "w": 259,
+          "h": 354
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "to the left of",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_2_02",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the door is to the left of the man",
+        "caption_b": "the man is to the left of the door",
+        "relation_name": "to the left of",
+        "bbox": {
+          "x": 42,
+          "y": 0,
+          "w": 251,
+          "h": 354
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "to the left of",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_2_03",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_2",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the man is wearing the shirt",
+        "caption_b": "the shirt is wearing the man",
+        "relation_name": "wearing",
+        "bbox": {
+          "x": 133,
+          "y": 57,
+          "w": 168,
+          "h": 278
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "wearing",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_2_04",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_3",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the man is on the train car",
+        "caption_b": "the train car is on the man",
+        "relation_name": "on",
+        "bbox": {
+          "x": 8,
+          "y": 4,
+          "w": 366,
+          "h": 492
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "on",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_2_05",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_4",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the man is to the right of the door",
+        "caption_b": "the door is to the right of the man",
+        "relation_name": "to the right of",
+        "bbox": {
+          "x": 42,
+          "y": 0,
+          "w": 251,
+          "h": 354
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "to the right of",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_2_06",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_5",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the man is in the train car",
+        "caption_b": "the train car is in the man",
+        "relation_name": "in",
+        "bbox": {
+          "x": 8,
+          "y": 4,
+          "w": 366,
+          "h": 492
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "in",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_2_07",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_6",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the shirt is to the right of the door",
+        "caption_b": "the door is to the right of the shirt",
+        "relation_name": "to the right of",
+        "bbox": {
+          "x": 42,
+          "y": 0,
+          "w": 259,
+          "h": 354
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "to the right of",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_2_08",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_7",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the banana is on the plate",
+        "caption_b": "the plate is on the banana",
+        "relation_name": "on",
+        "bbox": {
+          "x": 37,
+          "y": 48,
+          "w": 320,
+          "h": 287
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "on",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_2_09",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_8",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the table is under the plate",
+        "caption_b": "the plate is under the table",
+        "relation_name": "under",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 499,
+          "h": 398
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "under",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_2_10",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_9",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the table is below the plate",
+        "caption_b": "the plate is below the table",
+        "relation_name": "below",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 499,
+          "h": 398
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "below",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_3_01",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_0",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door",
+        "relation_name": "to the left of",
+        "bbox": {
+          "x": 42,
+          "y": 0,
+          "w": 259,
+          "h": 354
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "to the left of",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_3_02",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_1",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the door is to the left of the man",
+        "caption_b": "the man is to the left of the door",
+        "relation_name": "to the left of",
+        "bbox": {
+          "x": 42,
+          "y": 0,
+          "w": 251,
+          "h": 354
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "to the left of",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_3_03",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_2",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the man is wearing the shirt",
+        "caption_b": "the shirt is wearing the man",
+        "relation_name": "wearing",
+        "bbox": {
+          "x": 133,
+          "y": 57,
+          "w": 168,
+          "h": 278
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "wearing",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_3_04",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_3",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the man is on the train car",
+        "caption_b": "the train car is on the man",
+        "relation_name": "on",
+        "bbox": {
+          "x": 8,
+          "y": 4,
+          "w": 366,
+          "h": 492
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "on",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_3_05",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_4",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the man is to the right of the door",
+        "caption_b": "the door is to the right of the man",
+        "relation_name": "to the right of",
+        "bbox": {
+          "x": 42,
+          "y": 0,
+          "w": 251,
+          "h": 354
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "to the right of",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_3_06",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_5",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the man is in the train car",
+        "caption_b": "the train car is in the man",
+        "relation_name": "in",
+        "bbox": {
+          "x": 8,
+          "y": 4,
+          "w": 366,
+          "h": 492
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "in",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_3_07",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_6",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the shirt is to the right of the door",
+        "caption_b": "the door is to the right of the shirt",
+        "relation_name": "to the right of",
+        "bbox": {
+          "x": 42,
+          "y": 0,
+          "w": 259,
+          "h": 354
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "to the right of",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_3_08",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_7",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the banana is on the plate",
+        "caption_b": "the plate is on the banana",
+        "relation_name": "on",
+        "bbox": {
+          "x": 37,
+          "y": 48,
+          "w": 320,
+          "h": 287
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "on",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_3_09",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_8",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the table is under the plate",
+        "caption_b": "the plate is under the table",
+        "relation_name": "under",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 499,
+          "h": 398
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "under",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_3_10",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "vl",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间/动作关系是否与图像一致，并识别主客体交换错误。",
+      "asset_ref": "ARO-Visual-Relation:row_9",
+      "asset_binding_required": true,
+      "content": {
+        "caption_a": "the table is below the plate",
+        "caption_b": "the plate is below the table",
+        "relation_name": "below",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 499,
+          "h": 398
+        }
+      },
+      "answer_instruction": "选择正确描述并填写真实关系。",
+      "answer_example": {
+        "origin": "format_example",
+        "correct": "A",
+        "relation": "to the left of"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "relation": "below",
+        "error_type": "relation_reversal"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "ARO Visual Relation 公开关系样本；高阶任务为同一真实样本的训练焦点派生。",
+      "enabled": true
+    }
+  ]
+}
