@@ -1,0 +1,5844 @@
+{
+  "scene_id": "scene_02",
+  "scene_name": "电商客服对话文本敏感信息过滤",
+  "version": "real_complete_v1_90",
+  "question_count": 90,
+  "sample_policy": "优先使用公开数据集原生样本。为满足自适应学习中“同KP换新题复测”的题量要求，部分题目由真实公开数据集样本或任务plus中的真实数据集示例派生；所有派生题均显式标记 sample_origin=real_dataset_derived，不把派生样本冒充为数据集官方原始样本。",
+  "difficulty_rule": {
+    "1": "job / 岗位技能提升",
+    "2": "course / 课程学习巩固",
+    "3": "competition / 竞赛备赛",
+    "note": "difficulty 是本平台的岗-课-赛分流字段，不代表数据集官方难度。"
+  },
+  "kp_ids": [
+    "s2_recognition",
+    "s2_type",
+    "s2_boundary",
+    "s2_mask"
+  ],
+  "source_urls": [
+    "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+    "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+    "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy"
+  ],
+  "notes": [
+    "AI4Privacy 数据集中的 PII 为合成/模拟个人信息，适合教学与评测。",
+    "同一真实数据集样本可按岗/课/赛训练目标派生不同任务焦点。"
+  ],
+  "questions": [
+    {
+      "question_id": "s2_1_1_01",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Good Day Mrs. Bart, we've pinpointed a location 4062 Gusikowski Mills, Corabury, 90594-3651."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Mrs.",
+            "type": "PREFIX",
+            "start": 9,
+            "end": 13
+          },
+          {
+            "text": "Bart",
+            "type": "FIRSTNAME",
+            "start": 14,
+            "end": 18
+          },
+          {
+            "text": "4062 Gusikowski Mills",
+            "type": "STREETADDRESS",
+            "start": 48,
+            "end": 69
+          },
+          {
+            "text": "Corabury",
+            "type": "CITY",
+            "start": 71,
+            "end": 79
+          },
+          {
+            "text": "90594-3651",
+            "type": "ZIPCODE",
+            "start": 81,
+            "end": 91
+          }
+        ],
+        "masked_text": "Good Day [PREFIX] [FIRSTNAME], we've pinpointed a location [STREETADDRESS], [CITY], [ZIPCODE]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_1_02",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Lane, we have identified a user Kariane_Kilback83 with IP address 5f30:8dbb:c6aa:0bf8:64bb:9ff7:be50:cec5 who seems to be violating our online platform's security policies."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Lane",
+            "type": "FIRSTNAME",
+            "start": 0,
+            "end": 4
+          },
+          {
+            "text": "Kariane_Kilback83",
+            "type": "USERNAME",
+            "start": 32,
+            "end": 49
+          },
+          {
+            "text": "5f30:8dbb:c6aa:0bf8:64bb:9ff7:be50:cec5",
+            "type": "IPV6",
+            "start": 66,
+            "end": 105
+          }
+        ],
+        "masked_text": "[FIRSTNAME], we have identified a user [USERNAME] with IP address [IPV6] who seems to be violating our online platform's security policies."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_1_03",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "I need to consult with Cameron regarding a significant constitutional law case. We require an immediate arrangement for their input and expertise."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Cameron",
+            "type": "MIDDLENAME",
+            "start": 23,
+            "end": 30
+          }
+        ],
+        "masked_text": "I need to consult with [MIDDLENAME] regarding a significant constitutional law case. We require an immediate arrangement for their input and expertise."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_1_04",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Hello Mrs. Thiel, we are developing a fintech application that focuses on ease of transactions. Using your Product Markets Executive expertise and understanding of the market, could you share insights on the user experience of such an application? Consider factors like security, transaction speeds, and potential currency issues (consider our currency ؋)SM55U004184702427997792Y977 for any bank transfers involved in this research task."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Mrs.",
+            "type": "PREFIX",
+            "start": 6,
+            "end": 10
+          },
+          {
+            "text": "Thiel",
+            "type": "LASTNAME",
+            "start": 11,
+            "end": 16
+          },
+          {
+            "text": "Product Markets Executive",
+            "type": "JOBTITLE",
+            "start": 107,
+            "end": 132
+          },
+          {
+            "text": "؋",
+            "type": "CURRENCYSYMBOL",
+            "start": 353,
+            "end": 354
+          },
+          {
+            "text": "SM55U004184702427997792Y977",
+            "type": "IBAN",
+            "start": 355,
+            "end": 382
+          }
+        ],
+        "masked_text": "Hello [PREFIX] [LASTNAME], we are developing a fintech application that focuses on ease of transactions. Using your [JOBTITLE] expertise and understanding of the market, could you share insights on the user experience of such an application? Consider factors like security, transaction speeds, and potential currency issues (consider our currency [CURRENCYSYMBOL])[IBAN] for any bank transfers involved in this research task."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_1_05",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Please contact Meredith at 555-0187 regarding the account review."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Meredith",
+            "type": "FIRSTNAME",
+            "start": 15,
+            "end": 23
+          },
+          {
+            "text": "555-0187",
+            "type": "TELEPHONENUM",
+            "start": 27,
+            "end": 35
+          }
+        ],
+        "masked_text": "Please contact [FIRSTNAME] at [TELEPHONENUM] regarding the account review."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_1_06",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Good Day Mrs. Bart, we've pinpointed a location 4062 Gusikowski Mills, Corabury, 90594-3651."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Mrs.",
+            "type": "PREFIX",
+            "start": 9,
+            "end": 13
+          },
+          {
+            "text": "Bart",
+            "type": "FIRSTNAME",
+            "start": 14,
+            "end": 18
+          },
+          {
+            "text": "4062 Gusikowski Mills",
+            "type": "STREETADDRESS",
+            "start": 48,
+            "end": 69
+          },
+          {
+            "text": "Corabury",
+            "type": "CITY",
+            "start": 71,
+            "end": 79
+          },
+          {
+            "text": "90594-3651",
+            "type": "ZIPCODE",
+            "start": 81,
+            "end": 91
+          }
+        ],
+        "masked_text": "Good Day [PREFIX] [FIRSTNAME], we've pinpointed a location [STREETADDRESS], [CITY], [ZIPCODE]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_1_07",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Lane, we have identified a user Kariane_Kilback83 with IP address 5f30:8dbb:c6aa:0bf8:64bb:9ff7:be50:cec5 who seems to be violating our online platform's security policies."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Lane",
+            "type": "FIRSTNAME",
+            "start": 0,
+            "end": 4
+          },
+          {
+            "text": "Kariane_Kilback83",
+            "type": "USERNAME",
+            "start": 32,
+            "end": 49
+          },
+          {
+            "text": "5f30:8dbb:c6aa:0bf8:64bb:9ff7:be50:cec5",
+            "type": "IPV6",
+            "start": 66,
+            "end": 105
+          }
+        ],
+        "masked_text": "[FIRSTNAME], we have identified a user [USERNAME] with IP address [IPV6] who seems to be violating our online platform's security policies."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_1_08",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "I need to consult with Cameron regarding a significant constitutional law case. We require an immediate arrangement for their input and expertise."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Cameron",
+            "type": "MIDDLENAME",
+            "start": 23,
+            "end": 30
+          }
+        ],
+        "masked_text": "I need to consult with [MIDDLENAME] regarding a significant constitutional law case. We require an immediate arrangement for their input and expertise."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_1_09",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Hello Mrs. Thiel, we are developing a fintech application that focuses on ease of transactions. Using your Product Markets Executive expertise and understanding of the market, could you share insights on the user experience of such an application? Consider factors like security, transaction speeds, and potential currency issues (consider our currency ؋)SM55U004184702427997792Y977 for any bank transfers involved in this research task."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Mrs.",
+            "type": "PREFIX",
+            "start": 6,
+            "end": 10
+          },
+          {
+            "text": "Thiel",
+            "type": "LASTNAME",
+            "start": 11,
+            "end": 16
+          },
+          {
+            "text": "Product Markets Executive",
+            "type": "JOBTITLE",
+            "start": 107,
+            "end": 132
+          },
+          {
+            "text": "؋",
+            "type": "CURRENCYSYMBOL",
+            "start": 353,
+            "end": 354
+          },
+          {
+            "text": "SM55U004184702427997792Y977",
+            "type": "IBAN",
+            "start": 355,
+            "end": 382
+          }
+        ],
+        "masked_text": "Hello [PREFIX] [LASTNAME], we are developing a fintech application that focuses on ease of transactions. Using your [JOBTITLE] expertise and understanding of the market, could you share insights on the user experience of such an application? Consider factors like security, transaction speeds, and potential currency issues (consider our currency [CURRENCYSYMBOL])[IBAN] for any bank transfers involved in this research task."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_1_10",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Please contact Meredith at 555-0187 regarding the account review."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Meredith",
+            "type": "FIRSTNAME",
+            "start": 15,
+            "end": 23
+          },
+          {
+            "text": "555-0187",
+            "type": "TELEPHONENUM",
+            "start": 27,
+            "end": 35
+          }
+        ],
+        "masked_text": "Please contact [FIRSTNAME] at [TELEPHONENUM] regarding the account review."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_2_01",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Good Day Mrs. Bart, we've pinpointed a location 4062 Gusikowski Mills, Corabury, 90594-3651."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Mrs.",
+            "type": "PREFIX",
+            "start": 9,
+            "end": 13
+          },
+          {
+            "text": "Bart",
+            "type": "FIRSTNAME",
+            "start": 14,
+            "end": 18
+          },
+          {
+            "text": "4062 Gusikowski Mills",
+            "type": "STREETADDRESS",
+            "start": 48,
+            "end": 69
+          },
+          {
+            "text": "Corabury",
+            "type": "CITY",
+            "start": 71,
+            "end": 79
+          },
+          {
+            "text": "90594-3651",
+            "type": "ZIPCODE",
+            "start": 81,
+            "end": 91
+          }
+        ],
+        "masked_text": "Good Day [PREFIX] [FIRSTNAME], we've pinpointed a location [STREETADDRESS], [CITY], [ZIPCODE]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_2_02",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Lane, we have identified a user Kariane_Kilback83 with IP address 5f30:8dbb:c6aa:0bf8:64bb:9ff7:be50:cec5 who seems to be violating our online platform's security policies."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Lane",
+            "type": "FIRSTNAME",
+            "start": 0,
+            "end": 4
+          },
+          {
+            "text": "Kariane_Kilback83",
+            "type": "USERNAME",
+            "start": 32,
+            "end": 49
+          },
+          {
+            "text": "5f30:8dbb:c6aa:0bf8:64bb:9ff7:be50:cec5",
+            "type": "IPV6",
+            "start": 66,
+            "end": 105
+          }
+        ],
+        "masked_text": "[FIRSTNAME], we have identified a user [USERNAME] with IP address [IPV6] who seems to be violating our online platform's security policies."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_2_03",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "I need to consult with Cameron regarding a significant constitutional law case. We require an immediate arrangement for their input and expertise."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Cameron",
+            "type": "MIDDLENAME",
+            "start": 23,
+            "end": 30
+          }
+        ],
+        "masked_text": "I need to consult with [MIDDLENAME] regarding a significant constitutional law case. We require an immediate arrangement for their input and expertise."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_2_04",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Hello Mrs. Thiel, we are developing a fintech application that focuses on ease of transactions. Using your Product Markets Executive expertise and understanding of the market, could you share insights on the user experience of such an application? Consider factors like security, transaction speeds, and potential currency issues (consider our currency ؋)SM55U004184702427997792Y977 for any bank transfers involved in this research task."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Mrs.",
+            "type": "PREFIX",
+            "start": 6,
+            "end": 10
+          },
+          {
+            "text": "Thiel",
+            "type": "LASTNAME",
+            "start": 11,
+            "end": 16
+          },
+          {
+            "text": "Product Markets Executive",
+            "type": "JOBTITLE",
+            "start": 107,
+            "end": 132
+          },
+          {
+            "text": "؋",
+            "type": "CURRENCYSYMBOL",
+            "start": 353,
+            "end": 354
+          },
+          {
+            "text": "SM55U004184702427997792Y977",
+            "type": "IBAN",
+            "start": 355,
+            "end": 382
+          }
+        ],
+        "masked_text": "Hello [PREFIX] [LASTNAME], we are developing a fintech application that focuses on ease of transactions. Using your [JOBTITLE] expertise and understanding of the market, could you share insights on the user experience of such an application? Consider factors like security, transaction speeds, and potential currency issues (consider our currency [CURRENCYSYMBOL])[IBAN] for any bank transfers involved in this research task."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_2_05",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Please contact Meredith at 555-0187 regarding the account review."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Meredith",
+            "type": "FIRSTNAME",
+            "start": 15,
+            "end": 23
+          },
+          {
+            "text": "555-0187",
+            "type": "TELEPHONENUM",
+            "start": 27,
+            "end": 35
+          }
+        ],
+        "masked_text": "Please contact [FIRSTNAME] at [TELEPHONENUM] regarding the account review."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_2_06",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Good Day Mrs. Bart, we've pinpointed a location 4062 Gusikowski Mills, Corabury, 90594-3651."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Mrs.",
+            "type": "PREFIX",
+            "start": 9,
+            "end": 13
+          },
+          {
+            "text": "Bart",
+            "type": "FIRSTNAME",
+            "start": 14,
+            "end": 18
+          },
+          {
+            "text": "4062 Gusikowski Mills",
+            "type": "STREETADDRESS",
+            "start": 48,
+            "end": 69
+          },
+          {
+            "text": "Corabury",
+            "type": "CITY",
+            "start": 71,
+            "end": 79
+          },
+          {
+            "text": "90594-3651",
+            "type": "ZIPCODE",
+            "start": 81,
+            "end": 91
+          }
+        ],
+        "masked_text": "Good Day [PREFIX] [FIRSTNAME], we've pinpointed a location [STREETADDRESS], [CITY], [ZIPCODE]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_2_07",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Lane, we have identified a user Kariane_Kilback83 with IP address 5f30:8dbb:c6aa:0bf8:64bb:9ff7:be50:cec5 who seems to be violating our online platform's security policies."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Lane",
+            "type": "FIRSTNAME",
+            "start": 0,
+            "end": 4
+          },
+          {
+            "text": "Kariane_Kilback83",
+            "type": "USERNAME",
+            "start": 32,
+            "end": 49
+          },
+          {
+            "text": "5f30:8dbb:c6aa:0bf8:64bb:9ff7:be50:cec5",
+            "type": "IPV6",
+            "start": 66,
+            "end": 105
+          }
+        ],
+        "masked_text": "[FIRSTNAME], we have identified a user [USERNAME] with IP address [IPV6] who seems to be violating our online platform's security policies."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_2_08",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "I need to consult with Cameron regarding a significant constitutional law case. We require an immediate arrangement for their input and expertise."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Cameron",
+            "type": "MIDDLENAME",
+            "start": 23,
+            "end": 30
+          }
+        ],
+        "masked_text": "I need to consult with [MIDDLENAME] regarding a significant constitutional law case. We require an immediate arrangement for their input and expertise."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_2_09",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Hello Mrs. Thiel, we are developing a fintech application that focuses on ease of transactions. Using your Product Markets Executive expertise and understanding of the market, could you share insights on the user experience of such an application? Consider factors like security, transaction speeds, and potential currency issues (consider our currency ؋)SM55U004184702427997792Y977 for any bank transfers involved in this research task."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Mrs.",
+            "type": "PREFIX",
+            "start": 6,
+            "end": 10
+          },
+          {
+            "text": "Thiel",
+            "type": "LASTNAME",
+            "start": 11,
+            "end": 16
+          },
+          {
+            "text": "Product Markets Executive",
+            "type": "JOBTITLE",
+            "start": 107,
+            "end": 132
+          },
+          {
+            "text": "؋",
+            "type": "CURRENCYSYMBOL",
+            "start": 353,
+            "end": 354
+          },
+          {
+            "text": "SM55U004184702427997792Y977",
+            "type": "IBAN",
+            "start": 355,
+            "end": 382
+          }
+        ],
+        "masked_text": "Hello [PREFIX] [LASTNAME], we are developing a fintech application that focuses on ease of transactions. Using your [JOBTITLE] expertise and understanding of the market, could you share insights on the user experience of such an application? Consider factors like security, transaction speeds, and potential currency issues (consider our currency [CURRENCYSYMBOL])[IBAN] for any bank transfers involved in this research task."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_2_10",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Please contact Meredith at 555-0187 regarding the account review."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Meredith",
+            "type": "FIRSTNAME",
+            "start": 15,
+            "end": 23
+          },
+          {
+            "text": "555-0187",
+            "type": "TELEPHONENUM",
+            "start": 27,
+            "end": 35
+          }
+        ],
+        "masked_text": "Please contact [FIRSTNAME] at [TELEPHONENUM] regarding the account review."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_3_01",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Good Day Mrs. Bart, we've pinpointed a location 4062 Gusikowski Mills, Corabury, 90594-3651."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Mrs.",
+            "type": "PREFIX",
+            "start": 9,
+            "end": 13
+          },
+          {
+            "text": "Bart",
+            "type": "FIRSTNAME",
+            "start": 14,
+            "end": 18
+          },
+          {
+            "text": "4062 Gusikowski Mills",
+            "type": "STREETADDRESS",
+            "start": 48,
+            "end": 69
+          },
+          {
+            "text": "Corabury",
+            "type": "CITY",
+            "start": 71,
+            "end": 79
+          },
+          {
+            "text": "90594-3651",
+            "type": "ZIPCODE",
+            "start": 81,
+            "end": 91
+          }
+        ],
+        "masked_text": "Good Day [PREFIX] [FIRSTNAME], we've pinpointed a location [STREETADDRESS], [CITY], [ZIPCODE]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_3_02",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Lane, we have identified a user Kariane_Kilback83 with IP address 5f30:8dbb:c6aa:0bf8:64bb:9ff7:be50:cec5 who seems to be violating our online platform's security policies."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Lane",
+            "type": "FIRSTNAME",
+            "start": 0,
+            "end": 4
+          },
+          {
+            "text": "Kariane_Kilback83",
+            "type": "USERNAME",
+            "start": 32,
+            "end": 49
+          },
+          {
+            "text": "5f30:8dbb:c6aa:0bf8:64bb:9ff7:be50:cec5",
+            "type": "IPV6",
+            "start": 66,
+            "end": 105
+          }
+        ],
+        "masked_text": "[FIRSTNAME], we have identified a user [USERNAME] with IP address [IPV6] who seems to be violating our online platform's security policies."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_3_03",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "I need to consult with Cameron regarding a significant constitutional law case. We require an immediate arrangement for their input and expertise."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Cameron",
+            "type": "MIDDLENAME",
+            "start": 23,
+            "end": 30
+          }
+        ],
+        "masked_text": "I need to consult with [MIDDLENAME] regarding a significant constitutional law case. We require an immediate arrangement for their input and expertise."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_3_04",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Hello Mrs. Thiel, we are developing a fintech application that focuses on ease of transactions. Using your Product Markets Executive expertise and understanding of the market, could you share insights on the user experience of such an application? Consider factors like security, transaction speeds, and potential currency issues (consider our currency ؋)SM55U004184702427997792Y977 for any bank transfers involved in this research task."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Mrs.",
+            "type": "PREFIX",
+            "start": 6,
+            "end": 10
+          },
+          {
+            "text": "Thiel",
+            "type": "LASTNAME",
+            "start": 11,
+            "end": 16
+          },
+          {
+            "text": "Product Markets Executive",
+            "type": "JOBTITLE",
+            "start": 107,
+            "end": 132
+          },
+          {
+            "text": "؋",
+            "type": "CURRENCYSYMBOL",
+            "start": 353,
+            "end": 354
+          },
+          {
+            "text": "SM55U004184702427997792Y977",
+            "type": "IBAN",
+            "start": 355,
+            "end": 382
+          }
+        ],
+        "masked_text": "Hello [PREFIX] [LASTNAME], we are developing a fintech application that focuses on ease of transactions. Using your [JOBTITLE] expertise and understanding of the market, could you share insights on the user experience of such an application? Consider factors like security, transaction speeds, and potential currency issues (consider our currency [CURRENCYSYMBOL])[IBAN] for any bank transfers involved in this research task."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_3_05",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Please contact Meredith at 555-0187 regarding the account review."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Meredith",
+            "type": "FIRSTNAME",
+            "start": 15,
+            "end": 23
+          },
+          {
+            "text": "555-0187",
+            "type": "TELEPHONENUM",
+            "start": 27,
+            "end": 35
+          }
+        ],
+        "masked_text": "Please contact [FIRSTNAME] at [TELEPHONENUM] regarding the account review."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_3_06",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Good Day Mrs. Bart, we've pinpointed a location 4062 Gusikowski Mills, Corabury, 90594-3651."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Mrs.",
+            "type": "PREFIX",
+            "start": 9,
+            "end": 13
+          },
+          {
+            "text": "Bart",
+            "type": "FIRSTNAME",
+            "start": 14,
+            "end": 18
+          },
+          {
+            "text": "4062 Gusikowski Mills",
+            "type": "STREETADDRESS",
+            "start": 48,
+            "end": 69
+          },
+          {
+            "text": "Corabury",
+            "type": "CITY",
+            "start": 71,
+            "end": 79
+          },
+          {
+            "text": "90594-3651",
+            "type": "ZIPCODE",
+            "start": 81,
+            "end": 91
+          }
+        ],
+        "masked_text": "Good Day [PREFIX] [FIRSTNAME], we've pinpointed a location [STREETADDRESS], [CITY], [ZIPCODE]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_3_07",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Lane, we have identified a user Kariane_Kilback83 with IP address 5f30:8dbb:c6aa:0bf8:64bb:9ff7:be50:cec5 who seems to be violating our online platform's security policies."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Lane",
+            "type": "FIRSTNAME",
+            "start": 0,
+            "end": 4
+          },
+          {
+            "text": "Kariane_Kilback83",
+            "type": "USERNAME",
+            "start": 32,
+            "end": 49
+          },
+          {
+            "text": "5f30:8dbb:c6aa:0bf8:64bb:9ff7:be50:cec5",
+            "type": "IPV6",
+            "start": 66,
+            "end": 105
+          }
+        ],
+        "masked_text": "[FIRSTNAME], we have identified a user [USERNAME] with IP address [IPV6] who seems to be violating our online platform's security policies."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_3_08",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "I need to consult with Cameron regarding a significant constitutional law case. We require an immediate arrangement for their input and expertise."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Cameron",
+            "type": "MIDDLENAME",
+            "start": 23,
+            "end": 30
+          }
+        ],
+        "masked_text": "I need to consult with [MIDDLENAME] regarding a significant constitutional law case. We require an immediate arrangement for their input and expertise."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_3_09",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Hello Mrs. Thiel, we are developing a fintech application that focuses on ease of transactions. Using your Product Markets Executive expertise and understanding of the market, could you share insights on the user experience of such an application? Consider factors like security, transaction speeds, and potential currency issues (consider our currency ؋)SM55U004184702427997792Y977 for any bank transfers involved in this research task."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Mrs.",
+            "type": "PREFIX",
+            "start": 6,
+            "end": 10
+          },
+          {
+            "text": "Thiel",
+            "type": "LASTNAME",
+            "start": 11,
+            "end": 16
+          },
+          {
+            "text": "Product Markets Executive",
+            "type": "JOBTITLE",
+            "start": 107,
+            "end": 132
+          },
+          {
+            "text": "؋",
+            "type": "CURRENCYSYMBOL",
+            "start": 353,
+            "end": 354
+          },
+          {
+            "text": "SM55U004184702427997792Y977",
+            "type": "IBAN",
+            "start": 355,
+            "end": 382
+          }
+        ],
+        "masked_text": "Hello [PREFIX] [LASTNAME], we are developing a fintech application that focuses on ease of transactions. Using your [JOBTITLE] expertise and understanding of the market, could you share insights on the user experience of such an application? Consider factors like security, transaction speeds, and potential currency issues (consider our currency [CURRENCYSYMBOL])[IBAN] for any bank transfers involved in this research task."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_1_3_10",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 65K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Please contact Meredith at 555-0187 regarding the account review."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Meredith",
+            "type": "FIRSTNAME",
+            "start": 15,
+            "end": 23
+          },
+          {
+            "text": "555-0187",
+            "type": "TELEPHONENUM",
+            "start": 27,
+            "end": 35
+          }
+        ],
+        "masked_text": "Please contact [FIRSTNAME] at [TELEPHONENUM] regarding the account review."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-65k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_1_01",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Subject: Group Messaging for Admissions Process - wynqvrh053 - Meeting at 10:20am - luka.burg - Meeting at 21 - qahil.wittauer - Meeting at quarter past 13 - gholamhossein.ruschke - Meeting at 9:47 PM - pdmjrsyoz1460"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "wynqvrh053",
+            "type": "USERNAME",
+            "start": 50,
+            "end": 60
+          },
+          {
+            "text": "10:20am",
+            "type": "TIME",
+            "start": 74,
+            "end": 81
+          },
+          {
+            "text": "luka.burg",
+            "type": "USERNAME",
+            "start": 84,
+            "end": 93
+          },
+          {
+            "text": "21",
+            "type": "TIME",
+            "start": 107,
+            "end": 109
+          },
+          {
+            "text": "qahil.wittauer",
+            "type": "USERNAME",
+            "start": 112,
+            "end": 126
+          },
+          {
+            "text": "quarter past 13",
+            "type": "TIME",
+            "start": 140,
+            "end": 155
+          },
+          {
+            "text": "gholamhossein.ruschke",
+            "type": "USERNAME",
+            "start": 158,
+            "end": 179
+          },
+          {
+            "text": "9:47 PM",
+            "type": "TIME",
+            "start": 193,
+            "end": 200
+          },
+          {
+            "text": "pdmjrsyoz1460",
+            "type": "USERNAME",
+            "start": 203,
+            "end": 216
+          }
+        ],
+        "masked_text": "Subject: Group Messaging for Admissions Process - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_1_02",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Meeting at 2:33 PM - N23 - Meeting at 11:29pm - wennmann27 - Meeting at 4:45 PM"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "2:33 PM",
+            "type": "TIME",
+            "start": 11,
+            "end": 18
+          },
+          {
+            "text": "N23",
+            "type": "USERNAME",
+            "start": 21,
+            "end": 24
+          },
+          {
+            "text": "11:29pm",
+            "type": "TIME",
+            "start": 38,
+            "end": 45
+          },
+          {
+            "text": "wennmann27",
+            "type": "USERNAME",
+            "start": 48,
+            "end": 58
+          },
+          {
+            "text": "4:45 PM",
+            "type": "TIME",
+            "start": 72,
+            "end": 79
+          }
+        ],
+        "masked_text": "Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_1_03",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Subject: Admission Notification - Great Britain University. Date of Notification: 5:24am on August 5th, 2057. Applicant: Balloi Eckrich."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "5:24am",
+            "type": "TIME",
+            "start": 82,
+            "end": 88
+          },
+          {
+            "text": "August 5th, 2057",
+            "type": "DATE",
+            "start": 92,
+            "end": 108
+          },
+          {
+            "text": "Balloi",
+            "type": "LASTNAME1",
+            "start": 121,
+            "end": 127
+          },
+          {
+            "text": "Eckrich",
+            "type": "LASTNAME2",
+            "start": 128,
+            "end": 135
+          }
+        ],
+        "masked_text": "Subject: Admission Notification - Great Britain University. Date of Notification: [TIME] on [DATE]. Applicant: [LASTNAME1] [LASTNAME2]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_1_04",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Card: KB90324ER Country: GB Building: 163 Street: Conygre Grove City: Bristol State: ENG Postcode: BS34 7HU, BS34 7HZ"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "KB90324ER",
+            "type": "IDCARD",
+            "start": 6,
+            "end": 15
+          },
+          {
+            "text": "GB",
+            "type": "COUNTRY",
+            "start": 25,
+            "end": 27
+          },
+          {
+            "text": "163",
+            "type": "BUILDING",
+            "start": 38,
+            "end": 41
+          },
+          {
+            "text": "Conygre Grove",
+            "type": "STREET",
+            "start": 50,
+            "end": 63
+          },
+          {
+            "text": "Bristol",
+            "type": "CITY",
+            "start": 70,
+            "end": 77
+          },
+          {
+            "text": "ENG",
+            "type": "STATE",
+            "start": 85,
+            "end": 88
+          },
+          {
+            "text": "BS34 7HU, BS34 7HZ",
+            "type": "POSTCODE",
+            "start": 99,
+            "end": 117
+          }
+        ],
+        "masked_text": "Card: [IDCARD] Country: [COUNTRY] Building: [BUILDING] Street: [STREET] City: [CITY] State: [STATE] Postcode: [POSTCODE]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_1_05",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Social Security Number: 554.575.9355 - Email: vtpkbqcutaxb799@yahoo.com - Telephone: +1322380 4181 Applicant B: - Passport: 933932951 - Driver's License: LOUMA.657200.9.504"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "554.575.9355",
+            "type": "SOCIALNUMBER",
+            "start": 24,
+            "end": 36
+          },
+          {
+            "text": "vtpkbqcutaxb799@yahoo.com",
+            "type": "EMAIL",
+            "start": 46,
+            "end": 71
+          },
+          {
+            "text": "+1322380 4181",
+            "type": "TEL",
+            "start": 85,
+            "end": 98
+          },
+          {
+            "text": "933932951",
+            "type": "PASSPORT",
+            "start": 124,
+            "end": 133
+          },
+          {
+            "text": "LOUMA.657200.9.504",
+            "type": "DRIVERLICENSE",
+            "start": 154,
+            "end": 172
+          }
+        ],
+        "masked_text": "Social Security Number: [SOCIALNUMBER] - Email: [EMAIL] - Telephone: [TEL] Applicant B: - Passport: [PASSPORT] - Driver's License: [DRIVERLICENSE]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_1_06",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Subject: Group Messaging for Admissions Process - wynqvrh053 - Meeting at 10:20am - luka.burg - Meeting at 21 - qahil.wittauer - Meeting at quarter past 13 - gholamhossein.ruschke - Meeting at 9:47 PM - pdmjrsyoz1460"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "wynqvrh053",
+            "type": "USERNAME",
+            "start": 50,
+            "end": 60
+          },
+          {
+            "text": "10:20am",
+            "type": "TIME",
+            "start": 74,
+            "end": 81
+          },
+          {
+            "text": "luka.burg",
+            "type": "USERNAME",
+            "start": 84,
+            "end": 93
+          },
+          {
+            "text": "21",
+            "type": "TIME",
+            "start": 107,
+            "end": 109
+          },
+          {
+            "text": "qahil.wittauer",
+            "type": "USERNAME",
+            "start": 112,
+            "end": 126
+          },
+          {
+            "text": "quarter past 13",
+            "type": "TIME",
+            "start": 140,
+            "end": 155
+          },
+          {
+            "text": "gholamhossein.ruschke",
+            "type": "USERNAME",
+            "start": 158,
+            "end": 179
+          },
+          {
+            "text": "9:47 PM",
+            "type": "TIME",
+            "start": 193,
+            "end": 200
+          },
+          {
+            "text": "pdmjrsyoz1460",
+            "type": "USERNAME",
+            "start": 203,
+            "end": 216
+          }
+        ],
+        "masked_text": "Subject: Group Messaging for Admissions Process - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_1_07",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Meeting at 2:33 PM - N23 - Meeting at 11:29pm - wennmann27 - Meeting at 4:45 PM"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "2:33 PM",
+            "type": "TIME",
+            "start": 11,
+            "end": 18
+          },
+          {
+            "text": "N23",
+            "type": "USERNAME",
+            "start": 21,
+            "end": 24
+          },
+          {
+            "text": "11:29pm",
+            "type": "TIME",
+            "start": 38,
+            "end": 45
+          },
+          {
+            "text": "wennmann27",
+            "type": "USERNAME",
+            "start": 48,
+            "end": 58
+          },
+          {
+            "text": "4:45 PM",
+            "type": "TIME",
+            "start": 72,
+            "end": 79
+          }
+        ],
+        "masked_text": "Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_1_08",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Subject: Admission Notification - Great Britain University. Date of Notification: 5:24am on August 5th, 2057. Applicant: Balloi Eckrich."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "5:24am",
+            "type": "TIME",
+            "start": 82,
+            "end": 88
+          },
+          {
+            "text": "August 5th, 2057",
+            "type": "DATE",
+            "start": 92,
+            "end": 108
+          },
+          {
+            "text": "Balloi",
+            "type": "LASTNAME1",
+            "start": 121,
+            "end": 127
+          },
+          {
+            "text": "Eckrich",
+            "type": "LASTNAME2",
+            "start": 128,
+            "end": 135
+          }
+        ],
+        "masked_text": "Subject: Admission Notification - Great Britain University. Date of Notification: [TIME] on [DATE]. Applicant: [LASTNAME1] [LASTNAME2]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_1_09",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Card: KB90324ER Country: GB Building: 163 Street: Conygre Grove City: Bristol State: ENG Postcode: BS34 7HU, BS34 7HZ"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "KB90324ER",
+            "type": "IDCARD",
+            "start": 6,
+            "end": 15
+          },
+          {
+            "text": "GB",
+            "type": "COUNTRY",
+            "start": 25,
+            "end": 27
+          },
+          {
+            "text": "163",
+            "type": "BUILDING",
+            "start": 38,
+            "end": 41
+          },
+          {
+            "text": "Conygre Grove",
+            "type": "STREET",
+            "start": 50,
+            "end": 63
+          },
+          {
+            "text": "Bristol",
+            "type": "CITY",
+            "start": 70,
+            "end": 77
+          },
+          {
+            "text": "ENG",
+            "type": "STATE",
+            "start": 85,
+            "end": 88
+          },
+          {
+            "text": "BS34 7HU, BS34 7HZ",
+            "type": "POSTCODE",
+            "start": 99,
+            "end": 117
+          }
+        ],
+        "masked_text": "Card: [IDCARD] Country: [COUNTRY] Building: [BUILDING] Street: [STREET] City: [CITY] State: [STATE] Postcode: [POSTCODE]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_1_10",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Social Security Number: 554.575.9355 - Email: vtpkbqcutaxb799@yahoo.com - Telephone: +1322380 4181 Applicant B: - Passport: 933932951 - Driver's License: LOUMA.657200.9.504"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "554.575.9355",
+            "type": "SOCIALNUMBER",
+            "start": 24,
+            "end": 36
+          },
+          {
+            "text": "vtpkbqcutaxb799@yahoo.com",
+            "type": "EMAIL",
+            "start": 46,
+            "end": 71
+          },
+          {
+            "text": "+1322380 4181",
+            "type": "TEL",
+            "start": 85,
+            "end": 98
+          },
+          {
+            "text": "933932951",
+            "type": "PASSPORT",
+            "start": 124,
+            "end": 133
+          },
+          {
+            "text": "LOUMA.657200.9.504",
+            "type": "DRIVERLICENSE",
+            "start": 154,
+            "end": 172
+          }
+        ],
+        "masked_text": "Social Security Number: [SOCIALNUMBER] - Email: [EMAIL] - Telephone: [TEL] Applicant B: - Passport: [PASSPORT] - Driver's License: [DRIVERLICENSE]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_2_01",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Subject: Group Messaging for Admissions Process - wynqvrh053 - Meeting at 10:20am - luka.burg - Meeting at 21 - qahil.wittauer - Meeting at quarter past 13 - gholamhossein.ruschke - Meeting at 9:47 PM - pdmjrsyoz1460"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "wynqvrh053",
+            "type": "USERNAME",
+            "start": 50,
+            "end": 60
+          },
+          {
+            "text": "10:20am",
+            "type": "TIME",
+            "start": 74,
+            "end": 81
+          },
+          {
+            "text": "luka.burg",
+            "type": "USERNAME",
+            "start": 84,
+            "end": 93
+          },
+          {
+            "text": "21",
+            "type": "TIME",
+            "start": 107,
+            "end": 109
+          },
+          {
+            "text": "qahil.wittauer",
+            "type": "USERNAME",
+            "start": 112,
+            "end": 126
+          },
+          {
+            "text": "quarter past 13",
+            "type": "TIME",
+            "start": 140,
+            "end": 155
+          },
+          {
+            "text": "gholamhossein.ruschke",
+            "type": "USERNAME",
+            "start": 158,
+            "end": 179
+          },
+          {
+            "text": "9:47 PM",
+            "type": "TIME",
+            "start": 193,
+            "end": 200
+          },
+          {
+            "text": "pdmjrsyoz1460",
+            "type": "USERNAME",
+            "start": 203,
+            "end": 216
+          }
+        ],
+        "masked_text": "Subject: Group Messaging for Admissions Process - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_2_02",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Meeting at 2:33 PM - N23 - Meeting at 11:29pm - wennmann27 - Meeting at 4:45 PM"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "2:33 PM",
+            "type": "TIME",
+            "start": 11,
+            "end": 18
+          },
+          {
+            "text": "N23",
+            "type": "USERNAME",
+            "start": 21,
+            "end": 24
+          },
+          {
+            "text": "11:29pm",
+            "type": "TIME",
+            "start": 38,
+            "end": 45
+          },
+          {
+            "text": "wennmann27",
+            "type": "USERNAME",
+            "start": 48,
+            "end": 58
+          },
+          {
+            "text": "4:45 PM",
+            "type": "TIME",
+            "start": 72,
+            "end": 79
+          }
+        ],
+        "masked_text": "Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_2_03",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Subject: Admission Notification - Great Britain University. Date of Notification: 5:24am on August 5th, 2057. Applicant: Balloi Eckrich."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "5:24am",
+            "type": "TIME",
+            "start": 82,
+            "end": 88
+          },
+          {
+            "text": "August 5th, 2057",
+            "type": "DATE",
+            "start": 92,
+            "end": 108
+          },
+          {
+            "text": "Balloi",
+            "type": "LASTNAME1",
+            "start": 121,
+            "end": 127
+          },
+          {
+            "text": "Eckrich",
+            "type": "LASTNAME2",
+            "start": 128,
+            "end": 135
+          }
+        ],
+        "masked_text": "Subject: Admission Notification - Great Britain University. Date of Notification: [TIME] on [DATE]. Applicant: [LASTNAME1] [LASTNAME2]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_2_04",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Card: KB90324ER Country: GB Building: 163 Street: Conygre Grove City: Bristol State: ENG Postcode: BS34 7HU, BS34 7HZ"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "KB90324ER",
+            "type": "IDCARD",
+            "start": 6,
+            "end": 15
+          },
+          {
+            "text": "GB",
+            "type": "COUNTRY",
+            "start": 25,
+            "end": 27
+          },
+          {
+            "text": "163",
+            "type": "BUILDING",
+            "start": 38,
+            "end": 41
+          },
+          {
+            "text": "Conygre Grove",
+            "type": "STREET",
+            "start": 50,
+            "end": 63
+          },
+          {
+            "text": "Bristol",
+            "type": "CITY",
+            "start": 70,
+            "end": 77
+          },
+          {
+            "text": "ENG",
+            "type": "STATE",
+            "start": 85,
+            "end": 88
+          },
+          {
+            "text": "BS34 7HU, BS34 7HZ",
+            "type": "POSTCODE",
+            "start": 99,
+            "end": 117
+          }
+        ],
+        "masked_text": "Card: [IDCARD] Country: [COUNTRY] Building: [BUILDING] Street: [STREET] City: [CITY] State: [STATE] Postcode: [POSTCODE]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_2_05",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Social Security Number: 554.575.9355 - Email: vtpkbqcutaxb799@yahoo.com - Telephone: +1322380 4181 Applicant B: - Passport: 933932951 - Driver's License: LOUMA.657200.9.504"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "554.575.9355",
+            "type": "SOCIALNUMBER",
+            "start": 24,
+            "end": 36
+          },
+          {
+            "text": "vtpkbqcutaxb799@yahoo.com",
+            "type": "EMAIL",
+            "start": 46,
+            "end": 71
+          },
+          {
+            "text": "+1322380 4181",
+            "type": "TEL",
+            "start": 85,
+            "end": 98
+          },
+          {
+            "text": "933932951",
+            "type": "PASSPORT",
+            "start": 124,
+            "end": 133
+          },
+          {
+            "text": "LOUMA.657200.9.504",
+            "type": "DRIVERLICENSE",
+            "start": 154,
+            "end": 172
+          }
+        ],
+        "masked_text": "Social Security Number: [SOCIALNUMBER] - Email: [EMAIL] - Telephone: [TEL] Applicant B: - Passport: [PASSPORT] - Driver's License: [DRIVERLICENSE]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_2_06",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Subject: Group Messaging for Admissions Process - wynqvrh053 - Meeting at 10:20am - luka.burg - Meeting at 21 - qahil.wittauer - Meeting at quarter past 13 - gholamhossein.ruschke - Meeting at 9:47 PM - pdmjrsyoz1460"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "wynqvrh053",
+            "type": "USERNAME",
+            "start": 50,
+            "end": 60
+          },
+          {
+            "text": "10:20am",
+            "type": "TIME",
+            "start": 74,
+            "end": 81
+          },
+          {
+            "text": "luka.burg",
+            "type": "USERNAME",
+            "start": 84,
+            "end": 93
+          },
+          {
+            "text": "21",
+            "type": "TIME",
+            "start": 107,
+            "end": 109
+          },
+          {
+            "text": "qahil.wittauer",
+            "type": "USERNAME",
+            "start": 112,
+            "end": 126
+          },
+          {
+            "text": "quarter past 13",
+            "type": "TIME",
+            "start": 140,
+            "end": 155
+          },
+          {
+            "text": "gholamhossein.ruschke",
+            "type": "USERNAME",
+            "start": 158,
+            "end": 179
+          },
+          {
+            "text": "9:47 PM",
+            "type": "TIME",
+            "start": 193,
+            "end": 200
+          },
+          {
+            "text": "pdmjrsyoz1460",
+            "type": "USERNAME",
+            "start": 203,
+            "end": 216
+          }
+        ],
+        "masked_text": "Subject: Group Messaging for Admissions Process - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_2_07",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Meeting at 2:33 PM - N23 - Meeting at 11:29pm - wennmann27 - Meeting at 4:45 PM"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "2:33 PM",
+            "type": "TIME",
+            "start": 11,
+            "end": 18
+          },
+          {
+            "text": "N23",
+            "type": "USERNAME",
+            "start": 21,
+            "end": 24
+          },
+          {
+            "text": "11:29pm",
+            "type": "TIME",
+            "start": 38,
+            "end": 45
+          },
+          {
+            "text": "wennmann27",
+            "type": "USERNAME",
+            "start": 48,
+            "end": 58
+          },
+          {
+            "text": "4:45 PM",
+            "type": "TIME",
+            "start": 72,
+            "end": 79
+          }
+        ],
+        "masked_text": "Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_2_08",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Subject: Admission Notification - Great Britain University. Date of Notification: 5:24am on August 5th, 2057. Applicant: Balloi Eckrich."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "5:24am",
+            "type": "TIME",
+            "start": 82,
+            "end": 88
+          },
+          {
+            "text": "August 5th, 2057",
+            "type": "DATE",
+            "start": 92,
+            "end": 108
+          },
+          {
+            "text": "Balloi",
+            "type": "LASTNAME1",
+            "start": 121,
+            "end": 127
+          },
+          {
+            "text": "Eckrich",
+            "type": "LASTNAME2",
+            "start": 128,
+            "end": 135
+          }
+        ],
+        "masked_text": "Subject: Admission Notification - Great Britain University. Date of Notification: [TIME] on [DATE]. Applicant: [LASTNAME1] [LASTNAME2]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_2_09",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Card: KB90324ER Country: GB Building: 163 Street: Conygre Grove City: Bristol State: ENG Postcode: BS34 7HU, BS34 7HZ"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "KB90324ER",
+            "type": "IDCARD",
+            "start": 6,
+            "end": 15
+          },
+          {
+            "text": "GB",
+            "type": "COUNTRY",
+            "start": 25,
+            "end": 27
+          },
+          {
+            "text": "163",
+            "type": "BUILDING",
+            "start": 38,
+            "end": 41
+          },
+          {
+            "text": "Conygre Grove",
+            "type": "STREET",
+            "start": 50,
+            "end": 63
+          },
+          {
+            "text": "Bristol",
+            "type": "CITY",
+            "start": 70,
+            "end": 77
+          },
+          {
+            "text": "ENG",
+            "type": "STATE",
+            "start": 85,
+            "end": 88
+          },
+          {
+            "text": "BS34 7HU, BS34 7HZ",
+            "type": "POSTCODE",
+            "start": 99,
+            "end": 117
+          }
+        ],
+        "masked_text": "Card: [IDCARD] Country: [COUNTRY] Building: [BUILDING] Street: [STREET] City: [CITY] State: [STATE] Postcode: [POSTCODE]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_2_10",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Social Security Number: 554.575.9355 - Email: vtpkbqcutaxb799@yahoo.com - Telephone: +1322380 4181 Applicant B: - Passport: 933932951 - Driver's License: LOUMA.657200.9.504"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "554.575.9355",
+            "type": "SOCIALNUMBER",
+            "start": 24,
+            "end": 36
+          },
+          {
+            "text": "vtpkbqcutaxb799@yahoo.com",
+            "type": "EMAIL",
+            "start": 46,
+            "end": 71
+          },
+          {
+            "text": "+1322380 4181",
+            "type": "TEL",
+            "start": 85,
+            "end": 98
+          },
+          {
+            "text": "933932951",
+            "type": "PASSPORT",
+            "start": 124,
+            "end": 133
+          },
+          {
+            "text": "LOUMA.657200.9.504",
+            "type": "DRIVERLICENSE",
+            "start": 154,
+            "end": 172
+          }
+        ],
+        "masked_text": "Social Security Number: [SOCIALNUMBER] - Email: [EMAIL] - Telephone: [TEL] Applicant B: - Passport: [PASSPORT] - Driver's License: [DRIVERLICENSE]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_3_01",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Subject: Group Messaging for Admissions Process - wynqvrh053 - Meeting at 10:20am - luka.burg - Meeting at 21 - qahil.wittauer - Meeting at quarter past 13 - gholamhossein.ruschke - Meeting at 9:47 PM - pdmjrsyoz1460"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "wynqvrh053",
+            "type": "USERNAME",
+            "start": 50,
+            "end": 60
+          },
+          {
+            "text": "10:20am",
+            "type": "TIME",
+            "start": 74,
+            "end": 81
+          },
+          {
+            "text": "luka.burg",
+            "type": "USERNAME",
+            "start": 84,
+            "end": 93
+          },
+          {
+            "text": "21",
+            "type": "TIME",
+            "start": 107,
+            "end": 109
+          },
+          {
+            "text": "qahil.wittauer",
+            "type": "USERNAME",
+            "start": 112,
+            "end": 126
+          },
+          {
+            "text": "quarter past 13",
+            "type": "TIME",
+            "start": 140,
+            "end": 155
+          },
+          {
+            "text": "gholamhossein.ruschke",
+            "type": "USERNAME",
+            "start": 158,
+            "end": 179
+          },
+          {
+            "text": "9:47 PM",
+            "type": "TIME",
+            "start": 193,
+            "end": 200
+          },
+          {
+            "text": "pdmjrsyoz1460",
+            "type": "USERNAME",
+            "start": 203,
+            "end": 216
+          }
+        ],
+        "masked_text": "Subject: Group Messaging for Admissions Process - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_3_02",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Meeting at 2:33 PM - N23 - Meeting at 11:29pm - wennmann27 - Meeting at 4:45 PM"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "2:33 PM",
+            "type": "TIME",
+            "start": 11,
+            "end": 18
+          },
+          {
+            "text": "N23",
+            "type": "USERNAME",
+            "start": 21,
+            "end": 24
+          },
+          {
+            "text": "11:29pm",
+            "type": "TIME",
+            "start": 38,
+            "end": 45
+          },
+          {
+            "text": "wennmann27",
+            "type": "USERNAME",
+            "start": 48,
+            "end": 58
+          },
+          {
+            "text": "4:45 PM",
+            "type": "TIME",
+            "start": 72,
+            "end": 79
+          }
+        ],
+        "masked_text": "Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_3_03",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Subject: Admission Notification - Great Britain University. Date of Notification: 5:24am on August 5th, 2057. Applicant: Balloi Eckrich."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "5:24am",
+            "type": "TIME",
+            "start": 82,
+            "end": 88
+          },
+          {
+            "text": "August 5th, 2057",
+            "type": "DATE",
+            "start": 92,
+            "end": 108
+          },
+          {
+            "text": "Balloi",
+            "type": "LASTNAME1",
+            "start": 121,
+            "end": 127
+          },
+          {
+            "text": "Eckrich",
+            "type": "LASTNAME2",
+            "start": 128,
+            "end": 135
+          }
+        ],
+        "masked_text": "Subject: Admission Notification - Great Britain University. Date of Notification: [TIME] on [DATE]. Applicant: [LASTNAME1] [LASTNAME2]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_3_04",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Card: KB90324ER Country: GB Building: 163 Street: Conygre Grove City: Bristol State: ENG Postcode: BS34 7HU, BS34 7HZ"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "KB90324ER",
+            "type": "IDCARD",
+            "start": 6,
+            "end": 15
+          },
+          {
+            "text": "GB",
+            "type": "COUNTRY",
+            "start": 25,
+            "end": 27
+          },
+          {
+            "text": "163",
+            "type": "BUILDING",
+            "start": 38,
+            "end": 41
+          },
+          {
+            "text": "Conygre Grove",
+            "type": "STREET",
+            "start": 50,
+            "end": 63
+          },
+          {
+            "text": "Bristol",
+            "type": "CITY",
+            "start": 70,
+            "end": 77
+          },
+          {
+            "text": "ENG",
+            "type": "STATE",
+            "start": 85,
+            "end": 88
+          },
+          {
+            "text": "BS34 7HU, BS34 7HZ",
+            "type": "POSTCODE",
+            "start": 99,
+            "end": 117
+          }
+        ],
+        "masked_text": "Card: [IDCARD] Country: [COUNTRY] Building: [BUILDING] Street: [STREET] City: [CITY] State: [STATE] Postcode: [POSTCODE]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_3_05",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Social Security Number: 554.575.9355 - Email: vtpkbqcutaxb799@yahoo.com - Telephone: +1322380 4181 Applicant B: - Passport: 933932951 - Driver's License: LOUMA.657200.9.504"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "554.575.9355",
+            "type": "SOCIALNUMBER",
+            "start": 24,
+            "end": 36
+          },
+          {
+            "text": "vtpkbqcutaxb799@yahoo.com",
+            "type": "EMAIL",
+            "start": 46,
+            "end": 71
+          },
+          {
+            "text": "+1322380 4181",
+            "type": "TEL",
+            "start": 85,
+            "end": 98
+          },
+          {
+            "text": "933932951",
+            "type": "PASSPORT",
+            "start": 124,
+            "end": 133
+          },
+          {
+            "text": "LOUMA.657200.9.504",
+            "type": "DRIVERLICENSE",
+            "start": 154,
+            "end": 172
+          }
+        ],
+        "masked_text": "Social Security Number: [SOCIALNUMBER] - Email: [EMAIL] - Telephone: [TEL] Applicant B: - Passport: [PASSPORT] - Driver's License: [DRIVERLICENSE]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_3_06",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Subject: Group Messaging for Admissions Process - wynqvrh053 - Meeting at 10:20am - luka.burg - Meeting at 21 - qahil.wittauer - Meeting at quarter past 13 - gholamhossein.ruschke - Meeting at 9:47 PM - pdmjrsyoz1460"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "wynqvrh053",
+            "type": "USERNAME",
+            "start": 50,
+            "end": 60
+          },
+          {
+            "text": "10:20am",
+            "type": "TIME",
+            "start": 74,
+            "end": 81
+          },
+          {
+            "text": "luka.burg",
+            "type": "USERNAME",
+            "start": 84,
+            "end": 93
+          },
+          {
+            "text": "21",
+            "type": "TIME",
+            "start": 107,
+            "end": 109
+          },
+          {
+            "text": "qahil.wittauer",
+            "type": "USERNAME",
+            "start": 112,
+            "end": 126
+          },
+          {
+            "text": "quarter past 13",
+            "type": "TIME",
+            "start": 140,
+            "end": 155
+          },
+          {
+            "text": "gholamhossein.ruschke",
+            "type": "USERNAME",
+            "start": 158,
+            "end": 179
+          },
+          {
+            "text": "9:47 PM",
+            "type": "TIME",
+            "start": 193,
+            "end": 200
+          },
+          {
+            "text": "pdmjrsyoz1460",
+            "type": "USERNAME",
+            "start": 203,
+            "end": 216
+          }
+        ],
+        "masked_text": "Subject: Group Messaging for Admissions Process - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_3_07",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Meeting at 2:33 PM - N23 - Meeting at 11:29pm - wennmann27 - Meeting at 4:45 PM"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "2:33 PM",
+            "type": "TIME",
+            "start": 11,
+            "end": 18
+          },
+          {
+            "text": "N23",
+            "type": "USERNAME",
+            "start": 21,
+            "end": 24
+          },
+          {
+            "text": "11:29pm",
+            "type": "TIME",
+            "start": 38,
+            "end": 45
+          },
+          {
+            "text": "wennmann27",
+            "type": "USERNAME",
+            "start": 48,
+            "end": 58
+          },
+          {
+            "text": "4:45 PM",
+            "type": "TIME",
+            "start": 72,
+            "end": 79
+          }
+        ],
+        "masked_text": "Meeting at [TIME] - [USERNAME] - Meeting at [TIME] - [USERNAME] - Meeting at [TIME]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_3_08",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Subject: Admission Notification - Great Britain University. Date of Notification: 5:24am on August 5th, 2057. Applicant: Balloi Eckrich."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "5:24am",
+            "type": "TIME",
+            "start": 82,
+            "end": 88
+          },
+          {
+            "text": "August 5th, 2057",
+            "type": "DATE",
+            "start": 92,
+            "end": 108
+          },
+          {
+            "text": "Balloi",
+            "type": "LASTNAME1",
+            "start": 121,
+            "end": 127
+          },
+          {
+            "text": "Eckrich",
+            "type": "LASTNAME2",
+            "start": 128,
+            "end": 135
+          }
+        ],
+        "masked_text": "Subject: Admission Notification - Great Britain University. Date of Notification: [TIME] on [DATE]. Applicant: [LASTNAME1] [LASTNAME2]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_3_09",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Card: KB90324ER Country: GB Building: 163 Street: Conygre Grove City: Bristol State: ENG Postcode: BS34 7HU, BS34 7HZ"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "KB90324ER",
+            "type": "IDCARD",
+            "start": 6,
+            "end": 15
+          },
+          {
+            "text": "GB",
+            "type": "COUNTRY",
+            "start": 25,
+            "end": 27
+          },
+          {
+            "text": "163",
+            "type": "BUILDING",
+            "start": 38,
+            "end": 41
+          },
+          {
+            "text": "Conygre Grove",
+            "type": "STREET",
+            "start": 50,
+            "end": 63
+          },
+          {
+            "text": "Bristol",
+            "type": "CITY",
+            "start": 70,
+            "end": 77
+          },
+          {
+            "text": "ENG",
+            "type": "STATE",
+            "start": 85,
+            "end": 88
+          },
+          {
+            "text": "BS34 7HU, BS34 7HZ",
+            "type": "POSTCODE",
+            "start": 99,
+            "end": 117
+          }
+        ],
+        "masked_text": "Card: [IDCARD] Country: [COUNTRY] Building: [BUILDING] Street: [STREET] City: [CITY] State: [STATE] Postcode: [POSTCODE]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_2_3_10",
+      "scene_id": "scene_02",
+      "dataset": "AI4Privacy PII 300K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Social Security Number: 554.575.9355 - Email: vtpkbqcutaxb799@yahoo.com - Telephone: +1322380 4181 Applicant B: - Passport: 933932951 - Driver's License: LOUMA.657200.9.504"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "554.575.9355",
+            "type": "SOCIALNUMBER",
+            "start": 24,
+            "end": 36
+          },
+          {
+            "text": "vtpkbqcutaxb799@yahoo.com",
+            "type": "EMAIL",
+            "start": 46,
+            "end": 71
+          },
+          {
+            "text": "+1322380 4181",
+            "type": "TEL",
+            "start": 85,
+            "end": 98
+          },
+          {
+            "text": "933932951",
+            "type": "PASSPORT",
+            "start": 124,
+            "end": 133
+          },
+          {
+            "text": "LOUMA.657200.9.504",
+            "type": "DRIVERLICENSE",
+            "start": 154,
+            "end": 172
+          }
+        ],
+        "masked_text": "Social Security Number: [SOCIALNUMBER] - Email: [EMAIL] - Telephone: [TEL] Applicant B: - Passport: [PASSPORT] - Driver's License: [DRIVERLICENSE]"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/pii-masking-300k",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_1_01",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Ciao Silvan Raymundo, oggi ho deciso di esplorare la città in bicicletta. Ho passato Largo Ignazio Ciaia e Lissone ed è stato veramente emozionante."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Silvan Raymundo",
+            "type": "GIVENNAME",
+            "start": 5,
+            "end": 20
+          },
+          {
+            "text": "Largo Ignazio Ciaia",
+            "type": "STREET",
+            "start": 85,
+            "end": 104
+          },
+          {
+            "text": "Lissone",
+            "type": "CITY",
+            "start": 107,
+            "end": 114
+          }
+        ],
+        "masked_text": "Ciao [GIVENNAME], oggi ho deciso di esplorare la città in bicicletta. Ho passato [STREET] e [CITY] ed è stato veramente emozionante."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_1_02",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Hoe heet je schoonmoeder? Doriano Houssin Prassanna."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Doriano",
+            "type": "GIVENNAME",
+            "start": 26,
+            "end": 33
+          },
+          {
+            "text": "Houssin Prassanna",
+            "type": "SURNAME",
+            "start": 34,
+            "end": 51
+          }
+        ],
+        "masked_text": "Hoe heet je schoonmoeder? [GIVENNAME] [SURNAME]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_1_03",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Sto pianificando un nuovo percorso di ciclismo che passerà per Borgo Virgilio e Calle de le Beccarie, e vorrei invitarvi a unirvi a me. Il mio 6983966855 è valido e posso guidare fino a 58054."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Borgo Virgilio",
+            "type": "CITY",
+            "start": 63,
+            "end": 77
+          },
+          {
+            "text": "Calle de le Beccarie",
+            "type": "STREET",
+            "start": 80,
+            "end": 100
+          },
+          {
+            "text": "6983966855",
+            "type": "DRIVERLICENSENUM",
+            "start": 143,
+            "end": 153
+          },
+          {
+            "text": "58054",
+            "type": "ZIPCODE",
+            "start": 186,
+            "end": 191
+          }
+        ],
+        "masked_text": "Sto pianificando un nuovo percorso di ciclismo che passerà per [CITY] e [STREET], e vorrei invitarvi a unirvi a me. Il mio [DRIVERLICENSENUM] è valido e posso guidare fino a [ZIPCODE]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_1_04",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Bonjour Canan, votre commande de matériel de bijouterie a été expédiée à Rue des Fils 255."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Canan",
+            "type": "GIVENNAME",
+            "start": 8,
+            "end": 13
+          },
+          {
+            "text": "Rue des Fils",
+            "type": "STREET",
+            "start": 73,
+            "end": 85
+          },
+          {
+            "text": "255",
+            "type": "BUILDINGNUM",
+            "start": 86,
+            "end": 89
+          }
+        ],
+        "masked_text": "Bonjour [GIVENNAME], votre commande de matériel de bijouterie a été expédiée à [STREET] [BUILDINGNUM]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_1_05",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "+33 310.674 4631 pour discuter de vos projets de bijoux personnalisés."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "+33 310.674 4631",
+            "type": "TELEPHONENUM",
+            "start": 0,
+            "end": 16
+          }
+        ],
+        "masked_text": "[TELEPHONENUM] pour discuter de vos projets de bijoux personnalisés."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_1_06",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Khaja Chukwuebuka ist ein Meister der Bonsai-Kunst und teilt seine Erfahrungen in seinem neuen Buch."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Khaja Chukwuebuka",
+            "type": "GIVENNAME",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[GIVENNAME] ist ein Meister der Bonsai-Kunst und teilt seine Erfahrungen in seinem neuen Buch."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_1_07",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "El 8:51:03 PM de Milise Tewen Fradkoff se recibio una notificacion de un nuevo registro de ruta de ciclismo en 34310."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "8:51:03 PM",
+            "type": "TIME",
+            "start": 3,
+            "end": 13
+          },
+          {
+            "text": "Milise Tewen",
+            "type": "GIVENNAME",
+            "start": 17,
+            "end": 29
+          },
+          {
+            "text": "Fradkoff",
+            "type": "SURNAME",
+            "start": 30,
+            "end": 38
+          },
+          {
+            "text": "34310",
+            "type": "ZIPCODE",
+            "start": 111,
+            "end": 116
+          }
+        ],
+        "masked_text": "El [TIME] de [GIVENNAME] [SURNAME] se recibio una notificacion de un nuevo registro de ruta de ciclismo en [ZIPCODE]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_1_08",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "De route ging via Loerbeekseweg, De Mars en Kikkerpad."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Loerbeekseweg",
+            "type": "STREET",
+            "start": 18,
+            "end": 31
+          },
+          {
+            "text": "De Mars",
+            "type": "STREET",
+            "start": 33,
+            "end": 40
+          },
+          {
+            "text": "Kikkerpad",
+            "type": "STREET",
+            "start": 44,
+            "end": 53
+          }
+        ],
+        "masked_text": "De route ging via [STREET], [STREET] en [STREET]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_1_09",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "Buongiorno Radka, il suo pagamento per il corso di bonsai è stato ricevuto. Il suo CHE-563120634 è stato aggiornato."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Radka",
+            "type": "GIVENNAME",
+            "start": 11,
+            "end": 16
+          },
+          {
+            "text": "CHE-563120634",
+            "type": "TAXNUM",
+            "start": 83,
+            "end": 96
+          }
+        ],
+        "masked_text": "Buongiorno [GIVENNAME], il suo pagamento per il corso di bonsai è stato ricevuto. Il suo [TAXNUM] è stato aggiornato."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_1_10",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "识别文本中的敏感实体并完成标准脱敏。",
+      "content": {
+        "text": "16:14 Thushyanthan Fadel: 'Hey Puvitharan Nicolàs, I've been trying to get into bonsai care. Can you share some tips?'"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "16:14",
+            "type": "TIME",
+            "start": 0,
+            "end": 5
+          },
+          {
+            "text": "Thushyanthan Fadel",
+            "type": "GIVENNAME",
+            "start": 6,
+            "end": 24
+          },
+          {
+            "text": "Puvitharan Nicolàs",
+            "type": "GIVENNAME",
+            "start": 31,
+            "end": 49
+          }
+        ],
+        "masked_text": "[TIME] [GIVENNAME]: 'Hey [GIVENNAME], I've been trying to get into bonsai care. Can you share some tips?'"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_2_01",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Ciao Silvan Raymundo, oggi ho deciso di esplorare la città in bicicletta. Ho passato Largo Ignazio Ciaia e Lissone ed è stato veramente emozionante."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Silvan Raymundo",
+            "type": "GIVENNAME",
+            "start": 5,
+            "end": 20
+          },
+          {
+            "text": "Largo Ignazio Ciaia",
+            "type": "STREET",
+            "start": 85,
+            "end": 104
+          },
+          {
+            "text": "Lissone",
+            "type": "CITY",
+            "start": 107,
+            "end": 114
+          }
+        ],
+        "masked_text": "Ciao [GIVENNAME], oggi ho deciso di esplorare la città in bicicletta. Ho passato [STREET] e [CITY] ed è stato veramente emozionante."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_2_02",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Hoe heet je schoonmoeder? Doriano Houssin Prassanna."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Doriano",
+            "type": "GIVENNAME",
+            "start": 26,
+            "end": 33
+          },
+          {
+            "text": "Houssin Prassanna",
+            "type": "SURNAME",
+            "start": 34,
+            "end": 51
+          }
+        ],
+        "masked_text": "Hoe heet je schoonmoeder? [GIVENNAME] [SURNAME]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_2_03",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Sto pianificando un nuovo percorso di ciclismo che passerà per Borgo Virgilio e Calle de le Beccarie, e vorrei invitarvi a unirvi a me. Il mio 6983966855 è valido e posso guidare fino a 58054."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Borgo Virgilio",
+            "type": "CITY",
+            "start": 63,
+            "end": 77
+          },
+          {
+            "text": "Calle de le Beccarie",
+            "type": "STREET",
+            "start": 80,
+            "end": 100
+          },
+          {
+            "text": "6983966855",
+            "type": "DRIVERLICENSENUM",
+            "start": 143,
+            "end": 153
+          },
+          {
+            "text": "58054",
+            "type": "ZIPCODE",
+            "start": 186,
+            "end": 191
+          }
+        ],
+        "masked_text": "Sto pianificando un nuovo percorso di ciclismo che passerà per [CITY] e [STREET], e vorrei invitarvi a unirvi a me. Il mio [DRIVERLICENSENUM] è valido e posso guidare fino a [ZIPCODE]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_2_04",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Bonjour Canan, votre commande de matériel de bijouterie a été expédiée à Rue des Fils 255."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Canan",
+            "type": "GIVENNAME",
+            "start": 8,
+            "end": 13
+          },
+          {
+            "text": "Rue des Fils",
+            "type": "STREET",
+            "start": 73,
+            "end": 85
+          },
+          {
+            "text": "255",
+            "type": "BUILDINGNUM",
+            "start": 86,
+            "end": 89
+          }
+        ],
+        "masked_text": "Bonjour [GIVENNAME], votre commande de matériel de bijouterie a été expédiée à [STREET] [BUILDINGNUM]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_2_05",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "+33 310.674 4631 pour discuter de vos projets de bijoux personnalisés."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "+33 310.674 4631",
+            "type": "TELEPHONENUM",
+            "start": 0,
+            "end": 16
+          }
+        ],
+        "masked_text": "[TELEPHONENUM] pour discuter de vos projets de bijoux personnalisés."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_2_06",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Khaja Chukwuebuka ist ein Meister der Bonsai-Kunst und teilt seine Erfahrungen in seinem neuen Buch."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Khaja Chukwuebuka",
+            "type": "GIVENNAME",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[GIVENNAME] ist ein Meister der Bonsai-Kunst und teilt seine Erfahrungen in seinem neuen Buch."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_2_07",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "El 8:51:03 PM de Milise Tewen Fradkoff se recibio una notificacion de un nuevo registro de ruta de ciclismo en 34310."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "8:51:03 PM",
+            "type": "TIME",
+            "start": 3,
+            "end": 13
+          },
+          {
+            "text": "Milise Tewen",
+            "type": "GIVENNAME",
+            "start": 17,
+            "end": 29
+          },
+          {
+            "text": "Fradkoff",
+            "type": "SURNAME",
+            "start": 30,
+            "end": 38
+          },
+          {
+            "text": "34310",
+            "type": "ZIPCODE",
+            "start": 111,
+            "end": 116
+          }
+        ],
+        "masked_text": "El [TIME] de [GIVENNAME] [SURNAME] se recibio una notificacion de un nuevo registro de ruta de ciclismo en [ZIPCODE]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_2_08",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "De route ging via Loerbeekseweg, De Mars en Kikkerpad."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Loerbeekseweg",
+            "type": "STREET",
+            "start": 18,
+            "end": 31
+          },
+          {
+            "text": "De Mars",
+            "type": "STREET",
+            "start": 33,
+            "end": 40
+          },
+          {
+            "text": "Kikkerpad",
+            "type": "STREET",
+            "start": 44,
+            "end": 53
+          }
+        ],
+        "masked_text": "De route ging via [STREET], [STREET] en [STREET]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_2_09",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "Buongiorno Radka, il suo pagamento per il corso di bonsai è stato ricevuto. Il suo CHE-563120634 è stato aggiornato."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Radka",
+            "type": "GIVENNAME",
+            "start": 11,
+            "end": 16
+          },
+          {
+            "text": "CHE-563120634",
+            "type": "TAXNUM",
+            "start": 83,
+            "end": 96
+          }
+        ],
+        "masked_text": "Buongiorno [GIVENNAME], il suo pagamento per il corso di bonsai è stato ricevuto. Il suo [TAXNUM] è stato aggiornato."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_2_10",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "完成敏感实体识别、类型、边界和一致脱敏。",
+      "content": {
+        "text": "16:14 Thushyanthan Fadel: 'Hey Puvitharan Nicolàs, I've been trying to get into bonsai care. Can you share some tips?'"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "16:14",
+            "type": "TIME",
+            "start": 0,
+            "end": 5
+          },
+          {
+            "text": "Thushyanthan Fadel",
+            "type": "GIVENNAME",
+            "start": 6,
+            "end": 24
+          },
+          {
+            "text": "Puvitharan Nicolàs",
+            "type": "GIVENNAME",
+            "start": 31,
+            "end": 49
+          }
+        ],
+        "masked_text": "[TIME] [GIVENNAME]: 'Hey [GIVENNAME], I've been trying to get into bonsai care. Can you share some tips?'"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_3_01",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Ciao Silvan Raymundo, oggi ho deciso di esplorare la città in bicicletta. Ho passato Largo Ignazio Ciaia e Lissone ed è stato veramente emozionante."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Silvan Raymundo",
+            "type": "GIVENNAME",
+            "start": 5,
+            "end": 20
+          },
+          {
+            "text": "Largo Ignazio Ciaia",
+            "type": "STREET",
+            "start": 85,
+            "end": 104
+          },
+          {
+            "text": "Lissone",
+            "type": "CITY",
+            "start": 107,
+            "end": 114
+          }
+        ],
+        "masked_text": "Ciao [GIVENNAME], oggi ho deciso di esplorare la città in bicicletta. Ho passato [STREET] e [CITY] ed è stato veramente emozionante."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_3_02",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Hoe heet je schoonmoeder? Doriano Houssin Prassanna."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Doriano",
+            "type": "GIVENNAME",
+            "start": 26,
+            "end": 33
+          },
+          {
+            "text": "Houssin Prassanna",
+            "type": "SURNAME",
+            "start": 34,
+            "end": 51
+          }
+        ],
+        "masked_text": "Hoe heet je schoonmoeder? [GIVENNAME] [SURNAME]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_3_03",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Sto pianificando un nuovo percorso di ciclismo che passerà per Borgo Virgilio e Calle de le Beccarie, e vorrei invitarvi a unirvi a me. Il mio 6983966855 è valido e posso guidare fino a 58054."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Borgo Virgilio",
+            "type": "CITY",
+            "start": 63,
+            "end": 77
+          },
+          {
+            "text": "Calle de le Beccarie",
+            "type": "STREET",
+            "start": 80,
+            "end": 100
+          },
+          {
+            "text": "6983966855",
+            "type": "DRIVERLICENSENUM",
+            "start": 143,
+            "end": 153
+          },
+          {
+            "text": "58054",
+            "type": "ZIPCODE",
+            "start": 186,
+            "end": 191
+          }
+        ],
+        "masked_text": "Sto pianificando un nuovo percorso di ciclismo che passerà per [CITY] e [STREET], e vorrei invitarvi a unirvi a me. Il mio [DRIVERLICENSENUM] è valido e posso guidare fino a [ZIPCODE]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_3_04",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Bonjour Canan, votre commande de matériel de bijouterie a été expédiée à Rue des Fils 255."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Canan",
+            "type": "GIVENNAME",
+            "start": 8,
+            "end": 13
+          },
+          {
+            "text": "Rue des Fils",
+            "type": "STREET",
+            "start": 73,
+            "end": 85
+          },
+          {
+            "text": "255",
+            "type": "BUILDINGNUM",
+            "start": 86,
+            "end": 89
+          }
+        ],
+        "masked_text": "Bonjour [GIVENNAME], votre commande de matériel de bijouterie a été expédiée à [STREET] [BUILDINGNUM]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_3_05",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "+33 310.674 4631 pour discuter de vos projets de bijoux personnalisés."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "+33 310.674 4631",
+            "type": "TELEPHONENUM",
+            "start": 0,
+            "end": 16
+          }
+        ],
+        "masked_text": "[TELEPHONENUM] pour discuter de vos projets de bijoux personnalisés."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_3_06",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Khaja Chukwuebuka ist ein Meister der Bonsai-Kunst und teilt seine Erfahrungen in seinem neuen Buch."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Khaja Chukwuebuka",
+            "type": "GIVENNAME",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[GIVENNAME] ist ein Meister der Bonsai-Kunst und teilt seine Erfahrungen in seinem neuen Buch."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_3_07",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "El 8:51:03 PM de Milise Tewen Fradkoff se recibio una notificacion de un nuevo registro de ruta de ciclismo en 34310."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "8:51:03 PM",
+            "type": "TIME",
+            "start": 3,
+            "end": 13
+          },
+          {
+            "text": "Milise Tewen",
+            "type": "GIVENNAME",
+            "start": 17,
+            "end": 29
+          },
+          {
+            "text": "Fradkoff",
+            "type": "SURNAME",
+            "start": 30,
+            "end": 38
+          },
+          {
+            "text": "34310",
+            "type": "ZIPCODE",
+            "start": 111,
+            "end": 116
+          }
+        ],
+        "masked_text": "El [TIME] de [GIVENNAME] [SURNAME] se recibio una notificacion de un nuevo registro de ruta de ciclismo en [ZIPCODE]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_3_08",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "De route ging via Loerbeekseweg, De Mars en Kikkerpad."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Loerbeekseweg",
+            "type": "STREET",
+            "start": 18,
+            "end": 31
+          },
+          {
+            "text": "De Mars",
+            "type": "STREET",
+            "start": 33,
+            "end": 40
+          },
+          {
+            "text": "Kikkerpad",
+            "type": "STREET",
+            "start": 44,
+            "end": 53
+          }
+        ],
+        "masked_text": "De route ging via [STREET], [STREET] en [STREET]."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_3_09",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "Buongiorno Radka, il suo pagamento per il corso di bonsai è stato ricevuto. Il suo CHE-563120634 è stato aggiornato."
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "Radka",
+            "type": "GIVENNAME",
+            "start": 11,
+            "end": 16
+          },
+          {
+            "text": "CHE-563120634",
+            "type": "TAXNUM",
+            "start": 83,
+            "end": 96
+          }
+        ],
+        "masked_text": "Buongiorno [GIVENNAME], il suo pagamento per il corso di bonsai è stato ricevuto. Il suo [TAXNUM] è stato aggiornato."
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    },
+    {
+      "question_id": "s2_3_3_10",
+      "scene_id": "scene_02",
+      "dataset": "Open PII 500K",
+      "dataset_split": "train",
+      "sample_origin": "real_dataset",
+      "question_type": "pii",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s2_recognition",
+        "s2_type",
+        "s2_boundary",
+        "s2_mask"
+      ],
+      "prompt": "在多实体/多语言文本中完成完整 PII 识别、精确边界与一致脱敏。",
+      "content": {
+        "text": "16:14 Thushyanthan Fadel: 'Hey Puvitharan Nicolàs, I've been trying to get into bonsai care. Can you share some tips?'"
+      },
+      "answer_instruction": "填写 entities（text/type/start/end）和 masked_text。",
+      "answer_example": {
+        "origin": "format_example",
+        "entities": [
+          {
+            "text": "alice@example.com",
+            "type": "EMAIL",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "masked_text": "[EMAIL]"
+      },
+      "answer": {
+        "entities": [
+          {
+            "text": "16:14",
+            "type": "TIME",
+            "start": 0,
+            "end": 5
+          },
+          {
+            "text": "Thushyanthan Fadel",
+            "type": "GIVENNAME",
+            "start": 6,
+            "end": 24
+          },
+          {
+            "text": "Puvitharan Nicolàs",
+            "type": "GIVENNAME",
+            "start": 31,
+            "end": 49
+          }
+        ],
+        "masked_text": "[TIME] [GIVENNAME]: 'Hey [GIVENNAME], I've been trying to get into bonsai care. Can you share some tips?'"
+      },
+      "source_url": "https://huggingface.co/datasets/ai4privacy/open-pii-masking-500k-ai4privacy",
+      "source_note": "公开 AI4Privacy 数据集样本；其 PII 为数据集生成的模拟信息。",
+      "enabled": true
+    }
+  ]
+}
