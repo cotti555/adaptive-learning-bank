@@ -1,0 +1,4031 @@
+{
+  "scene_id": "scene_07",
+  "scene_name": "商场小票关键信息抽取",
+  "version": "real_complete_v1_90",
+  "question_count": 90,
+  "sample_policy": "优先使用公开数据集原生样本。为满足自适应学习中“同KP换新题复测”的题量要求，部分题目由真实公开数据集样本或任务plus中的真实数据集示例派生；所有派生题均显式标记 sample_origin=real_dataset_derived，不把派生样本冒充为数据集官方原始样本。",
+  "difficulty_rule": {
+    "1": "job / 岗位技能提升",
+    "2": "course / 课程学习巩固",
+    "3": "competition / 竞赛备赛",
+    "note": "difficulty 是本平台的岗-课-赛分流字段，不代表数据集官方难度。"
+  },
+  "kp_ids": [
+    "s7_ocr",
+    "s7_field_type",
+    "s7_items",
+    "s7_amount",
+    "s7_mapping"
+  ],
+  "source_urls": [
+    "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+    "https://huggingface.co/datasets/abdoelsayed/CORU",
+    "https://github.com/Update-For-Integrated-Business-AI/AMuRD"
+  ],
+  "notes": [
+    "CORD 使用公开 receipt parse 示例。",
+    "CORU 使用任务plus中的真实小票样例并派生不同字段训练题。",
+    "AMuRD 使用官方仓库公开 OCR 商品行示例。"
+  ],
+  "questions": [
+    {
+      "question_id": "s7_cord_1_01",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "抽取商品与总金额等核心字段。",
+      "asset_ref": "CORD-v2:train:image_id=0",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Nasi Campur Bali",
+            "count": "1",
+            "price": "75,000"
+          },
+          {
+            "name": "Bbk Bengil Nasi",
+            "count": "1",
+            "price": "125,000"
+          },
+          {
+            "name": "MilkShake Starwb",
+            "count": "1",
+            "price": "37,000"
+          },
+          {
+            "name": "Ice Lemon Tea",
+            "count": "1",
+            "price": "24,000"
+          },
+          {
+            "name": "Nasi Ayam Dewata",
+            "count": "1",
+            "price": "70,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "1,346,000",
+          "service": "100,950",
+          "tax": "144,695",
+          "rounding": "-45",
+          "total": "1,591,600"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_1_02",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "抽取商品与总金额等核心字段。",
+      "asset_ref": "CORD-v2:train:image_id=3",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Bintang Bremer",
+            "count": "1",
+            "price": "59,000"
+          },
+          {
+            "name": "Chicken H-H",
+            "count": "1",
+            "price": "190,000"
+          },
+          {
+            "name": "Ades",
+            "count": "1",
+            "price": "10,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "259,000",
+          "discount": "19,000",
+          "service": "9,600",
+          "tax": "52,416"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_1_03",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "抽取商品与总金额等核心字段。",
+      "asset_ref": "CORD-v2:train:image_id=4",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "BASO BIHUN",
+            "count": "1",
+            "price": "43.636"
+          }
+        ],
+        "fields": {
+          "subtotal": "43.636",
+          "tax": "4.364",
+          "total": "48.000",
+          "cash": "50.000",
+          "change": "2.000"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_1_04",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "抽取商品与总金额等核心字段。",
+      "asset_ref": "CORD-v2:train:image_id=6",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "BASO TAHU",
+            "count": "1",
+            "price": "43,181"
+          },
+          {
+            "name": "ES JERUK",
+            "count": "1",
+            "price": "13,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "56,181",
+          "tax": "5,618",
+          "total": "61,799",
+          "cash": "62,000",
+          "change": "201"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_1_05",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "抽取商品与总金额等核心字段。",
+      "asset_ref": "CORD-v2:train:image_id=7",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "PKT AYAM",
+            "count": "1",
+            "price": "33,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "33,000",
+          "tax": "3,300",
+          "total": "36,300",
+          "cash": "50,000",
+          "change": "13,700"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_1_06",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "抽取商品与总金额等核心字段。",
+      "asset_ref": "CORD-v2:train:image_id=8",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Kimchi P",
+            "count": "1x",
+            "price": "36.000"
+          },
+          {
+            "name": "Fre ice grentea",
+            "count": "1x",
+            "price": "Rp 0.000"
+          }
+        ],
+        "fields": {
+          "total": "36.000",
+          "cash": "Rp 51.000",
+          "change": "15.000"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_1_07",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "抽取商品与总金额等核心字段。",
+      "asset_ref": "CORD-v2:train:image_id=9",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "THAI ICED TEA",
+            "count": "2",
+            "price": "40.000"
+          }
+        ],
+        "fields": {
+          "unitprice": "@20.000",
+          "subtotal": "40.000",
+          "total": "40.000",
+          "cash": "100.000",
+          "change": "60.000"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_1_08",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "抽取商品与总金额等核心字段。",
+      "asset_ref": "CORD-v2:train:image_id=10",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Viet Milk Coffee",
+            "count": "1",
+            "price": "25.000"
+          }
+        ],
+        "fields": {
+          "subtotal": "25.000",
+          "total": "25.000",
+          "cash": "30.000",
+          "change": "5.000"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_1_09",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "抽取商品与总金额等核心字段。",
+      "asset_ref": "CORD-v2:train:image_id=0",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Nasi Campur Bali",
+            "count": "1",
+            "price": "75,000"
+          },
+          {
+            "name": "Bbk Bengil Nasi",
+            "count": "1",
+            "price": "125,000"
+          },
+          {
+            "name": "MilkShake Starwb",
+            "count": "1",
+            "price": "37,000"
+          },
+          {
+            "name": "Ice Lemon Tea",
+            "count": "1",
+            "price": "24,000"
+          },
+          {
+            "name": "Nasi Ayam Dewata",
+            "count": "1",
+            "price": "70,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "1,346,000",
+          "service": "100,950",
+          "tax": "144,695",
+          "rounding": "-45",
+          "total": "1,591,600"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_1_10",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "抽取商品与总金额等核心字段。",
+      "asset_ref": "CORD-v2:train:image_id=3",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Bintang Bremer",
+            "count": "1",
+            "price": "59,000"
+          },
+          {
+            "name": "Chicken H-H",
+            "count": "1",
+            "price": "190,000"
+          },
+          {
+            "name": "Ades",
+            "count": "1",
+            "price": "10,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "259,000",
+          "discount": "19,000",
+          "service": "9,600",
+          "tax": "52,416"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_2_01",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "完成商品行、金额汇总与字段映射。",
+      "asset_ref": "CORD-v2:train:image_id=0",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Nasi Campur Bali",
+            "count": "1",
+            "price": "75,000"
+          },
+          {
+            "name": "Bbk Bengil Nasi",
+            "count": "1",
+            "price": "125,000"
+          },
+          {
+            "name": "MilkShake Starwb",
+            "count": "1",
+            "price": "37,000"
+          },
+          {
+            "name": "Ice Lemon Tea",
+            "count": "1",
+            "price": "24,000"
+          },
+          {
+            "name": "Nasi Ayam Dewata",
+            "count": "1",
+            "price": "70,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "1,346,000",
+          "service": "100,950",
+          "tax": "144,695",
+          "rounding": "-45",
+          "total": "1,591,600"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_2_02",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "完成商品行、金额汇总与字段映射。",
+      "asset_ref": "CORD-v2:train:image_id=3",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Bintang Bremer",
+            "count": "1",
+            "price": "59,000"
+          },
+          {
+            "name": "Chicken H-H",
+            "count": "1",
+            "price": "190,000"
+          },
+          {
+            "name": "Ades",
+            "count": "1",
+            "price": "10,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "259,000",
+          "discount": "19,000",
+          "service": "9,600",
+          "tax": "52,416"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_2_03",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "完成商品行、金额汇总与字段映射。",
+      "asset_ref": "CORD-v2:train:image_id=4",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "BASO BIHUN",
+            "count": "1",
+            "price": "43.636"
+          }
+        ],
+        "fields": {
+          "subtotal": "43.636",
+          "tax": "4.364",
+          "total": "48.000",
+          "cash": "50.000",
+          "change": "2.000"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_2_04",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "完成商品行、金额汇总与字段映射。",
+      "asset_ref": "CORD-v2:train:image_id=6",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "BASO TAHU",
+            "count": "1",
+            "price": "43,181"
+          },
+          {
+            "name": "ES JERUK",
+            "count": "1",
+            "price": "13,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "56,181",
+          "tax": "5,618",
+          "total": "61,799",
+          "cash": "62,000",
+          "change": "201"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_2_05",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "完成商品行、金额汇总与字段映射。",
+      "asset_ref": "CORD-v2:train:image_id=7",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "PKT AYAM",
+            "count": "1",
+            "price": "33,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "33,000",
+          "tax": "3,300",
+          "total": "36,300",
+          "cash": "50,000",
+          "change": "13,700"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_2_06",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "完成商品行、金额汇总与字段映射。",
+      "asset_ref": "CORD-v2:train:image_id=8",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Kimchi P",
+            "count": "1x",
+            "price": "36.000"
+          },
+          {
+            "name": "Fre ice grentea",
+            "count": "1x",
+            "price": "Rp 0.000"
+          }
+        ],
+        "fields": {
+          "total": "36.000",
+          "cash": "Rp 51.000",
+          "change": "15.000"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_2_07",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "完成商品行、金额汇总与字段映射。",
+      "asset_ref": "CORD-v2:train:image_id=9",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "THAI ICED TEA",
+            "count": "2",
+            "price": "40.000"
+          }
+        ],
+        "fields": {
+          "unitprice": "@20.000",
+          "subtotal": "40.000",
+          "total": "40.000",
+          "cash": "100.000",
+          "change": "60.000"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_2_08",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "完成商品行、金额汇总与字段映射。",
+      "asset_ref": "CORD-v2:train:image_id=10",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Viet Milk Coffee",
+            "count": "1",
+            "price": "25.000"
+          }
+        ],
+        "fields": {
+          "subtotal": "25.000",
+          "total": "25.000",
+          "cash": "30.000",
+          "change": "5.000"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_2_09",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "完成商品行、金额汇总与字段映射。",
+      "asset_ref": "CORD-v2:train:image_id=0",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Nasi Campur Bali",
+            "count": "1",
+            "price": "75,000"
+          },
+          {
+            "name": "Bbk Bengil Nasi",
+            "count": "1",
+            "price": "125,000"
+          },
+          {
+            "name": "MilkShake Starwb",
+            "count": "1",
+            "price": "37,000"
+          },
+          {
+            "name": "Ice Lemon Tea",
+            "count": "1",
+            "price": "24,000"
+          },
+          {
+            "name": "Nasi Ayam Dewata",
+            "count": "1",
+            "price": "70,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "1,346,000",
+          "service": "100,950",
+          "tax": "144,695",
+          "rounding": "-45",
+          "total": "1,591,600"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_2_10",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "完成商品行、金额汇总与字段映射。",
+      "asset_ref": "CORD-v2:train:image_id=3",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Bintang Bremer",
+            "count": "1",
+            "price": "59,000"
+          },
+          {
+            "name": "Chicken H-H",
+            "count": "1",
+            "price": "190,000"
+          },
+          {
+            "name": "Ades",
+            "count": "1",
+            "price": "10,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "259,000",
+          "discount": "19,000",
+          "service": "9,600",
+          "tax": "52,416"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_3_01",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "在复杂票面中完成多商品、税费、金额与字段层级的完整结构化抽取。",
+      "asset_ref": "CORD-v2:train:image_id=0",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Nasi Campur Bali",
+            "count": "1",
+            "price": "75,000"
+          },
+          {
+            "name": "Bbk Bengil Nasi",
+            "count": "1",
+            "price": "125,000"
+          },
+          {
+            "name": "MilkShake Starwb",
+            "count": "1",
+            "price": "37,000"
+          },
+          {
+            "name": "Ice Lemon Tea",
+            "count": "1",
+            "price": "24,000"
+          },
+          {
+            "name": "Nasi Ayam Dewata",
+            "count": "1",
+            "price": "70,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "1,346,000",
+          "service": "100,950",
+          "tax": "144,695",
+          "rounding": "-45",
+          "total": "1,591,600"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_3_02",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "在复杂票面中完成多商品、税费、金额与字段层级的完整结构化抽取。",
+      "asset_ref": "CORD-v2:train:image_id=3",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Bintang Bremer",
+            "count": "1",
+            "price": "59,000"
+          },
+          {
+            "name": "Chicken H-H",
+            "count": "1",
+            "price": "190,000"
+          },
+          {
+            "name": "Ades",
+            "count": "1",
+            "price": "10,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "259,000",
+          "discount": "19,000",
+          "service": "9,600",
+          "tax": "52,416"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_3_03",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "在复杂票面中完成多商品、税费、金额与字段层级的完整结构化抽取。",
+      "asset_ref": "CORD-v2:train:image_id=4",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "BASO BIHUN",
+            "count": "1",
+            "price": "43.636"
+          }
+        ],
+        "fields": {
+          "subtotal": "43.636",
+          "tax": "4.364",
+          "total": "48.000",
+          "cash": "50.000",
+          "change": "2.000"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_3_04",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "在复杂票面中完成多商品、税费、金额与字段层级的完整结构化抽取。",
+      "asset_ref": "CORD-v2:train:image_id=6",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "BASO TAHU",
+            "count": "1",
+            "price": "43,181"
+          },
+          {
+            "name": "ES JERUK",
+            "count": "1",
+            "price": "13,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "56,181",
+          "tax": "5,618",
+          "total": "61,799",
+          "cash": "62,000",
+          "change": "201"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_3_05",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "在复杂票面中完成多商品、税费、金额与字段层级的完整结构化抽取。",
+      "asset_ref": "CORD-v2:train:image_id=7",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "PKT AYAM",
+            "count": "1",
+            "price": "33,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "33,000",
+          "tax": "3,300",
+          "total": "36,300",
+          "cash": "50,000",
+          "change": "13,700"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_3_06",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "在复杂票面中完成多商品、税费、金额与字段层级的完整结构化抽取。",
+      "asset_ref": "CORD-v2:train:image_id=8",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Kimchi P",
+            "count": "1x",
+            "price": "36.000"
+          },
+          {
+            "name": "Fre ice grentea",
+            "count": "1x",
+            "price": "Rp 0.000"
+          }
+        ],
+        "fields": {
+          "total": "36.000",
+          "cash": "Rp 51.000",
+          "change": "15.000"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_3_07",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "在复杂票面中完成多商品、税费、金额与字段层级的完整结构化抽取。",
+      "asset_ref": "CORD-v2:train:image_id=9",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "THAI ICED TEA",
+            "count": "2",
+            "price": "40.000"
+          }
+        ],
+        "fields": {
+          "unitprice": "@20.000",
+          "subtotal": "40.000",
+          "total": "40.000",
+          "cash": "100.000",
+          "change": "60.000"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_3_08",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "在复杂票面中完成多商品、税费、金额与字段层级的完整结构化抽取。",
+      "asset_ref": "CORD-v2:train:image_id=10",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Viet Milk Coffee",
+            "count": "1",
+            "price": "25.000"
+          }
+        ],
+        "fields": {
+          "subtotal": "25.000",
+          "total": "25.000",
+          "cash": "30.000",
+          "change": "5.000"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_3_09",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "在复杂票面中完成多商品、税费、金额与字段层级的完整结构化抽取。",
+      "asset_ref": "CORD-v2:train:image_id=0",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Nasi Campur Bali",
+            "count": "1",
+            "price": "75,000"
+          },
+          {
+            "name": "Bbk Bengil Nasi",
+            "count": "1",
+            "price": "125,000"
+          },
+          {
+            "name": "MilkShake Starwb",
+            "count": "1",
+            "price": "37,000"
+          },
+          {
+            "name": "Ice Lemon Tea",
+            "count": "1",
+            "price": "24,000"
+          },
+          {
+            "name": "Nasi Ayam Dewata",
+            "count": "1",
+            "price": "70,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "1,346,000",
+          "service": "100,950",
+          "tax": "144,695",
+          "rounding": "-45",
+          "total": "1,591,600"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_cord_3_10",
+      "scene_id": "scene_07",
+      "dataset": "CORD v2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "在复杂票面中完成多商品、税费、金额与字段层级的完整结构化抽取。",
+      "asset_ref": "CORD-v2:train:image_id=3",
+      "asset_binding_required": true,
+      "answer_instruction": "填写 items 和 fields；金额保持票面原格式。",
+      "answer_example": {
+        "origin": "format_example",
+        "items": [
+          {
+            "name": "Coffee",
+            "count": "1",
+            "price": "20.000"
+          }
+        ],
+        "fields": {
+          "total": "20.000"
+        }
+      },
+      "answer": {
+        "items": [
+          {
+            "name": "Bintang Bremer",
+            "count": "1",
+            "price": "59,000"
+          },
+          {
+            "name": "Chicken H-H",
+            "count": "1",
+            "price": "190,000"
+          },
+          {
+            "name": "Ades",
+            "count": "1",
+            "price": "10,000"
+          }
+        ],
+        "fields": {
+          "subtotal": "259,000",
+          "discount": "19,000",
+          "service": "9,600",
+          "tax": "52,416"
+        }
+      },
+      "source_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+      "source_note": "CORD v2 公开 receipt parse 示例。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_1_01",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：receipt_number。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "receipt_number": "16551"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_1_02",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：date_time。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "date_time": "07/12/2022 07:07 PM"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_1_03",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：order_number。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "order_number": "465"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_1_04",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping",
+        "s7_items"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：items。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "items": [
+          {
+            "amount": "92.10"
+          },
+          {
+            "amount": "30.71"
+          },
+          {
+            "amount": "25.43"
+          },
+          {
+            "amount": "39.47"
+          },
+          {
+            "amount": "21.93"
+          },
+          {
+            "amount": "8.77"
+          },
+          {
+            "quantity": "2",
+            "unit_price": "10.53",
+            "amount": "21.06"
+          }
+        ]
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_1_05",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：net_sales。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "net_sales": "239.47"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_1_06",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：service_12。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "service_12": "28.74"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_1_07",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：tax。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "tax": "37.55"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_1_08",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：min_charge。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "min_charge": "0.00"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_1_09",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：total_due。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "total_due": "305.76"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_1_10",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping",
+        "s7_items"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：full。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "receipt_number": "16551",
+        "date_time": "07/12/2022 07:07 PM",
+        "order_number": "465",
+        "items": [
+          {
+            "amount": "92.10"
+          },
+          {
+            "amount": "30.71"
+          },
+          {
+            "amount": "25.43"
+          },
+          {
+            "amount": "39.47"
+          },
+          {
+            "amount": "21.93"
+          },
+          {
+            "amount": "8.77"
+          },
+          {
+            "quantity": "2",
+            "unit_price": "10.53",
+            "amount": "21.06"
+          }
+        ],
+        "net_sales": "239.47",
+        "service_12": "28.74",
+        "tax": "37.55",
+        "min_charge": "0.00",
+        "total_due": "305.76"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_2_01",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：receipt_number。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "receipt_number": "16551"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_2_02",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：date_time。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "date_time": "07/12/2022 07:07 PM"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_2_03",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：order_number。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "order_number": "465"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_2_04",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping",
+        "s7_items"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：items。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "items": [
+          {
+            "amount": "92.10"
+          },
+          {
+            "amount": "30.71"
+          },
+          {
+            "amount": "25.43"
+          },
+          {
+            "amount": "39.47"
+          },
+          {
+            "amount": "21.93"
+          },
+          {
+            "amount": "8.77"
+          },
+          {
+            "quantity": "2",
+            "unit_price": "10.53",
+            "amount": "21.06"
+          }
+        ]
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_2_05",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：net_sales。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "net_sales": "239.47"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_2_06",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：service_12。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "service_12": "28.74"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_2_07",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：tax。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "tax": "37.55"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_2_08",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：min_charge。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "min_charge": "0.00"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_2_09",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：total_due。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "total_due": "305.76"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_2_10",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping",
+        "s7_items"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：full。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "receipt_number": "16551",
+        "date_time": "07/12/2022 07:07 PM",
+        "order_number": "465",
+        "items": [
+          {
+            "amount": "92.10"
+          },
+          {
+            "amount": "30.71"
+          },
+          {
+            "amount": "25.43"
+          },
+          {
+            "amount": "39.47"
+          },
+          {
+            "amount": "21.93"
+          },
+          {
+            "amount": "8.77"
+          },
+          {
+            "quantity": "2",
+            "unit_price": "10.53",
+            "amount": "21.06"
+          }
+        ],
+        "net_sales": "239.47",
+        "service_12": "28.74",
+        "tax": "37.55",
+        "min_charge": "0.00",
+        "total_due": "305.76"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_3_01",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：receipt_number。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "receipt_number": "16551"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_3_02",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：date_time。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "date_time": "07/12/2022 07:07 PM"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_3_03",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：order_number。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "order_number": "465"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_3_04",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping",
+        "s7_items"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：items。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "items": [
+          {
+            "amount": "92.10"
+          },
+          {
+            "amount": "30.71"
+          },
+          {
+            "amount": "25.43"
+          },
+          {
+            "amount": "39.47"
+          },
+          {
+            "amount": "21.93"
+          },
+          {
+            "amount": "8.77"
+          },
+          {
+            "quantity": "2",
+            "unit_price": "10.53",
+            "amount": "21.06"
+          }
+        ]
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_3_05",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：net_sales。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "net_sales": "239.47"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_3_06",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：service_12。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "service_12": "28.74"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_3_07",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：tax。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "tax": "37.55"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_3_08",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：min_charge。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "min_charge": "0.00"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_3_09",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：total_due。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "total_due": "305.76"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_coru_3_10",
+      "scene_id": "scene_07",
+      "dataset": "CORU / ReceiptSense",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_amount",
+        "s7_mapping",
+        "s7_items"
+      ],
+      "prompt": "从 CORU 小票中抽取字段：full。",
+      "asset_ref": "assets/scene_07/image2.jpeg",
+      "asset_binding_required": false,
+      "answer_instruction": "按票面文字精确填写目标字段。",
+      "answer_example": {
+        "origin": "format_example",
+        "total_due": "305.76"
+      },
+      "answer": {
+        "receipt_number": "16551",
+        "date_time": "07/12/2022 07:07 PM",
+        "order_number": "465",
+        "items": [
+          {
+            "amount": "92.10"
+          },
+          {
+            "amount": "30.71"
+          },
+          {
+            "amount": "25.43"
+          },
+          {
+            "amount": "39.47"
+          },
+          {
+            "amount": "21.93"
+          },
+          {
+            "amount": "8.77"
+          },
+          {
+            "quantity": "2",
+            "unit_price": "10.53",
+            "amount": "21.06"
+          }
+        ],
+        "net_sales": "239.47",
+        "service_12": "28.74",
+        "tax": "37.55",
+        "min_charge": "0.00",
+        "total_due": "305.76"
+      },
+      "source_url": "https://huggingface.co/datasets/abdoelsayed/CORU",
+      "source_note": "任务plus中的 CORU 真实小票示例；不同题只改变目标字段。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_1_01",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt_text",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "40.99 20.99 2 chunks sunshine"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "brand": "sunshine",
+          "weight": "No Weight",
+          "number_of_units": "2"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_1_02",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt_text",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "برسيل اتوماتيك جل روز 2.6"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "brand": "برسيل",
+          "weight": "2.6ل",
+          "number_of_units": "1"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_1_03",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt_text",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "regina Pasta penne 400g"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "brand": "regina",
+          "weight": "400g",
+          "number_of_units": "1"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_1_04",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt_text",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "10.00 400g Penne Pasta ElMaleka"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "brand": "ElMaleka",
+          "weight": "400g",
+          "number_of_units": "1"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_1_05",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "40.99 20.99 2 chunks sunshine"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "brand": "sunshine",
+          "weight": "No Weight",
+          "number_of_units": "2"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_1_06",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "برسيل اتوماتيك جل روز 2.6"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "brand": "برسيل",
+          "weight": "2.6ل",
+          "number_of_units": "1"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_1_07",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "regina Pasta penne 400g"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "brand": "regina",
+          "weight": "400g",
+          "number_of_units": "1"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_1_08",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "10.00 400g Penne Pasta ElMaleka"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "brand": "ElMaleka",
+          "weight": "400g",
+          "number_of_units": "1"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_1_09",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "40.99 20.99 2 chunks sunshine"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "brand": "sunshine",
+          "weight": "No Weight",
+          "number_of_units": "2"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_1_10",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "برسيل اتوماتيك جل روز 2.6"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "brand": "برسيل",
+          "weight": "2.6ل",
+          "number_of_units": "1"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_2_01",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt_text",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "40.99 20.99 2 chunks sunshine"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Tins, Jars & Packets",
+          "brand": "sunshine",
+          "weight": "No Weight",
+          "number_of_units": "2",
+          "price": "20.99",
+          "total_price": "40.99"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_2_02",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt_text",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "برسيل اتوماتيك جل روز 2.6"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Cleaning Supplies",
+          "brand": "برسيل",
+          "weight": "2.6ل",
+          "number_of_units": "1",
+          "price": "No Price",
+          "total_price": "No T.Price"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_2_03",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt_text",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "regina Pasta penne 400g"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Rice, Pasta & Pulses",
+          "brand": "regina",
+          "weight": "400g",
+          "number_of_units": "1",
+          "price": "No Price",
+          "total_price": "No T.Price"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_2_04",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt_text",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "10.00 400g Penne Pasta ElMaleka"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Rice, Pasta & Pulses",
+          "brand": "ElMaleka",
+          "weight": "400g",
+          "number_of_units": "1",
+          "price": "10",
+          "total_price": "10"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_2_05",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "40.99 20.99 2 chunks sunshine"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Tins, Jars & Packets",
+          "brand": "sunshine",
+          "weight": "No Weight",
+          "number_of_units": "2",
+          "price": "20.99",
+          "total_price": "40.99"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_2_06",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "برسيل اتوماتيك جل روز 2.6"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Cleaning Supplies",
+          "brand": "برسيل",
+          "weight": "2.6ل",
+          "number_of_units": "1",
+          "price": "No Price",
+          "total_price": "No T.Price"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_2_07",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "regina Pasta penne 400g"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Rice, Pasta & Pulses",
+          "brand": "regina",
+          "weight": "400g",
+          "number_of_units": "1",
+          "price": "No Price",
+          "total_price": "No T.Price"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_2_08",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "10.00 400g Penne Pasta ElMaleka"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Rice, Pasta & Pulses",
+          "brand": "ElMaleka",
+          "weight": "400g",
+          "number_of_units": "1",
+          "price": "10",
+          "total_price": "10"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_2_09",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "40.99 20.99 2 chunks sunshine"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Tins, Jars & Packets",
+          "brand": "sunshine",
+          "weight": "No Weight",
+          "number_of_units": "2",
+          "price": "20.99",
+          "total_price": "40.99"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_2_10",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "برسيل اتوماتيك جل روز 2.6"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Cleaning Supplies",
+          "brand": "برسيل",
+          "weight": "2.6ل",
+          "number_of_units": "1",
+          "price": "No Price",
+          "total_price": "No T.Price"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_3_01",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt_text",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "40.99 20.99 2 chunks sunshine"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Tins, Jars & Packets",
+          "brand": "sunshine",
+          "weight": "No Weight",
+          "number_of_units": "2",
+          "size_of_units": "No Size of units",
+          "price": "20.99",
+          "total_price": "40.99",
+          "pack": "علبة",
+          "unit": "No Unit"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_3_02",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt_text",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "برسيل اتوماتيك جل روز 2.6"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Cleaning Supplies",
+          "brand": "برسيل",
+          "weight": "2.6ل",
+          "number_of_units": "1",
+          "size_of_units": "No Size of units",
+          "price": "No Price",
+          "total_price": "No T.Price",
+          "pack": "عبوة",
+          "unit": "ل"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_3_03",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt_text",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "regina Pasta penne 400g"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Rice, Pasta & Pulses",
+          "brand": "regina",
+          "weight": "400g",
+          "number_of_units": "1",
+          "size_of_units": "No Size of units",
+          "price": "No Price",
+          "total_price": "No T.Price",
+          "pack": "كيس",
+          "unit": "g"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_3_04",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset",
+      "question_type": "receipt_text",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "10.00 400g Penne Pasta ElMaleka"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Rice, Pasta & Pulses",
+          "brand": "ElMaleka",
+          "weight": "400g",
+          "number_of_units": "1",
+          "size_of_units": "No Size of units",
+          "price": "10",
+          "total_price": "10",
+          "pack": "كيس",
+          "unit": "g"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_3_05",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "40.99 20.99 2 chunks sunshine"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Tins, Jars & Packets",
+          "brand": "sunshine",
+          "weight": "No Weight",
+          "number_of_units": "2",
+          "size_of_units": "No Size of units",
+          "price": "20.99",
+          "total_price": "40.99",
+          "pack": "علبة",
+          "unit": "No Unit"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_3_06",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "برسيل اتوماتيك جل روز 2.6"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Cleaning Supplies",
+          "brand": "برسيل",
+          "weight": "2.6ل",
+          "number_of_units": "1",
+          "size_of_units": "No Size of units",
+          "price": "No Price",
+          "total_price": "No T.Price",
+          "pack": "عبوة",
+          "unit": "ل"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_3_07",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "regina Pasta penne 400g"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Rice, Pasta & Pulses",
+          "brand": "regina",
+          "weight": "400g",
+          "number_of_units": "1",
+          "size_of_units": "No Size of units",
+          "price": "No Price",
+          "total_price": "No T.Price",
+          "pack": "كيس",
+          "unit": "g"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_3_08",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "10.00 400g Penne Pasta ElMaleka"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Rice, Pasta & Pulses",
+          "brand": "ElMaleka",
+          "weight": "400g",
+          "number_of_units": "1",
+          "size_of_units": "No Size of units",
+          "price": "10",
+          "total_price": "10",
+          "pack": "كيس",
+          "unit": "g"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_3_09",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "40.99 20.99 2 chunks sunshine"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Tins, Jars & Packets",
+          "brand": "sunshine",
+          "weight": "No Weight",
+          "number_of_units": "2",
+          "size_of_units": "No Size of units",
+          "price": "20.99",
+          "total_price": "40.99",
+          "pack": "علبة",
+          "unit": "No Unit"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s7_amurd_3_10",
+      "scene_id": "scene_07",
+      "dataset": "AMuRD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "receipt_text",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s7_ocr",
+        "s7_field_type",
+        "s7_items",
+        "s7_amount",
+        "s7_mapping"
+      ],
+      "prompt": "从商品 OCR 行中抽取结构化商品信息。",
+      "content": {
+        "text": "برسيل اتوماتيك جل روز 2.6"
+      },
+      "answer_instruction": "按字段填写类别、品牌、重量、数量、价格、包装和单位。",
+      "answer_example": {
+        "origin": "format_example",
+        "brand": "ElMaleka",
+        "weight": "400g",
+        "number_of_units": "1"
+      },
+      "answer": {
+        "fields": {
+          "class": "Cleaning Supplies",
+          "brand": "برسيل",
+          "weight": "2.6ل",
+          "number_of_units": "1",
+          "size_of_units": "No Size of units",
+          "price": "No Price",
+          "total_price": "No T.Price",
+          "pack": "عبوة",
+          "unit": "ل"
+        }
+      },
+      "source_url": "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "source_note": "AMuRD 官方仓库公开 Examples；重复题为不同训练字段组合派生。",
+      "enabled": true
+    }
+  ]
+}
