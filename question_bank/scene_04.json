@@ -1,0 +1,5070 @@
+{
+  "scene_id": "scene_04",
+  "scene_name": "路口监控视频关键帧与车辆目标标注",
+  "version": "visual_assets_local_v2_90",
+  "question_count": 90,
+  "sample_policy": "优先使用公开数据集原生样本。为满足自适应学习中“同KP换新题复测”的题量要求，部分题目由真实公开数据集样本或任务plus中的真实数据集示例派生；所有派生题均显式标记 sample_origin=real_dataset_derived，不把派生样本冒充为数据集官方原始样本。",
+  "difficulty_rule": {
+    "1": "job / 岗位技能提升",
+    "2": "course / 课程学习巩固",
+    "3": "competition / 竞赛备赛",
+    "note": "difficulty 是本平台的岗-课-赛分流字段，不代表数据集官方难度。"
+  },
+  "kp_ids": [
+    "s4_class",
+    "s4_bbox",
+    "s4_track",
+    "s4_occlusion"
+  ],
+  "source_urls": [
+    "https://jpjodoin.com/urbantracker/dataset.html",
+    "https://www.aicitychallenge.org/",
+    "https://github.com/VisDrone/VisDrone-Dataset"
+  ],
+  "notes": [
+    "车辆类别、Track ID、BBox 与遮挡标签采用任务plus场景四中的真实数据集示例标注。"
+  ],
+  "questions": [
+    {
+      "question_id": "s4_urban_1_01",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          700,
+          705
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_1_02",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          705,
+          710
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_1_03",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          710,
+          700
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_1_04",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          700,
+          705
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_1_05",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          705,
+          710
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_1_06",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          710,
+          700
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_1_07",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          700,
+          705
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_1_08",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          705,
+          710
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_1_09",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          710,
+          700
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_1_10",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          700,
+          705
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_1_01",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1353,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1353,
+        "class": "Car",
+        "track_id": "444",
+        "bbox": [
+          1053,
+          216,
+          95,
+          75
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_1_02",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1354,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1354,
+        "class": "Car",
+        "track_id": "662",
+        "bbox": [
+          1127,
+          210,
+          91,
+          83
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_1_03",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1355,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1355,
+        "class": "Car",
+        "track_id": "444",
+        "bbox": [
+          1049,
+          217,
+          98,
+          75
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_1_04",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1356,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1356,
+        "class": "Car",
+        "track_id": "662",
+        "bbox": [
+          1122,
+          206,
+          101,
+          98
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_1_05",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1353,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1353,
+        "class": "Car",
+        "track_id": "444",
+        "bbox": [
+          1053,
+          216,
+          95,
+          75
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_1_06",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1354,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1354,
+        "class": "Car",
+        "track_id": "662",
+        "bbox": [
+          1127,
+          210,
+          91,
+          83
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_1_07",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1355,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1355,
+        "class": "Car",
+        "track_id": "444",
+        "bbox": [
+          1049,
+          217,
+          98,
+          75
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_1_08",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1356,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1356,
+        "class": "Car",
+        "track_id": "662",
+        "bbox": [
+          1122,
+          206,
+          101,
+          98
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_1_09",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1353,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1353,
+        "class": "Car",
+        "track_id": "444",
+        "bbox": [
+          1053,
+          216,
+          95,
+          75
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_1_10",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1354,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1354,
+        "class": "Car",
+        "track_id": "662",
+        "bbox": [
+          1127,
+          210,
+          91,
+          83
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_1_01",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 182,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 182,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          363,
+          630,
+          285,
+          183
+        ],
+        "occlusion": 0,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_1_02",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 183,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 183,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          361,
+          634,
+          285,
+          183
+        ],
+        "occlusion": 1,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_1_03",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 184,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 184,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          360,
+          642,
+          285,
+          183
+        ],
+        "occlusion": 1,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_1_04",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 185,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 185,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          356,
+          663,
+          285,
+          183
+        ],
+        "occlusion": 0,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_1_05",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 182,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 182,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          363,
+          630,
+          285,
+          183
+        ],
+        "occlusion": 0,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_1_06",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 183,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 183,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          361,
+          634,
+          285,
+          183
+        ],
+        "occlusion": 1,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_1_07",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 184,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 184,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          360,
+          642,
+          285,
+          183
+        ],
+        "occlusion": 1,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_1_08",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 185,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 185,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          356,
+          663,
+          285,
+          183
+        ],
+        "occlusion": 0,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_1_09",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 182,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 182,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          363,
+          630,
+          285,
+          183
+        ],
+        "occlusion": 0,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_1_10",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 183,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 183,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          361,
+          634,
+          285,
+          183
+        ],
+        "occlusion": 1,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_2_01",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          700,
+          705
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_2_02",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          705,
+          710
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_2_03",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          710,
+          700
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_2_04",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          700,
+          705
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_2_05",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          705,
+          710
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_2_06",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          710,
+          700
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_2_07",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          700,
+          705
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_2_08",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          705,
+          710
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_2_09",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          710,
+          700
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_2_10",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          700,
+          705
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_2_01",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1353,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1353,
+        "class": "Car",
+        "track_id": "444",
+        "bbox": [
+          1053,
+          216,
+          95,
+          75
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_2_02",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1354,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1354,
+        "class": "Car",
+        "track_id": "662",
+        "bbox": [
+          1127,
+          210,
+          91,
+          83
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_2_03",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1355,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1355,
+        "class": "Car",
+        "track_id": "444",
+        "bbox": [
+          1049,
+          217,
+          98,
+          75
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_2_04",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1356,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1356,
+        "class": "Car",
+        "track_id": "662",
+        "bbox": [
+          1122,
+          206,
+          101,
+          98
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_2_05",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1353,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1353,
+        "class": "Car",
+        "track_id": "444",
+        "bbox": [
+          1053,
+          216,
+          95,
+          75
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_2_06",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1354,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1354,
+        "class": "Car",
+        "track_id": "662",
+        "bbox": [
+          1127,
+          210,
+          91,
+          83
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_2_07",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1355,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1355,
+        "class": "Car",
+        "track_id": "444",
+        "bbox": [
+          1049,
+          217,
+          98,
+          75
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_2_08",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1356,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1356,
+        "class": "Car",
+        "track_id": "662",
+        "bbox": [
+          1122,
+          206,
+          101,
+          98
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_2_09",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1353,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1353,
+        "class": "Car",
+        "track_id": "444",
+        "bbox": [
+          1053,
+          216,
+          95,
+          75
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_2_10",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1354,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1354,
+        "class": "Car",
+        "track_id": "662",
+        "bbox": [
+          1127,
+          210,
+          91,
+          83
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_2_01",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 182,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 182,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          363,
+          630,
+          285,
+          183
+        ],
+        "occlusion": 0,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_2_02",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 183,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 183,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          361,
+          634,
+          285,
+          183
+        ],
+        "occlusion": 1,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_2_03",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 184,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 184,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          360,
+          642,
+          285,
+          183
+        ],
+        "occlusion": 1,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_2_04",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 185,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 185,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          356,
+          663,
+          285,
+          183
+        ],
+        "occlusion": 0,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_2_05",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 182,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 182,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          363,
+          630,
+          285,
+          183
+        ],
+        "occlusion": 0,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_2_06",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 183,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 183,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          361,
+          634,
+          285,
+          183
+        ],
+        "occlusion": 1,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_2_07",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 184,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 184,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          360,
+          642,
+          285,
+          183
+        ],
+        "occlusion": 1,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_2_08",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 185,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 185,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          356,
+          663,
+          285,
+          183
+        ],
+        "occlusion": 0,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_2_09",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 182,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 182,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          363,
+          630,
+          285,
+          183
+        ],
+        "occlusion": 0,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_2_10",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 183,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 183,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          361,
+          634,
+          285,
+          183
+        ],
+        "occlusion": 1,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_3_01",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          700,
+          705
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_3_02",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          705,
+          710
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_3_03",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          710,
+          700
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_3_04",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          700,
+          705
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_3_05",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          705,
+          710
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_3_06",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          710,
+          700
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_3_07",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          700,
+          705
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_3_08",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          705,
+          710
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_3_09",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          710,
+          700
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_urban_3_10",
+      "scene_id": "scene_04",
+      "dataset": "UrbanTracker",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_track"
+      ],
+      "prompt": "判断连续帧中车辆类别与 Track ID 是否保持一致。",
+      "content": {
+        "frames": [
+          700,
+          705
+        ],
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image1.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image2.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image3.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image1.jpeg",
+          "assets/scene_04/image2.jpeg",
+          "assets/scene_04/image3.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、track_id、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "7",
+        "id_switch": false
+      },
+      "answer": {
+        "class": "Car",
+        "track_id": "13",
+        "id_switch": false
+      },
+      "source_url": "https://jpjodoin.com/urbantracker/dataset.html",
+      "source_note": "UrbanTracker 真实片段的连续帧 Track ID 示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_3_01",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1353,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1353,
+        "class": "Car",
+        "track_id": "444",
+        "bbox": [
+          1053,
+          216,
+          95,
+          75
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_3_02",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1354,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1354,
+        "class": "Car",
+        "track_id": "662",
+        "bbox": [
+          1127,
+          210,
+          91,
+          83
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_3_03",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1355,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1355,
+        "class": "Car",
+        "track_id": "444",
+        "bbox": [
+          1049,
+          217,
+          98,
+          75
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_3_04",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1356,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1356,
+        "class": "Car",
+        "track_id": "662",
+        "bbox": [
+          1122,
+          206,
+          101,
+          98
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_3_05",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1353,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1353,
+        "class": "Car",
+        "track_id": "444",
+        "bbox": [
+          1053,
+          216,
+          95,
+          75
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_3_06",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1354,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1354,
+        "class": "Car",
+        "track_id": "662",
+        "bbox": [
+          1127,
+          210,
+          91,
+          83
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_3_07",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1355,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1355,
+        "class": "Car",
+        "track_id": "444",
+        "bbox": [
+          1049,
+          217,
+          98,
+          75
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_3_08",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1356,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1356,
+        "class": "Car",
+        "track_id": "662",
+        "bbox": [
+          1122,
+          206,
+          101,
+          98
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_3_09",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1353,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1353,
+        "class": "Car",
+        "track_id": "444",
+        "bbox": [
+          1053,
+          216,
+          95,
+          75
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_city_3_10",
+      "scene_id": "scene_04",
+      "dataset": "CityFlowV2",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track"
+      ],
+      "prompt": "完成指定帧车辆类别、BBox 与 Track ID 标注。",
+      "content": {
+        "frame": 1354,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image4.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image5.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image6.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image7.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image8.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image9.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image10.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image4.jpeg",
+          "assets/scene_04/image5.jpeg",
+          "assets/scene_04/image6.jpeg",
+          "assets/scene_04/image7.jpeg",
+          "assets/scene_04/image8.jpeg",
+          "assets/scene_04/image9.jpeg",
+          "assets/scene_04/image10.jpeg"
+        ]
+      },
+      "answer_instruction": "bbox 格式为 [xmin,ymin,width,height]。",
+      "answer_example": {
+        "class": "Car",
+        "track_id": "10",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ]
+      },
+      "answer": {
+        "frame": 1354,
+        "class": "Car",
+        "track_id": "662",
+        "bbox": [
+          1127,
+          210,
+          91,
+          83
+        ],
+        "bbox_format": "[xmin,ymin,width,height]",
+        "id_switch": false
+      },
+      "source_url": "https://www.aicitychallenge.org/",
+      "source_note": "CityFlowV2 真实验证片段标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_3_01",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 182,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 182,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          363,
+          630,
+          285,
+          183
+        ],
+        "occlusion": 0,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_3_02",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 183,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 183,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          361,
+          634,
+          285,
+          183
+        ],
+        "occlusion": 1,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_3_03",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 184,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 184,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          360,
+          642,
+          285,
+          183
+        ],
+        "occlusion": 1,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_3_04",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 185,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 185,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          356,
+          663,
+          285,
+          183
+        ],
+        "occlusion": 0,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_3_05",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 182,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 182,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          363,
+          630,
+          285,
+          183
+        ],
+        "occlusion": 0,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_3_06",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 183,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 183,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          361,
+          634,
+          285,
+          183
+        ],
+        "occlusion": 1,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_3_07",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 184,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 184,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          360,
+          642,
+          285,
+          183
+        ],
+        "occlusion": 1,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_3_08",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 185,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 185,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          356,
+          663,
+          285,
+          183
+        ],
+        "occlusion": 0,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_3_09",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 182,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 182,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          363,
+          630,
+          285,
+          183
+        ],
+        "occlusion": 0,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s4_visdrone_3_10",
+      "scene_id": "scene_04",
+      "dataset": "VisDrone MOT",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "tracking",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s4_class",
+        "s4_bbox",
+        "s4_track",
+        "s4_occlusion"
+      ],
+      "prompt": "完成车辆框、Track ID、遮挡状态与ID连续性标注。",
+      "content": {
+        "frame": 183,
+        "frame_assets": [
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image11.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image12.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image13.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image14.jpeg",
+          "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_04/image15.jpeg"
+        ],
+        "frame_asset_paths": [
+          "assets/scene_04/image11.jpeg",
+          "assets/scene_04/image12.jpeg",
+          "assets/scene_04/image13.jpeg",
+          "assets/scene_04/image14.jpeg",
+          "assets/scene_04/image15.jpeg"
+        ]
+      },
+      "answer_instruction": "填写 class、bbox、track_id、occlusion、id_switch。",
+      "answer_example": {
+        "class": "Car",
+        "bbox": [
+          100,
+          100,
+          50,
+          40
+        ],
+        "track_id": "1",
+        "occlusion": 0
+      },
+      "answer": {
+        "frame": 183,
+        "class": "Car",
+        "track_id": "18",
+        "bbox": [
+          361,
+          634,
+          285,
+          183
+        ],
+        "occlusion": 1,
+        "id_switch": false
+      },
+      "source_url": "https://github.com/VisDrone/VisDrone-Dataset",
+      "source_note": "VisDrone MOT 真实连续帧标注示例派生。",
+      "enabled": true
+    }
+  ],
+  "asset_policy": "15帧素材全部来自任务plus场景四文档内嵌真实示例，已落地到 assets/scene_04。"
+}
