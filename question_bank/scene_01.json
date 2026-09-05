@@ -1,0 +1,3801 @@
+{
+  "scene_id": "scene_01",
+  "scene_name": "商超客流图像质量筛选与近重复去重",
+  "version": "visual_assets_local_v2_90",
+  "question_count": 90,
+  "difficulty_rule": {
+    "1": "job / 岗位技能提升",
+    "2": "course / 课程学习巩固",
+    "3": "competition / 竞赛备赛"
+  },
+  "asset_policy": "所有视觉素材已落地到仓库 assets/scene_01；CAVIAR base 本身是任务plus中的严重模糊教学样例。",
+  "kp_ids": [
+    "s1_clarity",
+    "s1_exposure",
+    "s1_occlusion",
+    "s1_validity",
+    "s1_duplicate"
+  ],
+  "questions": [
+    {
+      "question_id": "s1_mall_1_01",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（岗位技能提升），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g1_01_original.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g1_01_original.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "original"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_1_02",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（岗位技能提升），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g1_02_mild_blur.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g1_02_mild_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "mild_blur"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "轻微模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_1_03",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（岗位技能提升），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g1_03_severe_blur.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g1_03_severe_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "severe_blur"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_1_04",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（岗位技能提升），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g1_04_mild_over.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g1_04_mild_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "mild_over"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_1_05",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（岗位技能提升），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g1_05_severe_over.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g1_05_severe_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "severe_over"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重过曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_1_06",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（岗位技能提升），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g1_06_mild_under.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g1_06_mild_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "mild_under"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_1_07",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（岗位技能提升），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g1_07_severe_under.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g1_07_severe_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "severe_under"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重欠曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_1_08",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（岗位技能提升），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g1_08_mild_occlusion.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g1_08_mild_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "轻微遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_1_09",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（岗位技能提升），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g1_09_severe_occlusion.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g1_09_severe_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_1_10",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（岗位技能提升），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g1_10_black.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g1_10_black.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "black"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重欠曝",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_1_01",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（岗位技能提升），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g1_01_original.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g1_01_original.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "original"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_1_02",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（岗位技能提升），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g1_02_mild_blur.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g1_02_mild_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "mild_blur"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_1_03",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（岗位技能提升），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g1_03_severe_blur.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g1_03_severe_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "severe_blur"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_1_04",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（岗位技能提升），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g1_04_mild_over.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g1_04_mild_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "mild_over"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_1_05",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（岗位技能提升），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g1_05_severe_over.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g1_05_severe_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "severe_over"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重过曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_1_06",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（岗位技能提升），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g1_06_mild_under.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g1_06_mild_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "mild_under"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_1_07",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（岗位技能提升），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g1_07_severe_under.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g1_07_severe_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "severe_under"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重欠曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_1_08",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（岗位技能提升），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g1_08_mild_occlusion.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g1_08_mild_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "轻微遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_1_09",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（岗位技能提升），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g1_09_severe_occlusion.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g1_09_severe_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_1_10",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（岗位技能提升），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g1_10_black.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g1_10_black.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "black"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重欠曝",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_1_01",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（岗位技能提升）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g1_01_original.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g1_01_original.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "original"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_1_02",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（岗位技能提升）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g1_02_mild_blur.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g1_02_mild_blur.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "mild_blur"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_1_03",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（岗位技能提升）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g1_03_severe_blur.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g1_03_severe_blur.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "severe_blur"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_1_04",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（岗位技能提升）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g1_04_mild_over.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g1_04_mild_over.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "mild_over"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_1_05",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（岗位技能提升）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g1_05_severe_over.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g1_05_severe_over.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "severe_over"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_1_06",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（岗位技能提升）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g1_06_mild_under.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g1_06_mild_under.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "mild_under"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_1_07",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（岗位技能提升）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g1_07_severe_under.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g1_07_severe_under.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "severe_under"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_1_08",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（岗位技能提升）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g1_08_mild_occlusion.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g1_08_mild_occlusion.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_1_09",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（岗位技能提升）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g1_09_severe_occlusion.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g1_09_severe_occlusion.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_1_10",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（岗位技能提升）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g1_10_black.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g1_10_black.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "black"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_2_01",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（课程学习巩固），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g2_01_original.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g2_01_original.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "original"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_2_02",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（课程学习巩固），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g2_02_mild_blur.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g2_02_mild_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "mild_blur"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "轻微模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_2_03",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（课程学习巩固），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g2_03_severe_blur.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g2_03_severe_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "severe_blur"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_2_04",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（课程学习巩固），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g2_04_mild_over.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g2_04_mild_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "mild_over"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_2_05",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（课程学习巩固），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g2_05_severe_over.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g2_05_severe_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "severe_over"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重过曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_2_06",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（课程学习巩固），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g2_06_mild_under.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g2_06_mild_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "mild_under"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_2_07",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（课程学习巩固），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g2_07_severe_under.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g2_07_severe_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "severe_under"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重欠曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_2_08",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（课程学习巩固），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g2_08_mild_occlusion.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g2_08_mild_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "轻微遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_2_09",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（课程学习巩固），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g2_09_severe_occlusion.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g2_09_severe_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_2_10",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（课程学习巩固），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g2_10_black.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g2_10_black.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "black"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重欠曝",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_2_01",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（课程学习巩固），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g2_01_original.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g2_01_original.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "original"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_2_02",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（课程学习巩固），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g2_02_mild_blur.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g2_02_mild_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "mild_blur"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_2_03",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（课程学习巩固），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g2_03_severe_blur.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g2_03_severe_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "severe_blur"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_2_04",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（课程学习巩固），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g2_04_mild_over.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g2_04_mild_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "mild_over"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_2_05",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（课程学习巩固），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g2_05_severe_over.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g2_05_severe_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "severe_over"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重过曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_2_06",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（课程学习巩固），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g2_06_mild_under.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g2_06_mild_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "mild_under"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_2_07",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（课程学习巩固），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g2_07_severe_under.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g2_07_severe_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "severe_under"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重欠曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_2_08",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（课程学习巩固），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g2_08_mild_occlusion.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g2_08_mild_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "轻微遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_2_09",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（课程学习巩固），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g2_09_severe_occlusion.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g2_09_severe_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_2_10",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（课程学习巩固），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g2_10_black.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g2_10_black.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "black"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重欠曝",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_2_01",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（课程学习巩固）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g2_01_original.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g2_01_original.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "original"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_2_02",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（课程学习巩固）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g2_02_mild_blur.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g2_02_mild_blur.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "mild_blur"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_2_03",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（课程学习巩固）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g2_03_severe_blur.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g2_03_severe_blur.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "severe_blur"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_2_04",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（课程学习巩固）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g2_04_mild_over.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g2_04_mild_over.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "mild_over"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_2_05",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（课程学习巩固）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g2_05_severe_over.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g2_05_severe_over.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "severe_over"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_2_06",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（课程学习巩固）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g2_06_mild_under.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g2_06_mild_under.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "mild_under"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_2_07",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（课程学习巩固）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g2_07_severe_under.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g2_07_severe_under.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "severe_under"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_2_08",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（课程学习巩固）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g2_08_mild_occlusion.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g2_08_mild_occlusion.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_2_09",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（课程学习巩固）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g2_09_severe_occlusion.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g2_09_severe_occlusion.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_2_10",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（课程学习巩固）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g2_10_black.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g2_10_black.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "black"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_3_01",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（竞赛备赛），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g3_01_original.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g3_01_original.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "original"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_3_02",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（竞赛备赛），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g3_02_mild_blur.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g3_02_mild_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "mild_blur"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "轻微模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_3_03",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（竞赛备赛），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g3_03_severe_blur.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g3_03_severe_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "severe_blur"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_3_04",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（竞赛备赛），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g3_04_mild_over.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g3_04_mild_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "mild_over"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_3_05",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（竞赛备赛），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g3_05_severe_over.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g3_05_severe_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "severe_over"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重过曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_3_06",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（竞赛备赛），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g3_06_mild_under.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g3_06_mild_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "mild_under"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_3_07",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（竞赛备赛），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g3_07_severe_under.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g3_07_severe_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "severe_under"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "严重欠曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_3_08",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（竞赛备赛），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g3_08_mild_occlusion.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g3_08_mild_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "轻微遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_3_09",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（竞赛备赛），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g3_09_severe_occlusion.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g3_09_severe_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mall_3_10",
+      "scene_id": "scene_01",
+      "dataset": "Mall Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成商超客流图像质量筛选（竞赛备赛），并给出最终保留/删除决定。",
+      "asset_path": "assets/scene_01/mall/mall_g3_10_black.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mall/mall_g3_10_black.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image1.jpeg",
+        "transform": "black"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "清晰",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "有效",
+        "decision": "保留"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重欠曝",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://staff.ie.cuhk.edu.hk/~ccloy/downloads_mall_dataset.html",
+      "source_note": "来自用户提供的任务plus真实 Mall Dataset 示例；图像质量变化为本平台确定性派生，不冒充官方原图。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_3_01",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（竞赛备赛），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g3_01_original.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g3_01_original.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "original"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_3_02",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（竞赛备赛），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g3_02_mild_blur.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g3_02_mild_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "mild_blur"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_3_03",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（竞赛备赛），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g3_03_severe_blur.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g3_03_severe_blur.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "severe_blur"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_3_04",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（竞赛备赛），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g3_04_mild_over.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g3_04_mild_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "mild_over"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_3_05",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（竞赛备赛），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g3_05_severe_over.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g3_05_severe_over.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "severe_over"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重过曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_3_06",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（竞赛备赛），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g3_06_mild_under.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g3_06_mild_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "mild_under"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "轻微异常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_3_07",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（竞赛备赛），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g3_07_severe_under.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g3_07_severe_under.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "severe_under"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重欠曝",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_3_08",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（竞赛备赛），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g3_08_mild_occlusion.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g3_08_mild_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "轻微遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_3_09",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（竞赛备赛），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g3_09_severe_occlusion.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g3_09_severe_occlusion.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_caviar_3_10",
+      "scene_id": "scene_01",
+      "dataset": "CAVIAR Shopping Centre",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_quality",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_clarity",
+        "s1_exposure",
+        "s1_occlusion",
+        "s1_validity"
+      ],
+      "prompt": "完成低质量商超监控图像筛选（竞赛备赛），识别严重模糊及其他质量问题。",
+      "asset_path": "assets/scene_01/caviar/caviar_g3_10_black.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/caviar/caviar_g3_10_black.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景一/image2.png（已为严重模糊教学样例）",
+        "transform": "black"
+      },
+      "answer_instruction": "填写 clarity、exposure、occlusion、validity、decision。",
+      "answer_example": {
+        "clarity": "严重模糊",
+        "exposure": "正常",
+        "occlusion": "无明显遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "answer": {
+        "clarity": "严重模糊",
+        "exposure": "严重欠曝",
+        "occlusion": "严重遮挡",
+        "validity": "无效",
+        "decision": "删除"
+      },
+      "source_url": "https://groups.inf.ed.ac.uk/vision/DATASETS/CAVIAR/CAVIARDATA1/",
+      "source_note": "来自任务plus中的 CAVIAR 严重模糊教学样例；后续变换为平台派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_3_01",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（竞赛备赛）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g3_01_original.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g3_01_original.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "original"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_3_02",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（竞赛备赛）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g3_02_mild_blur.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g3_02_mild_blur.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "mild_blur"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_3_03",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（竞赛备赛）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g3_03_severe_blur.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g3_03_severe_blur.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "severe_blur"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_3_04",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（竞赛备赛）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g3_04_mild_over.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g3_04_mild_over.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "mild_over"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_3_05",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（竞赛备赛）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g3_05_severe_over.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g3_05_severe_over.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "severe_over"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_3_06",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（竞赛备赛）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g3_06_mild_under.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g3_06_mild_under.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "mild_under"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_3_07",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（竞赛备赛）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g3_07_severe_under.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g3_07_severe_under.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "severe_under"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_3_08",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（竞赛备赛）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g3_08_mild_occlusion.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g3_08_mild_occlusion.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "mild_occlusion"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_3_09",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（竞赛备赛）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g3_09_severe_occlusion.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g3_09_severe_occlusion.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "severe_occlusion"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s1_mallscape_3_10",
+      "scene_id": "scene_01",
+      "dataset": "Mallscape Dataset",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_dedup",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s1_duplicate",
+        "s1_clarity",
+        "s1_validity"
+      ],
+      "prompt": "比较图片A与图片B，判断近重复关系和最终保留项（竞赛备赛）。",
+      "content": {
+        "image_a_path": "assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b_path": "assets/scene_01/mallscape/mallscape_B_g3_10_black.jpg",
+        "image_a": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_A_original.jpg",
+        "image_b": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_01/mallscape/mallscape_B_g3_10_black.jpg"
+      },
+      "asset_binding_required": false,
+      "derivation": {
+        "base_pair": "任务plus/场景一/image3.png + image4.png",
+        "image_b_transform": "black"
+      },
+      "answer_instruction": "填写 duplicate_relation、subject_scene、information_difference、keep、remove。",
+      "answer_example": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "较小",
+        "keep": "A",
+        "remove": "B"
+      },
+      "answer": {
+        "duplicate_relation": "近重复",
+        "subject_scene": "一致",
+        "information_difference": "明显",
+        "keep": "A",
+        "remove": "B"
+      },
+      "source_url": "https://europe.naverlabs.com/blog/making-maps-evergreen/",
+      "source_note": "任务plus中的 Mallscape 原始图A与轻微模糊图B教学对；B继续做确定性质量派生。",
+      "enabled": true
+    }
+  ]
+}
