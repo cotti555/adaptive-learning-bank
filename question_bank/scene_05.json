@@ -1,0 +1,3905 @@
+{
+  "scene_id": "scene_05",
+  "scene_name": "图文一致性判断",
+  "version": "visual_assets_local_v2_90",
+  "question_count": 90,
+  "difficulty_rule": {
+    "1": "job / 岗位技能提升",
+    "2": "course / 课程学习巩固",
+    "3": "competition / 竞赛备赛"
+  },
+  "kp_ids": [
+    "s5_object",
+    "s5_attribute",
+    "s5_relation",
+    "s5_decision"
+  ],
+  "asset_policy": "90题全部改为仓库本地可访问视觉素材；所有派生均为不改变语义的亮度/对比度/锐度/轻微压缩等变化，不使用翻转或旋转。",
+  "questions": [
+    {
+      "question_id": "s5_sugar_001",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（岗位技能提升）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_01.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_01.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "original"
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_002",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（岗位技能提升）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_02.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_02.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.06
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_003",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（岗位技能提升）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_03.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_03.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.94
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_004",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（岗位技能提升）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_04.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_04.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.09
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_005",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（岗位技能提升）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_05.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_05.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "color",
+          "factor": 0.94
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_006",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（岗位技能提升）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_06.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_06.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.35
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_007",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（岗位技能提升）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_07.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_07.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.75
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_008",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（岗位技能提升）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_08.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_08.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 88
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_009",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（岗位技能提升）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_09.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_09.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.97,
+          "contrast": 1.03
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_010",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（岗位技能提升）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_10.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_10.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.12,
+          "contrast": 1.03
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_011",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（课程学习巩固）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_11.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_11.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "mild_noise",
+          "sigma": 1.5
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_012",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（课程学习巩固）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_12.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_12.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.1
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_013",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（课程学习巩固）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_13.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_13.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.9
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_014",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（课程学习巩固）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_14.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_14.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.15
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_015",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（课程学习巩固）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_15.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_15.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "color",
+          "factor": 0.9
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_016",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（课程学习巩固）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_16.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_16.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.55
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_017",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（课程学习巩固）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_17.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_17.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.55
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_018",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（课程学习巩固）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_18.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_18.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 80
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_019",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（课程学习巩固）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_19.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_19.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.95,
+          "contrast": 1.05
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_020",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（课程学习巩固）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_20.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_20.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.2,
+          "contrast": 1.05
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_021",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（竞赛备赛）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_21.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_21.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "mild_noise",
+          "sigma": 2.5
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_022",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（竞赛备赛）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_22.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_22.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.14
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_023",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（竞赛备赛）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_23.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_23.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.86
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_024",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（竞赛备赛）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_24.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_24.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.21
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_025",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（竞赛备赛）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_25.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_25.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "color",
+          "factor": 0.86
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_026",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（竞赛备赛）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_26.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_26.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.75
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_027",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（竞赛备赛）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_27.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_27.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.35
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_028",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（竞赛备赛）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_28.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_28.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 72
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_029",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（竞赛备赛）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_29.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_29.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.93,
+          "contrast": 1.07
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_sugar_030",
+      "scene_id": "scene_05",
+      "dataset": "SugarCrepe",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_attribute",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断哪条描述与图像一致，并指出错误关系/状态信息（竞赛备赛）。",
+      "asset_path": "assets/scene_05/sugarcrepe/sugar_30.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/sugarcrepe/sugar_30.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "A cat and dog napping together on the couch.",
+        "caption_b": "A cat and a dog napping together under a blanket on the couch."
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image1.jpeg",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.28,
+          "contrast": 1.07
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "label_a": "一致",
+        "label_b": "不一致",
+        "error_type": "relation",
+        "relation": "not_under_blanket"
+      },
+      "source_url": "https://github.com/RAIVNLab/sugar-crepe",
+      "source_note": "任务plus中的 SugarCrepe 教学示例图；仅做不改变语义的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_001",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（岗位技能提升）。",
+      "asset_path": "assets/scene_05/winoground/wino_snake_eats_bird_01.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_snake_eats_bird_01.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image2.jpeg",
+        "transform": {
+          "transform": "original"
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "B",
+        "error_type": "relation",
+        "relation": "snake_eats_bird"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_002",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（岗位技能提升）。",
+      "asset_path": "assets/scene_05/winoground/wino_bird_eats_snake_02.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_bird_eats_snake_02.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image3.jpeg",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.06
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "bird_eats_snake"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_003",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（岗位技能提升）。",
+      "asset_path": "assets/scene_05/winoground/wino_snake_eats_bird_03.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_snake_eats_bird_03.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image2.jpeg",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.94
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "B",
+        "error_type": "relation",
+        "relation": "snake_eats_bird"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_004",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（岗位技能提升）。",
+      "asset_path": "assets/scene_05/winoground/wino_bird_eats_snake_04.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_bird_eats_snake_04.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image3.jpeg",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.09
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "bird_eats_snake"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_005",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（岗位技能提升）。",
+      "asset_path": "assets/scene_05/winoground/wino_snake_eats_bird_05.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_snake_eats_bird_05.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image2.jpeg",
+        "transform": {
+          "transform": "color",
+          "factor": 0.94
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "B",
+        "error_type": "relation",
+        "relation": "snake_eats_bird"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_006",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（岗位技能提升）。",
+      "asset_path": "assets/scene_05/winoground/wino_bird_eats_snake_06.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_bird_eats_snake_06.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image3.jpeg",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.35
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "bird_eats_snake"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_007",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（岗位技能提升）。",
+      "asset_path": "assets/scene_05/winoground/wino_snake_eats_bird_07.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_snake_eats_bird_07.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image2.jpeg",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.75
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "B",
+        "error_type": "relation",
+        "relation": "snake_eats_bird"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_008",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（岗位技能提升）。",
+      "asset_path": "assets/scene_05/winoground/wino_bird_eats_snake_08.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_bird_eats_snake_08.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image3.jpeg",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 88
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "bird_eats_snake"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_009",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（岗位技能提升）。",
+      "asset_path": "assets/scene_05/winoground/wino_snake_eats_bird_09.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_snake_eats_bird_09.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image2.jpeg",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.97,
+          "contrast": 1.03
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "B",
+        "error_type": "relation",
+        "relation": "snake_eats_bird"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_010",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（岗位技能提升）。",
+      "asset_path": "assets/scene_05/winoground/wino_bird_eats_snake_10.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_bird_eats_snake_10.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image3.jpeg",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.12,
+          "contrast": 1.03
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "bird_eats_snake"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_011",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（课程学习巩固）。",
+      "asset_path": "assets/scene_05/winoground/wino_snake_eats_bird_11.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_snake_eats_bird_11.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image2.jpeg",
+        "transform": {
+          "transform": "mild_noise",
+          "sigma": 1.5
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "B",
+        "error_type": "relation",
+        "relation": "snake_eats_bird"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_012",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（课程学习巩固）。",
+      "asset_path": "assets/scene_05/winoground/wino_bird_eats_snake_12.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_bird_eats_snake_12.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image3.jpeg",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.1
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "bird_eats_snake"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_013",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（课程学习巩固）。",
+      "asset_path": "assets/scene_05/winoground/wino_snake_eats_bird_13.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_snake_eats_bird_13.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image2.jpeg",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.9
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "B",
+        "error_type": "relation",
+        "relation": "snake_eats_bird"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_014",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（课程学习巩固）。",
+      "asset_path": "assets/scene_05/winoground/wino_bird_eats_snake_14.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_bird_eats_snake_14.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image3.jpeg",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.15
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "bird_eats_snake"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_015",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（课程学习巩固）。",
+      "asset_path": "assets/scene_05/winoground/wino_snake_eats_bird_15.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_snake_eats_bird_15.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image2.jpeg",
+        "transform": {
+          "transform": "color",
+          "factor": 0.9
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "B",
+        "error_type": "relation",
+        "relation": "snake_eats_bird"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_016",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（课程学习巩固）。",
+      "asset_path": "assets/scene_05/winoground/wino_bird_eats_snake_16.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_bird_eats_snake_16.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image3.jpeg",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.55
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "bird_eats_snake"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_017",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（课程学习巩固）。",
+      "asset_path": "assets/scene_05/winoground/wino_snake_eats_bird_17.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_snake_eats_bird_17.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image2.jpeg",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.55
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "B",
+        "error_type": "relation",
+        "relation": "snake_eats_bird"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_018",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（课程学习巩固）。",
+      "asset_path": "assets/scene_05/winoground/wino_bird_eats_snake_18.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_bird_eats_snake_18.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image3.jpeg",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 80
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "bird_eats_snake"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_019",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（课程学习巩固）。",
+      "asset_path": "assets/scene_05/winoground/wino_snake_eats_bird_19.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_snake_eats_bird_19.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image2.jpeg",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.95,
+          "contrast": 1.05
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "B",
+        "error_type": "relation",
+        "relation": "snake_eats_bird"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_020",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（课程学习巩固）。",
+      "asset_path": "assets/scene_05/winoground/wino_bird_eats_snake_20.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_bird_eats_snake_20.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image3.jpeg",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.2,
+          "contrast": 1.05
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "bird_eats_snake"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_021",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（竞赛备赛）。",
+      "asset_path": "assets/scene_05/winoground/wino_snake_eats_bird_21.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_snake_eats_bird_21.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image2.jpeg",
+        "transform": {
+          "transform": "mild_noise",
+          "sigma": 2.5
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "B",
+        "error_type": "relation",
+        "relation": "snake_eats_bird"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_022",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（竞赛备赛）。",
+      "asset_path": "assets/scene_05/winoground/wino_bird_eats_snake_22.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_bird_eats_snake_22.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image3.jpeg",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.14
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "bird_eats_snake"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_023",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（竞赛备赛）。",
+      "asset_path": "assets/scene_05/winoground/wino_snake_eats_bird_23.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_snake_eats_bird_23.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image2.jpeg",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.86
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "B",
+        "error_type": "relation",
+        "relation": "snake_eats_bird"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_024",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（竞赛备赛）。",
+      "asset_path": "assets/scene_05/winoground/wino_bird_eats_snake_24.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_bird_eats_snake_24.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image3.jpeg",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.21
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "bird_eats_snake"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_025",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（竞赛备赛）。",
+      "asset_path": "assets/scene_05/winoground/wino_snake_eats_bird_25.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_snake_eats_bird_25.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image2.jpeg",
+        "transform": {
+          "transform": "color",
+          "factor": 0.86
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "B",
+        "error_type": "relation",
+        "relation": "snake_eats_bird"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_026",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（竞赛备赛）。",
+      "asset_path": "assets/scene_05/winoground/wino_bird_eats_snake_26.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_bird_eats_snake_26.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image3.jpeg",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.75
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "bird_eats_snake"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_027",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（竞赛备赛）。",
+      "asset_path": "assets/scene_05/winoground/wino_snake_eats_bird_27.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_snake_eats_bird_27.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image2.jpeg",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.35
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "B",
+        "error_type": "relation",
+        "relation": "snake_eats_bird"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_028",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（竞赛备赛）。",
+      "asset_path": "assets/scene_05/winoground/wino_bird_eats_snake_28.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_bird_eats_snake_28.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image3.jpeg",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 72
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "bird_eats_snake"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_029",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（竞赛备赛）。",
+      "asset_path": "assets/scene_05/winoground/wino_snake_eats_bird_29.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_snake_eats_bird_29.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image2.jpeg",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.93,
+          "contrast": 1.07
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "B",
+        "error_type": "relation",
+        "relation": "snake_eats_bird"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_wino_030",
+      "scene_id": "scene_05",
+      "dataset": "Winoground",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断 bird/snake 的主客体动作关系，选择与图像一致的描述（竞赛备赛）。",
+      "asset_path": "assets/scene_05/winoground/wino_bird_eats_snake_30.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/winoground/wino_bird_eats_snake_30.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "a bird eats a snake",
+        "caption_b": "a snake eats a bird"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image3.jpeg",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.28,
+          "contrast": 1.07
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "bird_eats_snake"
+      },
+      "source_url": "https://huggingface.co/datasets/facebook/winoground",
+      "source_note": "任务plus中的 Winoground 样本5教学图；仅做不改变主客体关系的视觉派生。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_001",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（岗位技能提升）。",
+      "asset_path": "assets/scene_05/aro/aro_01.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_01.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "original"
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_002",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（岗位技能提升）。",
+      "asset_path": "assets/scene_05/aro/aro_02.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_02.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.06
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_003",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（岗位技能提升）。",
+      "asset_path": "assets/scene_05/aro/aro_03.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_03.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.94
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_004",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（岗位技能提升）。",
+      "asset_path": "assets/scene_05/aro/aro_04.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_04.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.09
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_005",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（岗位技能提升）。",
+      "asset_path": "assets/scene_05/aro/aro_05.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_05.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "color",
+          "factor": 0.94
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_006",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（岗位技能提升）。",
+      "asset_path": "assets/scene_05/aro/aro_06.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_06.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.35
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_007",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（岗位技能提升）。",
+      "asset_path": "assets/scene_05/aro/aro_07.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_07.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.75
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_008",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（岗位技能提升）。",
+      "asset_path": "assets/scene_05/aro/aro_08.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_08.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 88
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_009",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（岗位技能提升）。",
+      "asset_path": "assets/scene_05/aro/aro_09.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_09.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.97,
+          "contrast": 1.03
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_010",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（岗位技能提升）。",
+      "asset_path": "assets/scene_05/aro/aro_10.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_10.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.12,
+          "contrast": 1.03
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_011",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（课程学习巩固）。",
+      "asset_path": "assets/scene_05/aro/aro_11.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_11.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "mild_noise",
+          "sigma": 1.5
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_012",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（课程学习巩固）。",
+      "asset_path": "assets/scene_05/aro/aro_12.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_12.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.1
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_013",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（课程学习巩固）。",
+      "asset_path": "assets/scene_05/aro/aro_13.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_13.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.9
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_014",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（课程学习巩固）。",
+      "asset_path": "assets/scene_05/aro/aro_14.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_14.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.15
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_015",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（课程学习巩固）。",
+      "asset_path": "assets/scene_05/aro/aro_15.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_15.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "color",
+          "factor": 0.9
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_016",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（课程学习巩固）。",
+      "asset_path": "assets/scene_05/aro/aro_16.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_16.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.55
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_017",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（课程学习巩固）。",
+      "asset_path": "assets/scene_05/aro/aro_17.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_17.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.55
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_018",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（课程学习巩固）。",
+      "asset_path": "assets/scene_05/aro/aro_18.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_18.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 80
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_019",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（课程学习巩固）。",
+      "asset_path": "assets/scene_05/aro/aro_19.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_19.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.95,
+          "contrast": 1.05
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_020",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（课程学习巩固）。",
+      "asset_path": "assets/scene_05/aro/aro_20.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_20.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.2,
+          "contrast": 1.05
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_021",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（竞赛备赛）。",
+      "asset_path": "assets/scene_05/aro/aro_21.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_21.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "mild_noise",
+          "sigma": 2.5
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_022",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（竞赛备赛）。",
+      "asset_path": "assets/scene_05/aro/aro_22.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_22.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.14
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_023",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（竞赛备赛）。",
+      "asset_path": "assets/scene_05/aro/aro_23.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_23.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.86
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_024",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（竞赛备赛）。",
+      "asset_path": "assets/scene_05/aro/aro_24.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_24.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.21
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_025",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（竞赛备赛）。",
+      "asset_path": "assets/scene_05/aro/aro_25.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_25.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "color",
+          "factor": 0.86
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_026",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（竞赛备赛）。",
+      "asset_path": "assets/scene_05/aro/aro_26.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_26.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.75
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_027",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（竞赛备赛）。",
+      "asset_path": "assets/scene_05/aro/aro_27.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_27.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.35
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_028",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（竞赛备赛）。",
+      "asset_path": "assets/scene_05/aro/aro_28.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_28.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 72
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_029",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（竞赛备赛）。",
+      "asset_path": "assets/scene_05/aro/aro_29.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_29.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.93,
+          "contrast": 1.07
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    },
+    {
+      "question_id": "s5_aro_030",
+      "scene_id": "scene_05",
+      "dataset": "ARO Visual Relation",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "image_text_match",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s5_object",
+        "s5_relation",
+        "s5_decision"
+      ],
+      "prompt": "判断空间关系方向是否与图像一致（竞赛备赛）。",
+      "asset_path": "assets/scene_05/aro/aro_30.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_05/aro/aro_30.jpg",
+      "asset_binding_required": false,
+      "content": {
+        "caption_a": "the door is to the left of the shirt",
+        "caption_b": "the shirt is to the left of the door"
+      },
+      "derivation": {
+        "base_asset": "任务plus/场景五/image4.jpeg",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.28,
+          "contrast": 1.07
+        }
+      },
+      "answer_instruction": "填写 correct（A/B）、error_type；可选填写 relation。",
+      "answer_example": {
+        "correct": "A",
+        "error_type": "relation"
+      },
+      "answer": {
+        "correct": "A",
+        "error_type": "relation",
+        "relation": "door_left_of_shirt"
+      },
+      "source_url": "https://huggingface.co/datasets/mteb/ARO-Visual-Relation",
+      "source_note": "任务plus中的 ARO 空间关系教学图；仅做不改变左右关系的视觉派生（无翻转/旋转）。",
+      "enabled": true
+    }
+  ]
+}
