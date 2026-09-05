@@ -1,0 +1,4356 @@
+{
+  "scene_id": "scene_08",
+  "scene_name": "工业产品缺陷识别与区域标注",
+  "version": "visual_assets_local_v2_90",
+  "question_count": 90,
+  "difficulty_rule": {
+    "1": "job / 岗位技能提升",
+    "2": "course / 课程学习巩固",
+    "3": "competition / 竞赛备赛"
+  },
+  "kp_ids": [
+    "s8_anomaly",
+    "s8_type",
+    "s8_location",
+    "s8_segmentation",
+    "s8_logic"
+  ],
+  "asset_policy": "VisA、MVTec AD、MVTec LOCO 三组真实教学样例及其 GT 均已落地；派生只做不改变几何的视觉变化，因此可复用对应 GT mask。",
+  "questions": [
+    {
+      "question_id": "s8_visa_001",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/visa/visa_01.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_01.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "original"
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_002",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/visa/visa_02.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_02.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.06
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_003",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/visa/visa_03.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_03.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.94
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_004",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/visa/visa_04.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_04.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.09
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_005",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/visa/visa_05.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_05.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "color",
+          "factor": 0.94
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_006",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/visa/visa_06.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_06.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.35
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_007",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/visa/visa_07.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_07.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.75
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_008",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/visa/visa_08.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_08.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 88
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_009",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/visa/visa_09.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_09.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.97,
+          "contrast": 1.03
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_010",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/visa/visa_10.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_10.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.12,
+          "contrast": 1.03
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_011",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/visa/visa_11.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_11.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "mild_noise",
+          "sigma": 1.5
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_012",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/visa/visa_12.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_12.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.1
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_013",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/visa/visa_13.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_13.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.9
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_014",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/visa/visa_14.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_14.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.15
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_015",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/visa/visa_15.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_15.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "color",
+          "factor": 0.9
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_016",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/visa/visa_16.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_16.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.55
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_017",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/visa/visa_17.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_17.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.55
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_018",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/visa/visa_18.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_18.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 80
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_019",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/visa/visa_19.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_19.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.95,
+          "contrast": 1.05
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_020",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/visa/visa_20.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_20.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.2,
+          "contrast": 1.05
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_021",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/visa/visa_21.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_21.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "mild_noise",
+          "sigma": 2.5
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_022",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/visa/visa_22.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_22.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.14
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_023",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/visa/visa_23.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_23.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.86
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_024",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/visa/visa_24.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_24.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.21
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_025",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/visa/visa_25.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_25.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "color",
+          "factor": 0.86
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_026",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/visa/visa_26.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_26.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.75
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_027",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/visa/visa_27.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_27.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.35
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_028",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/visa/visa_28.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_28.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 72
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_029",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/visa/visa_29.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_29.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.93,
+          "contrast": 1.07
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_visa_030",
+      "scene_id": "scene_08",
+      "dataset": "VisA",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/visa/visa_30.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_30.jpg",
+      "mask_path": "assets/scene_08/visa/visa_gt_mask.jpg",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/visa/visa_gt_mask.jpg",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image1.jpeg",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.28,
+          "contrast": 1.07
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Bubble",
+        "location": "图像中上部偏左的一粒胶囊表面",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/dddraxxx/visa-dataset",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_001",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_01.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_01.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "original"
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_002",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_02.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_02.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.06
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_003",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_03.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_03.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.94
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_004",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_04.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_04.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.09
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_005",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_05.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_05.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "color",
+          "factor": 0.94
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_006",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_06.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_06.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.35
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_007",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_07.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_07.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.75
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_008",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_08.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_08.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 88
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_009",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_09.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_09.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.97,
+          "contrast": 1.03
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_010",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "判断产品是否异常，并指出缺陷类型与位置。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_10.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_10.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.12,
+          "contrast": 1.03
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_011",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_11.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_11.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "mild_noise",
+          "sigma": 1.5
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_012",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_12.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_12.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.1
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_013",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_13.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_13.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.9
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_014",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_14.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_14.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.15
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_015",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_15.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_15.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "color",
+          "factor": 0.9
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_016",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_16.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_16.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.55
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_017",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_17.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_17.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.55
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_018",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_18.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_18.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 80
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_019",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_19.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_19.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.95,
+          "contrast": 1.05
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_020",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "完成缺陷类型、位置与官方 GT 区域对齐。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_20.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_20.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.2,
+          "contrast": 1.05
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_021",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_21.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_21.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "mild_noise",
+          "sigma": 2.5
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_022",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_22.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_22.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.14
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_023",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_23.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_23.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.86
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_024",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_24.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_24.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.21
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_025",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_25.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_25.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "color",
+          "factor": 0.86
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_026",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_26.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_26.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.75
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_027",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_27.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_27.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.35
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_028",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_28.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_28.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 72
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_029",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_29.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_29.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.93,
+          "contrast": 1.07
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_ad_030",
+      "scene_id": "scene_08",
+      "dataset": "MVTec AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation"
+      ],
+      "prompt": "在轻度成像变化下完成缺陷判定、类别、定位与像素级区域引用。",
+      "asset_path": "assets/scene_08/mvtec_ad/mvtec_ad_30.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_ad_30.jpg",
+      "mask_path": "assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_ad/mvtec_bottle_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image3.png",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.28,
+          "contrast": 1.07
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Broken Large",
+        "location": "瓶口右侧至右下方边缘",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "structural"
+      },
+      "source_url": "https://huggingface.co/datasets/jiang-cc/MMAD",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_001",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断早餐盒是否存在逻辑异常，并识别缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_01.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_01.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "original"
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_002",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断早餐盒是否存在逻辑异常，并识别缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_02.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_02.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.06
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_003",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断早餐盒是否存在逻辑异常，并识别缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_03.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_03.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.94
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_004",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断早餐盒是否存在逻辑异常，并识别缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_04.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_04.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.09
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_005",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断早餐盒是否存在逻辑异常，并识别缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_05.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_05.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "color",
+          "factor": 0.94
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_006",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断早餐盒是否存在逻辑异常，并识别缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_06.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_06.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.35
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_007",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断早餐盒是否存在逻辑异常，并识别缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_07.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_07.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.75
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_008",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断早餐盒是否存在逻辑异常，并识别缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_08.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_08.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 88
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_009",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断早餐盒是否存在逻辑异常，并识别缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_09.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_09.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.97,
+          "contrast": 1.03
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_010",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 1,
+      "goal_type": "job",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断早餐盒是否存在逻辑异常，并识别缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_10.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_10.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.12,
+          "contrast": 1.03
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_011",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断逻辑异常类型、异常位置及缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_11.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_11.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "mild_noise",
+          "sigma": 1.5
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_012",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断逻辑异常类型、异常位置及缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_12.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_12.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.1
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_013",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断逻辑异常类型、异常位置及缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_13.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_13.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.9
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_014",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断逻辑异常类型、异常位置及缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_14.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_14.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.15
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_015",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断逻辑异常类型、异常位置及缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_15.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_15.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "color",
+          "factor": 0.9
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_016",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断逻辑异常类型、异常位置及缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_16.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_16.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.55
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_017",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断逻辑异常类型、异常位置及缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_17.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_17.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.55
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_018",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断逻辑异常类型、异常位置及缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_18.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_18.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 80
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_019",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断逻辑异常类型、异常位置及缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_19.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_19.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.95,
+          "contrast": 1.05
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_020",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 2,
+      "goal_type": "course",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "判断逻辑异常类型、异常位置及缺失组件。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_20.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_20.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.2,
+          "contrast": 1.05
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_021",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "完成逻辑异常的完整判定、定位、区域引用与规则解释。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_21.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_21.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "mild_noise",
+          "sigma": 2.5
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_022",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "完成逻辑异常的完整判定、定位、区域引用与规则解释。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_22.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_22.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "brightness",
+          "factor": 1.14
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_023",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "完成逻辑异常的完整判定、定位、区域引用与规则解释。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_23.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_23.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "contrast",
+          "factor": 0.86
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_024",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "完成逻辑异常的完整判定、定位、区域引用与规则解释。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_24.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_24.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "sharpness",
+          "factor": 1.21
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_025",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "完成逻辑异常的完整判定、定位、区域引用与规则解释。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_25.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_25.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "color",
+          "factor": 0.86
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_026",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "完成逻辑异常的完整判定、定位、区域引用与规则解释。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_26.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_26.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "blur",
+          "radius": 0.75
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_027",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "完成逻辑异常的完整判定、定位、区域引用与规则解释。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_27.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_27.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "grayscale",
+          "color_factor": 0.35
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_028",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "完成逻辑异常的完整判定、定位、区域引用与规则解释。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_28.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_28.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "jpeg",
+          "jpeg_quality": 72
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_029",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "完成逻辑异常的完整判定、定位、区域引用与规则解释。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_29.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_29.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "brightness_contrast",
+          "brightness": 0.93,
+          "contrast": 1.07
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    },
+    {
+      "question_id": "s8_mvtec_loco_030",
+      "scene_id": "scene_08",
+      "dataset": "MVTec LOCO AD",
+      "sample_origin": "real_dataset_derived",
+      "question_type": "defect",
+      "difficulty": 3,
+      "goal_type": "competition",
+      "kp_ids": [
+        "s8_anomaly",
+        "s8_type",
+        "s8_location",
+        "s8_segmentation",
+        "s8_logic"
+      ],
+      "prompt": "完成逻辑异常的完整判定、定位、区域引用与规则解释。",
+      "asset_path": "assets/scene_08/mvtec_loco/mvtec_loco_30.jpg",
+      "asset_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/mvtec_loco_30.jpg",
+      "mask_path": "assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "mask_ref": "https://cdn.jsdelivr.net/gh/cotti555/adaptive-learning-bank@main/assets/scene_08/mvtec_loco/loco_breakfast_gt.png",
+      "asset_binding_required": false,
+      "derivation": {
+        "base_asset": "任务plus/场景八/image5.png",
+        "transform": {
+          "transform": "sharp_contrast",
+          "sharpness": 1.28,
+          "contrast": 1.07
+        },
+        "geometry_changed": false
+      },
+      "answer_instruction": "填写 anomaly、defect_type、location、region_ref/segmentation_ref；LOCO 题还填写逻辑异常字段。",
+      "answer_example": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "region_ref": "official_gt_mask"
+      },
+      "answer": {
+        "anomaly": true,
+        "defect_type": "Logical Anomaly",
+        "location": "早餐盒右侧食品区域，重点涉及右下方杏仁区域",
+        "region_ref": "official_gt_mask",
+        "segmentation_ref": "official_gt_mask",
+        "logic_type": "Logical Anomaly",
+        "specific_issue": "Missing Component",
+        "missing_component": "Banana Chips / Banana Slices",
+        "normal_rule": "正常早餐盒配置中应包含香蕉片",
+        "reason": "当前样本缺少香蕉片，食品组成不符合正常配置规则",
+        "confounder": "不是划痕、破损或变色等物理结构缺陷"
+      },
+      "source_url": "https://www.mvtec.com/company/research/datasets/mvtec-loco",
+      "source_note": "任务plus中的真实数据集教学示例；仅做不改变几何位置的视觉派生，因此 GT 区域保持有效。",
+      "enabled": true
+    }
+  ]
+}
